@@ -57,7 +57,7 @@ Create a new book **POST**: localhost:8080/api/v1/books
 Create a new student **POST**: localhost:8080/api/v1/students
 ```json
 {
-  "document": "70943418496",
+  "document": "51436427606",
   "name": "Kenneth de Oliveira Soares",
   "email": "kennetholiveira2015@gmail.com",
   "address": {
@@ -66,6 +66,6 @@ Create a new student **POST**: localhost:8080/api/v1/students
 }
 ```
 
-Process reservation **POST**:  ``` localhost:8080/api/v1/reservation-inventory?isbn=9783127323207&document=70943418496```
+Process reservation **POST**:  ``` localhost:8080/api/v1/reservation-inventory?isbn=9783127323207&document=51436427606```
 
 Find book by isbn **GET**: ```localhost:8080/api/v1/books/9783127323207```
