@@ -1,0 +1,84 @@
+package io.bookwise.application.usecase;
+
+import io.bookwise.application.core.domain.Book;
+import io.bookwise.application.core.domain.Student;
+import io.bookwise.application.core.ports.out.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.*;
+
+@ExtendWith(SpringExtension.class)
+class ReservationInventoryUseCaseTest {
+
+    private ReservationInventoryUseCase reservationInventoryUseCase;
+
+    @Mock
+    private FindBookPortOut findBookPortOut;
+
+    @Mock
+    private FindStudentPortOut findStudentPortOut;
+
+    @Mock
+    private PublishReservationMessageToQueuePortOut publishReservationMessageToQueuePortOut;
+
+    @Mock
+    private ReservationInventoryPortOut reservationInventoryPortOut;
+
+    @Mock
+    private UpdateStatusReservedBookPortOut updateStatusReservedBookPortOut;
+
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+        reservationInventoryUseCase = new ReservationInventoryUseCase(findBookPortOut, findStudentPortOut, publishReservationMessageToQueuePortOut, reservationInventoryPortOut, updateStatusReservedBookPortOut);
+    }
+
+    @Test
+    void reservationShouldThrowExceptionWhenBookNotFound() {
+        when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.empty());
+
+        assertThrows(RuntimeException.class, () -> reservationInventoryUseCase.sendToReservationQueue("123", "456"));
+    }
+
+    @Test
+    void reservationShouldThrowExceptionWhenStudentNotFound() {
+        when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(new Book()));
+        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.empty());
+
+        assertThrows(RuntimeException.class, () -> reservationInventoryUseCase.sendToReservationQueue("123", "456"));
+    }
+
+    @Test
+    void reservationShouldThrowExceptionWhenBookIsAlreadyReserved() {
+        Book book = new Book();
+        book.setReserved(true);
+
+        when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(book));
+        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.of(new Student()));
+
+        assertThrows(RuntimeException.class, () -> reservationInventoryUseCase.sendToReservationQueue("123", "456"));
+    }
+
+    @Test
+    void reservationShouldSendMessageToQueueWhenBookIsAvailableAndStudentExists() {
+        Book book = new Book();
+        book.setReserved(false);
+
+        when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(book));
+        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.of(new Student()));
+        doNothing().when(publishReservationMessageToQueuePortOut).send("123", "123");
+
+        assertDoesNotThrow(() -> reservationInventoryUseCase.sendToReservationQueue("123", "123"));
+
+    }
+}

@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "109cf95c-8bf0-4cde-a849-a7b5f9bf6c1e",
+		"name": "ReservationInventory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13662308",
+		"_collection_link": "https://winter-equinox-571706.postman.co/workspace/Estudo~ade54a94-8d16-4e60-80cd-49276704e132/collection/13662308-109cf95c-8bf0-4cde-a849-a7b5f9bf6c1e?action=share&source=collection_link&creator=13662308"
+	},
+	"item": [
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Clean Code\",\r\n    \"authorName\": \"Uncle Bob\",\r\n    \"text\": \"bla bla bla\",\r\n    \"isbn\": \"9783127323207\",\r\n    \"category\": {\r\n        \"name\": \"Informática\",\r\n        \"description\": \"bla, bla, bla\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/books",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/books?isbn=9783127323207",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books"
+							],
+							"query": [
+								{
+									"key": "isbn",
+									"value": "9783127323207"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"document\": \"70943418496\",\r\n    \"name\": \"Kenneth de Oliveira Soares\",\r\n    \"email\": \"kennetholiveira2015@gmail.com\",\r\n    \"address\": {\r\n        \"postalCode\": \"58051020\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/v1/students",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"students"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "inventory",
+			"item": [
+				{
+					"name": "reservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/v1/reservation-inventory?isbn=9783127323207&document=70943418496",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reservation-inventory"
+							],
+							"query": [
+								{
+									"key": "isbn",
+									"value": "9783127323207"
+								},
+								{
+									"key": "document",
+									"value": "70943418496"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "t"
+		}
+	]
+}
