@@ -1,10 +1,13 @@
 package io.bookwise.application.usecase;
 
+import io.bookwise.adapters.out.repository.projection.ReservationProjection;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.domain.Student;
 import io.bookwise.application.core.ports.in.ReservationInventoryPortIn;
 import io.bookwise.application.core.ports.out.*;
+
+import java.util.List;
 
 public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
 
@@ -30,6 +33,11 @@ public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
     @Override
     public void init(Reservation reservation) {
         reservationInventoryPortOut.init(reservation);
+    }
+
+    @Override
+    public List<ReservationProjection> find(String document) {
+        return reservationInventoryPortOut.find(document);
     }
 
     @Override

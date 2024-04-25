@@ -1,8 +1,13 @@
 package io.bookwise.adapters.out.repository;
 
 import io.bookwise.adapters.out.repository.entity.ReservationEntity;
+import io.bookwise.adapters.out.repository.projection.ReservationProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
 
 public interface ReservationInventoryRepository extends JpaRepository<ReservationEntity, Long> {
-
+    @Query(nativeQuery = true, value = "select b.title, b.author_name as authorName, b.isbn from reservation r join book b on b.isbn = r.isbn where r.document = :document")
+    List<ReservationProjection> find(String document);
 }
