@@ -69,3 +69,5 @@ Create a new student **POST**: localhost:8080/api/v1/students
 Process reservation **POST**:  ``` localhost:8080/api/v1/reservation-inventory?isbn=9783127323207&document=51436427606```
 
 Find book by isbn **GET**: ```localhost:8080/api/v1/books/9783127323207```
+
+Find book by category **GET**: ```localhost:8080/api/v1/books?category=Informática```
