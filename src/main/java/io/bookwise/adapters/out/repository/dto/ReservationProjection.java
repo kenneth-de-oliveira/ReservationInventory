@@ -1,4 +1,4 @@
-package io.bookwise.adapters.out.repository.projection;
+package io.bookwise.adapters.out.repository.dto;
 
 public interface ReservationProjection {
     String getTitle();

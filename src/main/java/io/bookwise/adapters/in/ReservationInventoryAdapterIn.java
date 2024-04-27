@@ -1,6 +1,6 @@
 package io.bookwise.adapters.in;
 
-import io.bookwise.adapters.out.repository.projection.ReservationProjection;
+import io.bookwise.adapters.out.repository.dto.ReservationProjection;
 import io.bookwise.application.core.ports.in.ReservationInventoryPortIn;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

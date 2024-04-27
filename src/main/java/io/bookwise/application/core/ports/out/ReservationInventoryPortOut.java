@@ -1,6 +1,6 @@
 package io.bookwise.application.core.ports.out;
 
-import io.bookwise.adapters.out.repository.projection.ReservationProjection;
+import io.bookwise.adapters.out.repository.dto.ReservationProjection;
 import io.bookwise.application.core.domain.Reservation;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package io.bookwise.adapters.out;
 
 import io.bookwise.adapters.out.repository.ReservationInventoryRepository;
-import io.bookwise.adapters.out.repository.projection.ReservationProjection;
+import io.bookwise.adapters.out.repository.dto.ReservationProjection;
 import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.ports.out.ReservationInventoryPortOut;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +29,7 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
 
     @Override
     public List<ReservationProjection> find(String document) {
-        var reservations = repository.find(document);
+        var reservations = repository.find(document, ReservationProjection.class);
         log.info("Reservations found: {}", reservations.size());
         return reservations;
     }
