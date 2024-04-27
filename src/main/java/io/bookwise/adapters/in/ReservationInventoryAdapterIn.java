@@ -1,6 +1,7 @@
 package io.bookwise.adapters.in;
 
 import io.bookwise.adapters.out.repository.dto.ReservationProjection;
+import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.ports.in.ReservationInventoryPortIn;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,10 +20,11 @@ public class ReservationInventoryAdapterIn {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void reservation(@RequestParam String isbn, @RequestParam String document) {
+    public ReservationQueue reservation(@RequestParam String isbn, @RequestParam String document) {
         log.info("Reservation received: isbn: {} and document: {}", isbn, document);
-        reservationInventoryPortIn.sendToReservationQueue(isbn, document);
+        var reservationQueue = reservationInventoryPortIn.sendToReservationQueue(isbn, document);
         log.info("Reservation created");
+        return reservationQueue;
     }
 
     @GetMapping("/reservations")

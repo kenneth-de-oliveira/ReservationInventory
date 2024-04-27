@@ -1,6 +1,7 @@
 package io.bookwise.application.usecase;
 
 import io.bookwise.adapters.out.repository.dto.ReservationProjection;
+import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Student;
 import io.bookwise.application.core.ports.out.*;
@@ -11,10 +12,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -79,7 +77,7 @@ class ReservationInventoryUseCaseTest {
 
         when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(book));
         when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.of(new Student()));
-        doNothing().when(publishReservationMessageToQueuePortOut).send("123", "123");
+        when(publishReservationMessageToQueuePortOut.send(anyString(), anyString())).thenReturn(new ReservationQueue(UUID.randomUUID()));
 
         assertDoesNotThrow(() -> reservationInventoryUseCase.sendToReservationQueue("123", "123"));
 

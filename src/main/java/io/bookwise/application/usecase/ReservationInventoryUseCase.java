@@ -1,6 +1,7 @@
 package io.bookwise.application.usecase;
 
 import io.bookwise.adapters.out.repository.dto.ReservationProjection;
+import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.domain.Student;
@@ -41,18 +42,19 @@ public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
     }
 
     @Override
-    public void sendToReservationQueue(String isbn, String document) {
+    public ReservationQueue sendToReservationQueue(String isbn, String document) {
         var book = findBookPortOut.findIsbn(isbn).orElseThrow(() -> new RuntimeException("Book not Found"));
         var student = findStudentPortOut.findByDocument(document).orElseThrow(() -> new RuntimeException("Student not Found"));
+        var reservationQueue = sendToReservationQueue(book, student);
         updateStatusReservedBookPortOut.update(isbn);
-        this.sendToReservationQueue(book, student);
+        return reservationQueue;
     }
 
-    private void sendToReservationQueue(Book book, Student student) {
+    private ReservationQueue sendToReservationQueue(Book book, Student student) {
         if (book.isReserved()) {
             throw new RuntimeException("Book is already reserved");
         } else {
-            publishReservationMessageToQueuePortOut.send(book.getIsbn(), student.getDocument());
+            return publishReservationMessageToQueuePortOut.send(book.getIsbn(), student.getDocument());
         }
     }
 
