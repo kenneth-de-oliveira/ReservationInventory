@@ -16,7 +16,7 @@ This is an example of a very simplified book inventory system made in an archite
 
 **Comprehensive guide describing the architecture:**
 
-* [Hexagonal architecture](https://www.bing.com/search?q=hexagonal+architecture+al&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=hexagonal+architecture+al&sc=10-25&sk=&cvid=E9CDA3BE7BDC4AEB96E797B6C6A26011&ghsh=0&ghacc=0&ghpl=/)
+* [Hexagonal architecture](https://alistair.cockburn.us/hexagonal-architecture/)
 
 Other articles around Hexagonal architecture that could be interesting:
 
