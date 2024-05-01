@@ -33,6 +33,11 @@ spring:
           auth: true
           starttls:
             enable: true
+
+  graphql:
+    graphiql:
+      enabled: true
+
 api:
   viacep:
     url: ${API_VIACEP_URL:https://viacep.com.br/ws}
