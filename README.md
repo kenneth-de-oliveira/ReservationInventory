@@ -11,6 +11,7 @@ This is an example of a very simplified book inventory system made in an archite
 * Spring Data JPA
 * Spring GraphQL
 * Lombok
+* Feature Flags
 * RabbitMQ
 * H2 Database
 
