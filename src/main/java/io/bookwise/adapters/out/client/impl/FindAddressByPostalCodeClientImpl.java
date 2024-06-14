@@ -1,6 +1,7 @@
-package io.bookwise.adapters.out.client;
+package io.bookwise.adapters.out.client.impl;
 
 import feign.FeignException;
+import io.bookwise.adapters.out.client.FindAddressByPostalCodeClient;
 import io.bookwise.adapters.out.client.dto.AddressResponse;
 import io.bookwise.framework.errors.GenericErrorsEnum;
 import lombok.RequiredArgsConstructor;

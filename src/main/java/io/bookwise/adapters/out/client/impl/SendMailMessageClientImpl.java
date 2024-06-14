@@ -1,5 +1,6 @@
-package io.bookwise.adapters.out.client;
+package io.bookwise.adapters.out.client.impl;
 
+import io.bookwise.adapters.out.client.SendMailMessageClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
