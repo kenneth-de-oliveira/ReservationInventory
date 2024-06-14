@@ -40,3 +40,8 @@ api:
 mq:
   queues:
     reservationInventory: reservationInventory
+
+featuretoggle:
+  EnvName: ${FEATURE_TOGGLE_NAME}
+  InstanceId: ${INSTANCE_ID}
+  Url: ${FEATURE_TOGGLE_URL}

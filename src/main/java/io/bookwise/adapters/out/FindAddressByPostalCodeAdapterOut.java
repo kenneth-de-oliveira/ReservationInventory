@@ -1,6 +1,6 @@
 package io.bookwise.adapters.out;
 
-import io.bookwise.adapters.out.client.FindAddressByPostalCodeClientImpl;
+import io.bookwise.adapters.out.client.impl.FindAddressByPostalCodeClientImpl;
 import io.bookwise.adapters.out.mapper.AddressMapper;
 import io.bookwise.application.core.domain.Address;
 import io.bookwise.application.core.ports.out.FindAddressByPostalCodePortOut;
