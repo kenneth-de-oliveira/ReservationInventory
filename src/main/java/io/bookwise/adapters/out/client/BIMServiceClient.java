@@ -2,6 +2,7 @@ package io.bookwise.adapters.out.client;
 
 import com.example.inventorymanagement.BookResponse;
 import com.example.inventorymanagement.SearchBookRequest;
+import io.bookwise.adapters.out.client.dto.RetrieveAllBooksRequest;
 import io.bookwise.framework.config.adapter.SoapAdapterConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,5 +23,14 @@ public interface BIMServiceClient {
      */
     @PostMapping
     BookResponse findByIsbn(@RequestBody SearchBookRequest request);
+
+    /**
+     * Retrieves all books.
+     *
+     * @param request the request to retrieve all books
+     * @return the response containing the list of all books
+     */
+    @PostMapping
+    BookResponse findAll(@RequestBody RetrieveAllBooksRequest request);
 
 }

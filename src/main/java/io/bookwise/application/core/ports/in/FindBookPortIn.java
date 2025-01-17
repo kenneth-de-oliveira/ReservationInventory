@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface FindBookPortIn {
     Book findIsbn(String isbn);
-    List<Book> findAllByCategory(String category);
+    List<Book> findAll();
 }

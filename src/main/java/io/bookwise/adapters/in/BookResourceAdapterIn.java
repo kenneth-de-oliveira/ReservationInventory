@@ -24,6 +24,14 @@ public class BookResourceAdapterIn {
     private final CreateBookPortIn createBookPortIn;
     private final FindBookPortIn findBookPortIn;
 
+    @GetMapping
+    public ResponseEntity<List<Book>> findAll() {
+        log.info("Finding all books with books controller");
+        var books = findBookPortIn.findAll();
+        log.info("Found all books with books controller");
+        return ResponseEntity.ok().body(books);
+    }
+
     @PostMapping
     public ResponseEntity<Book> create(@RequestBody Book book) {
         try {
@@ -39,19 +47,11 @@ public class BookResourceAdapterIn {
         }
     }
 
-    @GetMapping
-    public ResponseEntity<Book> find(@RequestParam String isbn) {
+    @GetMapping(value = "/{isbn}")
+    public ResponseEntity<Book> findIsbn(@PathVariable String isbn) {
         log.info("Finding book with isbn with books controller: {}", isbn);
         var book = findBookPortIn.findIsbn(isbn);
         log.info("Found book with isbn with books controller: {}", book);
-        return ResponseEntity.ok().body(book);
-    }
-
-    @GetMapping(params = "category")
-    public ResponseEntity<List<Book>> findAllByCategory(@RequestParam String category) {
-        log.info("Finding books with category with books controller: {}", category);
-        var book = findBookPortIn.findAllByCategory(category);
-        log.info("Found books with category with books controller: {}", book);
         return ResponseEntity.ok().body(book);
     }
 

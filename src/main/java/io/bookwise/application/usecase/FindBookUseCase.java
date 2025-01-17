@@ -36,8 +36,10 @@ public class FindBookUseCase implements FindBookPortIn {
     }
 
     @Override
-    public List<Book> findAllByCategory(String category) {
-        return findBookPortOut.findAllByCategory(category);
+    public List<Book> findAll() {
+        return findBookPortOut.findAll().stream()
+                .peek(book -> book.setReserved(reservationInventoryPortOut.checkIfBookIsReservedByIsbn(book.getIsbn())))
+                .toList();
     }
 
 }

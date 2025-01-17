@@ -1,9 +1,9 @@
 package io.bookwise.adapters.out;
 
+import com.example.inventorymanagement.BookResponse;
 import io.bookwise.adapters.out.client.InventoryManagementClient;
 import io.bookwise.adapters.out.mapper.BookMapper;
 import io.bookwise.adapters.out.mapper.InventoryManagementMapper;
-import io.bookwise.adapters.out.repository.BookRepository;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.ports.out.FindBookPortOut;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +17,6 @@ import java.util.Optional;
 @Component
 @RequiredArgsConstructor
 public class FindBookAdapterOut implements FindBookPortOut {
-
-    private final BookRepository repository;
 
     private final InventoryManagementClient serviceClient;
     private final InventoryManagementMapper mapper;
@@ -36,8 +34,12 @@ public class FindBookAdapterOut implements FindBookPortOut {
     }
 
     @Override
-    public List<Book> findAllByCategory(String category) {
-        return repository.findAllByCategory(category).stream().map(BookMapper::toDomain).toList();
+    public List<Book> findAll() {
+
+        var response = serviceClient.findAll();
+        var books = mapper.mapToBookDomainList(response);
+
+        return books;
     }
 
 }

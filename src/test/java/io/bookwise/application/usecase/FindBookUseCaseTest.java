@@ -47,17 +47,17 @@ class FindBookUseCaseTest {
     }
 
     @Test
-    void findAllByCategory_callsFindAllByCategoryOnPortOut() {
+    void findAll_callsFindAllOnPortOut() {
         String category = "Fiction";
         Book book1 = new Book();
         Book book2 = new Book();
         List<Book> books = Arrays.asList(book1, book2);
 
-        when(findBookPortOut.findAllByCategory(category)).thenReturn(books);
+        when(findBookPortOut.findAll()).thenReturn(books);
 
-        findBookUseCase.findAllByCategory(category);
+        findBookUseCase.findAll();
 
-        verify(findBookPortOut).findAllByCategory(category);
+        verify(findBookPortOut).findAll();
     }
 
 }

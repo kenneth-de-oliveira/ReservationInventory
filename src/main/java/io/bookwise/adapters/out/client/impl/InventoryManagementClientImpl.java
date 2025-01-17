@@ -5,6 +5,7 @@ import com.example.inventorymanagement.SearchBookRequest;
 import feign.FeignException;
 import io.bookwise.adapters.out.client.BIMServiceClient;
 import io.bookwise.adapters.out.client.InventoryManagementClient;
+import io.bookwise.adapters.out.client.dto.RetrieveAllBooksRequest;
 import io.bookwise.framework.errors.GenericErrorsEnum;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,20 +28,37 @@ public class InventoryManagementClientImpl implements InventoryManagementClient 
             return response;
         } catch (FeignException ex) {
             if (ex.getMessage().contains("Book not found")) {
-                this.handleMessageException(ex);
+                this.handleMessageException("Book not found: ", ex);
                 throw new RuntimeException("Book not found");
             }
-            this.handleMessageException(ex);
+            this.handleMessageException("Error finding Book by isbn: ", ex);
             throw new RuntimeException("Error finding Book by isbn: " + ex.getMessage());
         } catch (Exception ex) {
-            this.handleMessageException(ex);
+            this.handleMessageException(GenericErrorsEnum.ERROR_GENERIC.getInfo(), ex);
             throw new RuntimeException(GenericErrorsEnum.ERROR_GENERIC.getInfo());
         }
 
     }
 
-    private void handleMessageException(Exception ex) {
-        log.error("Error finding Book by isbn: {}", ex.getMessage());
+    @Override
+    public BookResponse findAll() {
+        try {
+            var request = new RetrieveAllBooksRequest();
+            var response = serviceClient.findAll(request);
+            log.info("Books found: {}", response);
+
+            return response;
+        } catch (FeignException ex) {
+            this.handleMessageException("Error finding all books: ", ex);
+            throw new RuntimeException("Error finding all books: " + ex.getMessage());
+        } catch (Exception ex) {
+            this.handleMessageException(GenericErrorsEnum.ERROR_GENERIC.getInfo(), ex);
+            throw new RuntimeException(GenericErrorsEnum.ERROR_GENERIC.getInfo());
+        }
+    }
+
+    private void handleMessageException(String msg, Exception ex) {
+        log.error("{}: {}", msg, ex.getMessage());
     }
 
 }

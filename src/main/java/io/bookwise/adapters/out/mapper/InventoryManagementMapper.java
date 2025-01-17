@@ -7,6 +7,8 @@ import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Category;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Component
@@ -23,6 +25,13 @@ public class InventoryManagementMapper {
                 }
         ).orElse(null);
 
+    }
+
+    public List<Book> mapToBookDomainList(BookResponse bookResponse) {
+        return Objects.requireNonNull(Optional.ofNullable(bookResponse)
+                .map(BookResponse::getBook)
+                .map(books -> books.stream().map(this::convertToBookDomain))
+                .orElse(null)).toList();
     }
 
     public Book mapToBookDomain(BookResponse bookResponse) {
