@@ -3,6 +3,7 @@ package io.bookwise.application.usecase;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.ports.out.FeatureTogglePortOut;
 import io.bookwise.application.core.ports.out.FindBookPortOut;
+import io.bookwise.application.core.ports.out.ReservationInventoryPortOut;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -26,6 +27,9 @@ class FindBookUseCaseTest {
     @Mock
     private FeatureTogglePortOut featureTogglePortOut;
 
+    @Mock
+    private ReservationInventoryPortOut reservationInventoryPortOut;
+
     @InjectMocks
     private FindBookUseCase findBookUseCase;
 
@@ -35,6 +39,7 @@ class FindBookUseCaseTest {
         Book book = new Book();
         when(findBookPortOut.findIsbn(isbn)).thenReturn(Optional.of(book));
         when(featureTogglePortOut.isEnabled(Mockito.anyString())).thenReturn(false);
+        when(reservationInventoryPortOut.checkIfBookIsReservedByIsbn(Mockito.anyString())).thenReturn(true);
 
         findBookUseCase.findIsbn(isbn);
 

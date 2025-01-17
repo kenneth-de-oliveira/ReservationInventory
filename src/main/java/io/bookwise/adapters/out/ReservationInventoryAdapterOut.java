@@ -63,4 +63,11 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
         return reservations;
     }
 
+    @Override
+    public Boolean checkIfBookIsReservedByIsbn(String isbn) {
+        var isReserved = repository.existsByIsbn(isbn);
+        log.info("Book with ISBN: {} is reserved: {}", isbn, isReserved);
+        return isReserved;
+    }
+
 }

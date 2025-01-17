@@ -8,4 +8,5 @@ import java.util.List;
 public interface ReservationInventoryPortOut {
     void init(Reservation reservation);
     List<ReservationProjection> find(String document);
+    Boolean checkIfBookIsReservedByIsbn(String isbn);
 }
