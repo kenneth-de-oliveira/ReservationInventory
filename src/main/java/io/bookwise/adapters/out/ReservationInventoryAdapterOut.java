@@ -2,6 +2,7 @@ package io.bookwise.adapters.out;
 
 import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.ReservationInventoryRepository;
+import io.bookwise.adapters.out.repository.dto.ReservationProjection;
 import io.bookwise.adapters.out.repository.entity.ReservationControlEntity;
 import io.bookwise.adapters.out.repository.enums.ReservationControlStatus;
 import io.bookwise.application.core.domain.Reservation;
@@ -9,6 +10,8 @@ import io.bookwise.application.core.ports.out.ReservationInventoryPortOut;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 import static io.bookwise.adapters.out.mapper.ReservationInventoryMapper.toEntity;
 import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.*;
@@ -51,6 +54,13 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
     private void saveReservationControlRepository(ReservationControlEntity reservationControlEntity, ReservationControlStatus status) {
         reservationControlEntity.setStatus(status);
         reservationControlRepository.save(reservationControlEntity);
+    }
+
+    @Override
+    public List<ReservationProjection> find(String document) {
+        var reservations = repository.find(document, ReservationProjection.class);
+        log.info("Reservations found: {}", reservations.size());
+        return reservations;
     }
 
 }

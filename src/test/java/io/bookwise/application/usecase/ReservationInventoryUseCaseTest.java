@@ -1,5 +1,6 @@
 package io.bookwise.application.usecase;
 
+import io.bookwise.adapters.out.repository.dto.ReservationProjection;
 import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Student;
@@ -11,11 +12,11 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.*;
 import java.util.Optional;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(SpringExtension.class)
@@ -83,4 +84,60 @@ class ReservationInventoryUseCaseTest {
         assertDoesNotThrow(() -> reservationInventoryUseCase.sendToReservationQueue("123", "123"));
 
     }
+
+    @Test
+    void findShouldReturnListOfReservations() {
+        String document = "123";
+        ReservationProjection reservation1 = new ReservationProjection() {
+            @Override
+            public String getTitle() {
+                return "Title 1";
+            }
+
+            @Override
+            public String getAuthorName() {
+                return "Author 1";
+            }
+
+            @Override
+            public String getIsbn() {
+                return "ISBN 1";
+            }
+        };
+        ReservationProjection reservation2 = new ReservationProjection() {
+            @Override
+            public String getTitle() {
+                return "Title 2";
+            }
+
+            @Override
+            public String getAuthorName() {
+                return "Author 2";
+            }
+
+            @Override
+            public String getIsbn() {
+                return "ISBN 2";
+            }
+        };
+        List<ReservationProjection> expectedReservations = Arrays.asList(reservation1, reservation2);
+
+        when(reservationInventoryPortOut.find(document)).thenReturn(expectedReservations);
+
+        List<ReservationProjection> actualReservations = reservationInventoryUseCase.find(document);
+
+        assertEquals(expectedReservations, actualReservations);
+    }
+
+    @Test
+    void findShouldReturnListOfReservationsEmpty() {
+        String document = "123";
+
+        when(reservationInventoryPortOut.find(document)).thenReturn(Collections.emptyList());
+
+        List<ReservationProjection> actualReservations = reservationInventoryUseCase.find(document);
+
+        assertEquals(Collections.emptyList(), actualReservations);
+    }
+
 }

@@ -1,11 +1,14 @@
 package io.bookwise.adapters.in;
 
+import io.bookwise.adapters.out.repository.dto.ReservationProjection;
 import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.ports.in.ReservationInventoryPortIn;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -22,6 +25,12 @@ public class ReservationInventoryAdapterIn {
         var reservationQueue = reservationInventoryPortIn.sendToReservationQueue(isbn, document);
         log.info("Reservation created");
         return reservationQueue;
+    }
+
+    @GetMapping("/reservations")
+    public List<ReservationProjection> find(@RequestParam String document) {
+        log.info("Find reservation List by document: {}", document);
+        return reservationInventoryPortIn.find(document);
     }
 
 }
