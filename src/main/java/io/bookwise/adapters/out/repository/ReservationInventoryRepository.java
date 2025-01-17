@@ -12,4 +12,5 @@ public interface ReservationInventoryRepository extends JpaRepository<Reservatio
 
     Boolean existsByIsbn(String isbn);
 
+    List<ReservationEntity> findByDocument(String document);
 }

@@ -1,9 +1,8 @@
 package io.bookwise.application.usecase;
 
-import io.bookwise.adapters.out.repository.dto.ReservationProjection;
+import io.bookwise.adapters.out.repository.dto.Reservation;
 import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.domain.Book;
-import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.domain.Student;
 import io.bookwise.application.core.ports.in.ReservationInventoryPortIn;
 import io.bookwise.application.core.ports.out.*;
@@ -16,38 +15,44 @@ public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
     private final FindStudentPortOut findStudentPortOut;
     private final PublishReservationMessageToQueuePortOut publishReservationMessageToQueuePortOut;
     private final ReservationInventoryPortOut reservationInventoryPortOut;
-    private final UpdateStatusReservedBookPortOut updateStatusReservedBookPortOut;
 
     public ReservationInventoryUseCase(
             FindBookPortOut findBookPortOut,
             FindStudentPortOut findStudentPortOut,
             PublishReservationMessageToQueuePortOut publishReservationMessageToQueuePortOut,
-            ReservationInventoryPortOut reservationInventoryPortOut,
-            UpdateStatusReservedBookPortOut updateStatusReservedBookPortOut) {
+            ReservationInventoryPortOut reservationInventoryPortOut) {
         this.findBookPortOut = findBookPortOut;
         this.findStudentPortOut = findStudentPortOut;
         this.publishReservationMessageToQueuePortOut = publishReservationMessageToQueuePortOut;
         this.reservationInventoryPortOut = reservationInventoryPortOut;
-        this.updateStatusReservedBookPortOut = updateStatusReservedBookPortOut;
     }
 
     @Override
-    public void init(Reservation reservation) {
+    public void init(io.bookwise.application.core.domain.Reservation reservation) {
         reservationInventoryPortOut.init(reservation);
     }
 
     @Override
-    public List<ReservationProjection> find(String document) {
-        return reservationInventoryPortOut.find(document);
+    public List<Reservation> findAllByDocument(String document) {
+        return reservationInventoryPortOut.findAllByDocument(document);
     }
 
     @Override
     public ReservationQueue sendToReservationQueue(String isbn, String document) {
-        var book = findBookPortOut.findIsbn(isbn).orElseThrow(() -> new RuntimeException("Book not Found"));
+        var bookDomain = findBookPortOut.findIsbn(isbn).map(book -> {
+            book.setReserved(reservationInventoryPortOut.checkIfBookIsReservedByIsbn(isbn));
+            return book;
+        }).orElseThrow(() -> new RuntimeException("Book not found"));
         var student = findStudentPortOut.findByDocument(document).orElseThrow(() -> new RuntimeException("Student not Found"));
-        var reservationQueue = sendToReservationQueue(book, student);
-        updateStatusReservedBookPortOut.update(isbn);
+        this.checkIfBookIsReservedByIsbn(isbn);
+        var reservationQueue = sendToReservationQueue(bookDomain, student);
         return reservationQueue;
+    }
+
+    private void checkIfBookIsReservedByIsbn(String isbn) {
+        if (reservationInventoryPortOut.checkIfBookIsReservedByIsbn(isbn)) {
+            throw new RuntimeException("Book is already reserved");
+        }
     }
 
     private ReservationQueue sendToReservationQueue(Book book, Student student) {
