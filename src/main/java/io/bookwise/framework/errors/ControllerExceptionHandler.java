@@ -38,7 +38,7 @@ public class ControllerExceptionHandler {
 	@ExceptionHandler({ BindException.class })
 	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
 	public ResponseEntity<Error> bindRequestException(Exception ex) {
-		 Error response = getError(GenericErrorsEnum.BAD_REQUEST,HttpStatus.BAD_REQUEST.value(),"ResourcePortIn: non-standard id path");
+		 Error response = getError(GenericErrorsEnum.BAD_REQUEST,HttpStatus.BAD_REQUEST.value(),"Invalid request");
 		log.error(response.toString(), ex.getCause());
 		return new ResponseEntity<>(response, new HttpHeaders(), HttpStatus.BAD_REQUEST);
 	}
