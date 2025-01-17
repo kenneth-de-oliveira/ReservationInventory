@@ -80,7 +80,16 @@
 			<artifactId>feign-soap</artifactId>
 			<version>11.8</version>
 		</dependency>
-
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-core</artifactId>
+			<version>11.8</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-jackson</artifactId>
+			<version>11.8</version>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
