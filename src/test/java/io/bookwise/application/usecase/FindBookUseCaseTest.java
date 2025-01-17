@@ -10,6 +10,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.mockito.Mockito.verify;
@@ -37,6 +39,20 @@ class FindBookUseCaseTest {
         findBookUseCase.findIsbn(isbn);
 
         verify(findBookPortOut).findIsbn(isbn);
+    }
+
+    @Test
+    void findAllByCategory_callsFindAllByCategoryOnPortOut() {
+        String category = "Fiction";
+        Book book1 = new Book();
+        Book book2 = new Book();
+        List<Book> books = Arrays.asList(book1, book2);
+
+        when(findBookPortOut.findAllByCategory(category)).thenReturn(books);
+
+        findBookUseCase.findAllByCategory(category);
+
+        verify(findBookPortOut).findAllByCategory(category);
     }
 
 }

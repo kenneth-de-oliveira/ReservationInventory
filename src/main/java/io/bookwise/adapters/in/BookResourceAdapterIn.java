@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/books")
@@ -42,6 +44,14 @@ public class BookResourceAdapterIn {
         log.info("Finding book with isbn with books controller: {}", isbn);
         var book = findBookPortIn.findIsbn(isbn);
         log.info("Found book with isbn with books controller: {}", book);
+        return ResponseEntity.ok().body(book);
+    }
+
+    @GetMapping(params = "category")
+    public ResponseEntity<List<Book>> findAllByCategory(@RequestParam String category) {
+        log.info("Finding books with category with books controller: {}", category);
+        var book = findBookPortIn.findAllByCategory(category);
+        log.info("Found books with category with books controller: {}", book);
         return ResponseEntity.ok().body(book);
     }
 

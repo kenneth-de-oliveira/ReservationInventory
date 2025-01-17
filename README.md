@@ -83,3 +83,5 @@ Process reservation **POST**:  ``` localhost:8080/api/v1/reservation-inventory?i
 Find reservation **GET**:  ``` localhost:8080/api/v1/reservation-inventory/reservations?document=51436427606```
 
 Find book by isbn **GET**: ```localhost:8080/api/v1/books/9783127323207```
+
+Find book by category **GET**: ```localhost:8080/api/v1/books?category=Informática```
