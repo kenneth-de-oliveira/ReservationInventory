@@ -39,6 +39,8 @@ spring:
       enabled: true
 
 api:
+  inventory-management:
+    url: ${API_INVENTORY_MANAGEMENT_URL:http://localhost:8080/BIM-WS/InventoryManagementWS}
   viacep:
     url: ${API_VIACEP_URL:https://viacep.com.br/ws}
 
