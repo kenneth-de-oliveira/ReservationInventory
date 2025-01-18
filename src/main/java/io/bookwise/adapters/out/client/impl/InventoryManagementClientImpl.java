@@ -1,7 +1,6 @@
 package io.bookwise.adapters.out.client.impl;
 
-import com.example.inventorymanagement.BookResponse;
-import com.example.inventorymanagement.SearchBookRequest;
+import com.example.inventorymanagement.*;
 import feign.FeignException;
 import io.bookwise.adapters.out.client.BIMServiceClient;
 import io.bookwise.adapters.out.client.InventoryManagementClient;
@@ -55,6 +54,41 @@ public class InventoryManagementClientImpl implements InventoryManagementClient 
             }
             this.handleMessageException("Error finding all books: ", ex);
             throw new RuntimeException("Error finding all books: " + ex.getMessage());
+        } catch (Exception ex) {
+            this.handleMessageException(GenericErrorsEnum.ERROR_GENERIC.getInfo(), ex);
+            throw new RuntimeException(GenericErrorsEnum.ERROR_GENERIC.getInfo());
+        }
+    }
+
+    @Override
+    public CategoryResponse saveCategory(CategoryRequest categoryRequest) {
+        try {
+            var response = serviceClient.createCategory(categoryRequest);
+            log.info("Category created: {}", response);
+
+            return response;
+        } catch (FeignException ex) {
+            this.handleMessageException("Error creating category: ", ex);
+            throw new RuntimeException("Error creating category: " + ex.getMessage());
+        } catch (Exception ex) {
+            this.handleMessageException(GenericErrorsEnum.ERROR_GENERIC.getInfo(), ex);
+            throw new RuntimeException(GenericErrorsEnum.ERROR_GENERIC.getInfo());
+        }
+    }
+
+    @Override
+    public void saveBook(BookRequest bookRequest) {
+        try {
+            serviceClient.createBook(bookRequest);
+            log.info("Book created: {}", bookRequest);
+
+        } catch (FeignException ex) {
+            if (ex.getMessage().contains("Category not found")) {
+                this.handleMessageException("Category not found: ", ex);
+                throw new RuntimeException("Category not found");
+            }
+            this.handleMessageException("Error creating book: ", ex);
+            throw new RuntimeException("Error creating book: " + ex.getMessage());
         } catch (Exception ex) {
             this.handleMessageException(GenericErrorsEnum.ERROR_GENERIC.getInfo(), ex);
             throw new RuntimeException(GenericErrorsEnum.ERROR_GENERIC.getInfo());

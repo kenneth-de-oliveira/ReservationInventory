@@ -13,8 +13,8 @@ public class CreateBookUseCase implements CreateBookPortIn {
     }
 
     @Override
-    public Book create(Book book) {
-        return createBookPortOut.create(book);
+    public void create(Book book) {
+        createBookPortOut.create(book);
     }
 
 }

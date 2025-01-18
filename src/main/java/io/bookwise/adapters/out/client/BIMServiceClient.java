@@ -1,7 +1,6 @@
 package io.bookwise.adapters.out.client;
 
-import com.example.inventorymanagement.BookResponse;
-import com.example.inventorymanagement.SearchBookRequest;
+import com.example.inventorymanagement.*;
 import io.bookwise.adapters.out.client.dto.RetrieveAllBooksRequest;
 import io.bookwise.framework.config.adapter.SoapAdapterConfig;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -32,5 +31,11 @@ public interface BIMServiceClient {
      */
     @PostMapping
     BookResponse findAll(@RequestBody RetrieveAllBooksRequest request);
+
+    @PostMapping
+    CategoryResponse createCategory(@RequestBody CategoryRequest categoryRequest);
+
+    @PostMapping
+    void createBook(@RequestBody BookRequest bookRequest);
 
 }

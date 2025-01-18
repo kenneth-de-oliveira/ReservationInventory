@@ -33,12 +33,12 @@ public class BookResourceAdapterIn {
     }
 
     @PostMapping
-    public ResponseEntity<Book> create(@RequestBody Book book) {
+    public ResponseEntity<Void> create(@RequestBody Book book) {
         try {
             log.info("Creating book with books controller : {}", book);
-            book = createBookPortIn.create(book);
-            ResponseEntity<Book> responseEntity = ResponseEntity.created(ServletUriComponentsBuilder.fromCurrentRequest().path("/{isbn}")
-                    .buildAndExpand(book.getIsbn()).toUri()).body(book);
+            createBookPortIn.create(book);
+            ResponseEntity<Void> responseEntity = ResponseEntity.created(ServletUriComponentsBuilder.fromCurrentRequest().path("/{isbn}")
+                    .buildAndExpand(book.getIsbn()).toUri()).build();
             log.info("Created book with books controller : {}", book);
             return responseEntity;
         }catch (Exception ex){
