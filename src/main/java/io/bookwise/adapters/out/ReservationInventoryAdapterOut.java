@@ -6,15 +6,14 @@ import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.ReservationInventoryRepository;
 import io.bookwise.adapters.out.repository.dto.Reservation;
 import io.bookwise.adapters.out.repository.entity.ReservationControlEntity;
+import io.bookwise.adapters.out.repository.entity.ReservationEntity;
 import io.bookwise.adapters.out.repository.enums.ReservationControlStatus;
 import io.bookwise.application.core.ports.out.ReservationInventoryPortOut;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static io.bookwise.adapters.out.mapper.ReservationInventoryMapper.toEntity;
@@ -64,20 +63,17 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
 
     @Override
     public List<Reservation> findAllByDocument(String document) {
-        var reservationEntities = Optional.ofNullable(repository.findByDocument(document))
-                .orElseGet(() -> {
-                    log.info("No reservationEntities found for student with document: {}", document);
-                    return Collections.emptyList();
-                });
+        var response = inventoryManagementClient.findAll();
+        var books = inventoryManagementMapper.mapToBookDomainList(response);
 
-        var reservations = reservationEntities.stream()
-                .map(entity -> {
-                    var request = inventoryManagementMapper.mapToSearchBookRequest(entity.getIsbn());
-                    var response = inventoryManagementClient.findByIsbn(request);
-                    var book = inventoryManagementMapper.mapToBookDomain(response);
-                    return new Reservation(book.getTitle(), book.getAuthorName(), book.getIsbn());
-                })
-                .collect(Collectors.toList());
+        var reservationIsbns = repository.findByDocument(document).stream()
+                .map(ReservationEntity::getIsbn)
+                .collect(Collectors.toSet());
+
+        var reservations = books.parallelStream()
+                .filter(book -> reservationIsbns.contains(book.getIsbn()))
+                .map(book -> new Reservation(book.getTitle(), book.getAuthorName(), book.getIsbn()))
+                .toList();
 
         log.info("Reservations found: {}", reservations.size());
         return reservations;
