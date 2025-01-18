@@ -49,6 +49,10 @@ public class InventoryManagementClientImpl implements InventoryManagementClient 
 
             return response;
         } catch (FeignException ex) {
+            if (ex.getMessage().contains("No books found")) {
+                this.handleMessageException("No books found: ", ex);
+                throw new RuntimeException("No books found");
+            }
             this.handleMessageException("Error finding all books: ", ex);
             throw new RuntimeException("Error finding all books: " + ex.getMessage());
         } catch (Exception ex) {
