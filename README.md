@@ -33,7 +33,7 @@ This project is a “fictitious” digital book inventory project proposal devel
 ## Architecture overview
 
 <p align="center">
-    <img alt="NET Microservices Architecture" src="https://i.ibb.co/72YKnzx/Desenho.jpg" />
+    <img alt="NET Microservices Architecture" src="https://i.ibb.co/PGxJt4Y/Sem-t-tulo-2024-11-25-1123-excalidraw.png" />
 </p>
 
 # Instructions
