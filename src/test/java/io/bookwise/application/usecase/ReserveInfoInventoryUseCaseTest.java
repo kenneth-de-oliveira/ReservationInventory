@@ -1,6 +1,6 @@
 package io.bookwise.application.usecase;
 
-import io.bookwise.adapters.out.repository.dto.Reservation;
+import io.bookwise.adapters.out.repository.dto.ReserveInfo;
 import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Student;
@@ -24,7 +24,7 @@ import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
-class ReservationInventoryUseCaseTest {
+class ReserveInfoInventoryUseCaseTest {
 
     private ReservationInventoryUseCase reservationInventoryUseCase;
 
@@ -73,30 +73,35 @@ class ReservationInventoryUseCaseTest {
     @Test
     void reservationShouldSendMessageToQueueWhenBookIsAvailableAndStudentExists() {
         Book book = new Book();
+        book.setIsbn("123");
         book.setReserved(false);
 
+        Student student = new Student();
+        student.setDocument("123");
+
         when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(book));
-        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.of(new Student()));
-        when(publishReservationMessageToQueuePortOut.send(anyString(), anyString())).thenReturn(new ReservationQueue(UUID.randomUUID()));
+        when(reservationInventoryPortOut.checkIfBookIsReservedByIsbn(anyString())).thenReturn(false);
+        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.of(student));
+        when(publishReservationMessageToQueuePortOut.send(anyString(), anyString()))
+                .thenReturn(new ReservationQueue(UUID.randomUUID()));
 
         assertDoesNotThrow(() -> reservationInventoryUseCase.sendToReservationQueue("123", "123"));
-
     }
 
     @Test
     void findAllByDocumentShouldReturnListOfReservations() {
         String document = "123";
 
-        Reservation reservation1 = new Reservation("title", "author", "isbn");
-        Reservation reservation2 = new Reservation("title2", "author2", "isbn2");
+        ReserveInfo reserveInfo1 = new ReserveInfo("title", "author", "isbn");
+        ReserveInfo reserveInfo2 = new ReserveInfo("title2", "author2", "isbn2");
 
-        List<Reservation> expectedReservations = Arrays.asList(reservation1, reservation2);
+        List<ReserveInfo> expectedReserveInfos = Arrays.asList(reserveInfo1, reserveInfo2);
 
-        when(reservationInventoryPortOut.findAllByDocument(document)).thenReturn(expectedReservations);
+        when(reservationInventoryPortOut.findAllByDocument(document)).thenReturn(expectedReserveInfos);
 
-        List<Reservation> actualReservations = reservationInventoryUseCase.findAllByDocument(document);
+        List<ReserveInfo> actualReserveInfos = reservationInventoryUseCase.findAllByDocument(document);
 
-        assertEquals(expectedReservations, actualReservations);
+        assertEquals(expectedReserveInfos, actualReserveInfos);
     }
 
     @Test
@@ -105,9 +110,9 @@ class ReservationInventoryUseCaseTest {
 
         when(reservationInventoryPortOut.findAllByDocument(document)).thenReturn(Collections.emptyList());
 
-        List<Reservation> actualReservations = reservationInventoryUseCase.findAllByDocument(document);
+        List<ReserveInfo> actualReserveInfos = reservationInventoryUseCase.findAllByDocument(document);
 
-        assertEquals(Collections.emptyList(), actualReservations);
+        assertEquals(Collections.emptyList(), actualReserveInfos);
     }
 
 }
