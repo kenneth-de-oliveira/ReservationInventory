@@ -29,8 +29,8 @@ public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
     }
 
     @Override
-    public void init(Reservation reservation) {
-        reservationInventoryPortOut.init(reservation);
+    public void reserve(Reservation reservation) {
+        reservationInventoryPortOut.execute(reservation);
     }
 
     @Override

@@ -31,30 +31,23 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
     private final InventoryManagementMapper inventoryManagementMapper;
 
     @Override
-    public void init(Reservation reservation) {
+    public void execute(Reservation reservation) {
         log.info("Creating reservation for book with ISBN: {} for student with document: {}", reservation.getIsbn(), reservation.getDocument());
-        this.run(reservation);
+        var reservationControlEntity = reservationControlRepository.findByIsbnAndStatus(reservation.getIsbn(), PENDING);
+        reservationControlEntity.ifPresent(control -> this.processReservation(reservation, control));
         log.info("Reservation created successfully with status {}", CONFIRMED);
     }
 
-    private void run(Reservation reservation) {
-        var reservationControlEntity = reservationControlRepository.findByIsbnAndStatus(reservation.getIsbn(), PENDING);
-        reservationControlEntity.ifPresent(control -> this.processReservation(reservation, control));
-    }
-
     private void processReservation(Reservation reservation, ReservationControlEntity reservationControlEntity) {
-        var status = reservationControlEntity.getStatus();
-        if (ReservationControlStatus.equals(status, PENDING)) {
-            saveReservationControlRepository(reservationControlEntity, CONFIRMED);
-            reserve(reservation);
-        } else {
-           saveReservationControlRepository(reservationControlEntity, ERROR);
+        switch (reservationControlEntity.getStatus()) {
+            case PENDING -> reserve(reservation, reservationControlEntity);
+            default -> saveReservationControlRepository(reservationControlEntity, ERROR);
         }
     }
 
-    private void reserve(Reservation reservation) {
-        var entity = toEntity(reservation);
-        repository.save(entity);
+    private void reserve(Reservation reservation, ReservationControlEntity reservationControlEntity) {
+        repository.save( toEntity(reservation) );
+        saveReservationControlRepository(reservationControlEntity, CONFIRMED);
     }
 
     private void saveReservationControlRepository(ReservationControlEntity reservationControlEntity, ReservationControlStatus status) {

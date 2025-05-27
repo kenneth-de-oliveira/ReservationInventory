@@ -6,7 +6,7 @@ import io.bookwise.application.core.domain.Reservation;
 import java.util.List;
 
 public interface ReservationInventoryPortOut {
-    void init(Reservation reservation);
+    void execute(Reservation reservation);
     List<ReserveInfo> findAllByDocument(String document);
     Boolean checkIfBookIsReservedByIsbn(String isbn);
 }
