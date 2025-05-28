@@ -73,14 +73,19 @@ class ReserveInfoInventoryUseCaseTest {
     @Test
     void reservationShouldSendMessageToQueueWhenBookIsAvailableAndStudentExists() {
         Book book = new Book();
+        book.setIsbn("123");
         book.setReserved(false);
 
+        Student student = new Student();
+        student.setDocument("123");
+
         when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(book));
-        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.of(new Student()));
-        when(publishReservationMessageToQueuePortOut.send(anyString(), anyString())).thenReturn(new ReservationQueue(UUID.randomUUID()));
+        when(reservationInventoryPortOut.checkIfBookIsReservedByIsbn(anyString())).thenReturn(false);
+        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.of(student));
+        when(publishReservationMessageToQueuePortOut.send(anyString(), anyString()))
+                .thenReturn(new ReservationQueue(UUID.randomUUID()));
 
         assertDoesNotThrow(() -> reservationInventoryUseCase.sendToReservationQueue("123", "123"));
-
     }
 
     @Test

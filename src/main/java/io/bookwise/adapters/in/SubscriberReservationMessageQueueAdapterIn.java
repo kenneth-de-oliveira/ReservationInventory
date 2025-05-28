@@ -20,9 +20,7 @@ public class SubscriberReservationMessageQueueAdapterIn {
     private void receiveMessageQueue(@Payload String payload) {
         try {
             log.info("Received message queue: {}", payload);
-            reservationInventoryPortIn.reserve(
-                    toDomain(payload)
-            );
+            reservationInventoryPortIn.reserve( toDomain(payload) );
             log.info("Reservation created");
         } catch (Exception ex) {
             log.error("Error received message queue: {}", ex.getMessage());
