@@ -28,11 +28,11 @@ public class FindBookUseCase implements FindBookPortIn {
         if (featureTogglePortOut.isEnabled("test-ff")) {
             throw new RuntimeException("feature toggle test enabled");
         }
-        return findBookPortOut.findIsbn(isbn).map(book -> {
-            book.setReserved(reservationInventoryPortOut.checkIfBookIsReservedByIsbn(isbn));
-            return book;
-        }).orElseThrow(() -> new RuntimeException("Book not found"));
 
+        return findBookPortOut.findIsbn(isbn).stream()
+                .peek(book -> book.setReserved(reservationInventoryPortOut.checkIfBookIsReservedByIsbn(isbn)))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Book not found"));
     }
 
     @Override
