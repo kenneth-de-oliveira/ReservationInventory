@@ -2,6 +2,7 @@ package io.bookwise.adapters.out;
 
 import io.bookwise.adapters.out.client.InventoryManagementClient;
 import io.bookwise.adapters.out.mapper.InventoryManagementMapper;
+import io.bookwise.adapters.out.processor.ReservationProcessor;
 import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.ReservationInventoryRepository;
 import io.bookwise.adapters.out.repository.dto.ReserveInfo;
@@ -18,7 +19,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static io.bookwise.adapters.out.mapper.ReservationInventoryMapper.toEntity;
-import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.*;
+import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.CONFIRMED;
+import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.PENDING;
 
 @Slf4j
 @Component
@@ -29,6 +31,7 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
     private final ReservationControlRepository reservationControlRepository;
     private final InventoryManagementClient inventoryManagementClient;
     private final InventoryManagementMapper inventoryManagementMapper;
+    private final List<ReservationProcessor> reservationProcessors;
 
     @Override
     public void execute(Reservation reservation) {
@@ -39,19 +42,22 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
     }
 
     private void processReservation(Reservation reservation, ReservationControlEntity reservationControlEntity) {
-        switch (reservationControlEntity.getStatus()) {
-            case PENDING -> reserve(reservation, reservationControlEntity);
-            default -> saveReservationControlRepository(reservationControlEntity, ERROR);
-        }
+        reservationProcessors.stream()
+                .filter(reservationProcessor -> reservationProcessor.supportsStatus(reservationControlEntity.getStatus()))
+                .findFirst()
+                .ifPresentOrElse(
+                        reservationProcessor -> reservationProcessor.process(reservation, reservationControlEntity),
+                        () -> this.updateReservationStatus(reservationControlEntity, ReservationControlStatus.ERROR)
+                );
     }
 
-    private void reserve(Reservation reservation, ReservationControlEntity reservationControlEntity) {
+    public void reserve(Reservation reservation, ReservationControlEntity reservationControlEntity) {
         repository.save( toEntity(reservation) );
-        saveReservationControlRepository(reservationControlEntity, CONFIRMED);
+        this.updateReservationStatus(reservationControlEntity, CONFIRMED);
     }
 
-    private void saveReservationControlRepository(ReservationControlEntity reservationControlEntity, ReservationControlStatus status) {
-        reservationControlEntity.setStatus(status);
+    private void updateReservationStatus(ReservationControlEntity reservationControlEntity, ReservationControlStatus reservationControlStatus) {
+        reservationControlEntity.setStatus(reservationControlStatus);
         reservationControlRepository.save(reservationControlEntity);
     }
 
