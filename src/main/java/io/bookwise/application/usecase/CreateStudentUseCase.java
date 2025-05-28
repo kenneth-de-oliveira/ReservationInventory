@@ -24,11 +24,6 @@ public class CreateStudentUseCase implements CreateStudentPortIn {
     @Override
     public Student create(Student student) {
         this.findAddressByPostalCode(student);
-        student = this.createStudentAndNotify(student);
-        return student;
-    }
-
-    private Student createStudentAndNotify(Student student) {
         student = createStudentPortOut.create(student);
         sendMailMessagePortOut.send(student.getEmail());
         return student;
