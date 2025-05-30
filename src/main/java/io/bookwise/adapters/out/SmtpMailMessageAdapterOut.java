@@ -16,7 +16,7 @@ public class SmtpMailMessageAdapterOut implements SmtpMailMessagePortOut {
 
     @Override
     public void sendMail(MailMessage mailMessage) {
-        log.info("Sending email to: {}", mailMessage.getTo());
+        log.info("Sending mail using SmtpMailMessageAdapterOut: {}", mailMessage);
         smtpMailMessageClient.sendMail(mailMessage);
     }
 
