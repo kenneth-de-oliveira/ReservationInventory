@@ -12,7 +12,7 @@ import static io.bookwise.adapters.out.mapper.ReservationInventoryMapper.toDomai
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class SubscriberReservationMessageQueueAdapterIn {
+public class ReservationMessageQueueListenerAdapterIn {
 
     private final ReservationInventoryPortIn reservationInventoryPortIn;
 

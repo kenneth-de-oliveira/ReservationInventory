@@ -1,14 +1,12 @@
 package io.bookwise.application.usecase;
 
+import io.bookwise.adapters.out.mail.MailMessage;
 import io.bookwise.adapters.out.repository.dto.ReserveInfo;
 import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.domain.Student;
-import io.bookwise.application.core.ports.out.FindBookPortOut;
-import io.bookwise.application.core.ports.out.FindStudentPortOut;
-import io.bookwise.application.core.ports.out.PublishReservationMessageToQueuePortOut;
-import io.bookwise.application.core.ports.out.ReservationInventoryPortOut;
+import io.bookwise.application.core.ports.out.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(SpringExtension.class)
-class ReserveInfoInventoryUseCaseTest {
+class ReserveInventoryUseCaseTest {
 
     private ReservationInventoryUseCase reservationInventoryUseCase;
 
@@ -35,22 +33,25 @@ class ReserveInfoInventoryUseCaseTest {
     private FindStudentPortOut findStudentPortOut;
 
     @Mock
-    private PublishReservationMessageToQueuePortOut publishReservationMessageToQueuePortOut;
+    private ReservationMessageQueuePublisherPortOut reservationMessageQueuePublisherPortOut;
 
     @Mock
     private ReservationInventoryPortOut reservationInventoryPortOut;
 
+    @Mock
+    private SmtpMailMessagePortOut smtpMailMessagePortOut;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        reservationInventoryUseCase = new ReservationInventoryUseCase(findBookPortOut, findStudentPortOut, publishReservationMessageToQueuePortOut, reservationInventoryPortOut);
+        reservationInventoryUseCase = new ReservationInventoryUseCase(findBookPortOut, findStudentPortOut, reservationMessageQueuePublisherPortOut, reservationInventoryPortOut, smtpMailMessagePortOut);
     }
 
     @Test
     void reservationShouldThrowExceptionWhenBookNotFound() {
         when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.empty());
 
-        assertThrows(RuntimeException.class, () -> reservationInventoryUseCase.sendToReservationQueue("123", "456"));
+        assertThrows(RuntimeException.class, () -> reservationInventoryUseCase.enqueueReservationRequest("123", "456"));
     }
 
     @Test
@@ -58,7 +59,7 @@ class ReserveInfoInventoryUseCaseTest {
         when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(new Book()));
         when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.empty());
 
-        assertThrows(RuntimeException.class, () -> reservationInventoryUseCase.sendToReservationQueue("123", "456"));
+        assertThrows(RuntimeException.class, () -> reservationInventoryUseCase.enqueueReservationRequest("123", "456"));
     }
 
     @Test
@@ -67,7 +68,7 @@ class ReserveInfoInventoryUseCaseTest {
         when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.of(new Student()));
         when(reservationInventoryPortOut.checkIfBookIsReservedByIsbn(anyString())).thenReturn(true);
 
-        assertThrows(RuntimeException.class, () -> reservationInventoryUseCase.sendToReservationQueue("123", "456"));
+        assertThrows(RuntimeException.class, () -> reservationInventoryUseCase.enqueueReservationRequest("123", "456"));
     }
 
     @Test
@@ -82,10 +83,10 @@ class ReserveInfoInventoryUseCaseTest {
         when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(book));
         when(reservationInventoryPortOut.checkIfBookIsReservedByIsbn(anyString())).thenReturn(false);
         when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.of(student));
-        when(publishReservationMessageToQueuePortOut.send(anyString(), anyString()))
+        when(reservationMessageQueuePublisherPortOut.sendToQueueRequest(anyString(), anyString()))
                 .thenReturn(new ReservationQueue(UUID.randomUUID()));
 
-        assertDoesNotThrow(() -> reservationInventoryUseCase.sendToReservationQueue("123", "123"));
+        assertDoesNotThrow(() -> reservationInventoryUseCase.enqueueReservationRequest("123", "123"));
     }
 
     @Test
@@ -115,13 +116,21 @@ class ReserveInfoInventoryUseCaseTest {
         assertEquals(Collections.emptyList(), actualReserveInfos);
     }
 
-    @Test
-    void reserveShouldCallExecuteOnReservationInventoryPortOut() {
-        Reservation reservation = new Reservation();
+   @Test
+   void reserveShouldCallExecuteOnReservationInventoryPortOut() {
+       Reservation reservation = new Reservation();
+       reservation.setDocument("123");
+       reservation.setIsbn("isbn-1");
 
-        assertDoesNotThrow(() -> reservationInventoryUseCase.reserve(reservation));
+       Student student = new Student();
+       student.setEmail("student@email.com");
 
-        verify(reservationInventoryPortOut).execute(reservation);
-    }
+       when(findStudentPortOut.findByDocument("123")).thenReturn(Optional.of(student));
+
+       assertDoesNotThrow(() -> reservationInventoryUseCase.reserve(reservation));
+
+       verify(reservationInventoryPortOut).execute(reservation);
+       verify(smtpMailMessagePortOut).sendMail(any(MailMessage.class));
+   }
 
 }

@@ -7,7 +7,7 @@ import io.bookwise.application.core.domain.Reservation;
 import java.util.List;
 
 public interface ReservationInventoryPortIn {
-    ReservationQueue sendToReservationQueue(String isbn, String document);
+    ReservationQueue enqueueReservationRequest(String isbn, String document);
     void reserve(Reservation reservation);
     List<ReserveInfo> findAllByDocument(String document);
 }
