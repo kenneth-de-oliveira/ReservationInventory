@@ -4,8 +4,6 @@ import io.bookwise.adapters.out.client.SmtpMailMessageClient;
 import io.bookwise.adapters.out.mail.MailMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
@@ -14,8 +12,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class SmtpMailMessageClientImpl implements SmtpMailMessageClient {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(SmtpMailMessageClientImpl.class);
 
     private final JavaMailSender javaMailSender;
 
@@ -26,7 +22,7 @@ public class SmtpMailMessageClientImpl implements SmtpMailMessageClient {
             javaMailSender.send(message);
             log.info("Email sent to: {}", mailMessage.getTo());
         } catch (Exception ex) {
-            LOGGER.error("Error sending email: {}", ex.getMessage());
+            log.error("Error sending email: {}", ex.getMessage());
             throw new RuntimeException(ex.getMessage(), ex);
         }
     }
