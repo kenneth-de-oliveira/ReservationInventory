@@ -1,0 +1,36 @@
+
+# Application configuration for production environment
+
+spring:
+
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+
+  datasource:
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
+    driverClassName: ${DATASOURCE_DRIVER_CLASS_NAME}
+  jpa:
+    database-platform: ${DATASOURCE_PLATFORM}
+
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+api:
+  inventory-management:
+    url: ${API_INVENTORY_MANAGEMENT_URL}
+  viacep:
+    url: ${API_VIACEP_URL}

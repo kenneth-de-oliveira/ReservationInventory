@@ -3,6 +3,7 @@ package io.bookwise.application.usecase;
 import io.bookwise.adapters.out.repository.dto.ReserveInfo;
 import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.domain.Book;
+import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.domain.Student;
 import io.bookwise.application.core.ports.out.FindBookPortOut;
 import io.bookwise.application.core.ports.out.FindStudentPortOut;
@@ -20,8 +21,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.anyString;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(SpringExtension.class)
 class ReserveInfoInventoryUseCaseTest {
@@ -113,6 +113,15 @@ class ReserveInfoInventoryUseCaseTest {
         List<ReserveInfo> actualReserveInfos = reservationInventoryUseCase.findAllByDocument(document);
 
         assertEquals(Collections.emptyList(), actualReserveInfos);
+    }
+
+    @Test
+    void reserveShouldCallExecuteOnReservationInventoryPortOut() {
+        Reservation reservation = new Reservation();
+
+        assertDoesNotThrow(() -> reservationInventoryUseCase.reserve(reservation));
+
+        verify(reservationInventoryPortOut).execute(reservation);
     }
 
 }
