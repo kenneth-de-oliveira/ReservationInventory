@@ -66,6 +66,11 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+		<dependency>
 			<groupId>no.finn.unleash</groupId>
 			<artifactId>unleash-client-java</artifactId>
 			<version>3.3.1</version>
