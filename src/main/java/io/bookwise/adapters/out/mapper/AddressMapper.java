@@ -3,35 +3,17 @@ package io.bookwise.adapters.out.mapper;
 import io.bookwise.adapters.out.client.dto.AddressResponse;
 import io.bookwise.adapters.out.repository.entity.AddressEntity;
 import io.bookwise.application.core.domain.Address;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
-public class AddressMapper {
+@Mapper(componentModel = "spring")
+public interface AddressMapper {
 
-    public static Address toDomain(AddressEntity addressEntity) {
-        var address = new Address();
-        address.setId(addressEntity.getId());
-        address.setCity(addressEntity.getCity());
-        address.setState(addressEntity.getState());
-        address.setStreet(addressEntity.getStreet());
-        address.setPostalCode(addressEntity.getPostalCode());
-        return address;
-    }
+    Address toDomain(AddressEntity addressEntity);
 
-    public static AddressEntity toEntity(Address address) {
-        var addressEntity = new AddressEntity();
-        addressEntity.setCity(address.getCity());
-        addressEntity.setState(address.getState());
-        addressEntity.setStreet(address.getStreet());
-        addressEntity.setPostalCode(address.getPostalCode());
-        return addressEntity;
-    }
+    AddressEntity toEntity(Address address);
 
-    public static Address toDomain(AddressResponse addressResponse) {
-        var address = new Address();
-        address.setCity(addressResponse.city());
-        address.setState(addressResponse.state());
-        address.setStreet(addressResponse.street());
-        address.setPostalCode(addressResponse.postalCode());
-        return address;
-    }
+    @Mapping(target = "id", ignore = true)
+    Address toDomain(AddressResponse addressResponse);
 
 }

@@ -1,6 +1,6 @@
 package io.bookwise.adapters.out.repository.dto;
 
-public record Reservation(
+public record ReserveInfo(
         String title,
         String authorName,
         String isbn

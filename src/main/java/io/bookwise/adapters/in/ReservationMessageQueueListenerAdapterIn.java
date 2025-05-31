@@ -1,5 +1,6 @@
 package io.bookwise.adapters.in;
 
+import io.bookwise.adapters.out.mapper.ReservationInventoryMapper;
 import io.bookwise.application.core.ports.in.ReservationInventoryPortIn;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,21 +8,19 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
-import static io.bookwise.adapters.out.mapper.ReservationInventoryMapper.toDomain;
-
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class SubscriberReservationMessageQueueAdapterIn {
+public class ReservationMessageQueueListenerAdapterIn {
 
     private final ReservationInventoryPortIn reservationInventoryPortIn;
+    private final ReservationInventoryMapper mapper;
 
     @RabbitListener(queues = "${mq.queues.reservationInventory}")
-    private void receiveMessageQueue(@Payload String payload)  {
+    private void receiveMessageQueue(@Payload String payload) {
         try {
             log.info("Received message queue: {}", payload);
-            var reservation = toDomain(payload);
-            reservationInventoryPortIn.init(reservation);
+            reservationInventoryPortIn.reserve( mapper.toDomain(payload) );
             log.info("Reservation created");
         } catch (Exception ex) {
             log.error("Error received message queue: {}", ex.getMessage());

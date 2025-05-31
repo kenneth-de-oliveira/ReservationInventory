@@ -1,0 +1,1039 @@
+2025-05-30 14:31:40,291 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 14:31:40,323 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 6124 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 14:31:40,325 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 14:31:42,162 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 14:31:42,493 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 312 ms. Found 4 JPA repository interfaces.
+2025-05-30 14:31:42,881 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=d5bfb36c-1797-32f8-9c12-5e59197ec38a
+2025-05-30 14:31:43,830 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 14:31:43,844 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 14:31:43,845 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 14:31:43,845 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 14:31:44,206 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 14:31:44,207 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3764 ms
+2025-05-30 14:31:44,263 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 14:31:44,642 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 14:31:44,666 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 14:31:44,912 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 14:31:45,013 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 14:31:45,334 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 14:31:45,559 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 14:31:46,806 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 14:31:46,816 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 14:31:47,017 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 14:31:50,247 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 14:31:52,099 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 14:31:52,214 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 14:31:52,273 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 14:31:53,698 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 14:31:53,700 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 14:31:53,711 INFO o.s.a.r.l.AbstractMessageListenerContainer [main] Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused: no further information
+2025-05-30 14:31:53,720 INFO o.s.a.r.c.AbstractConnectionFactory [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Attempting to connect to: [localhost:5672]
+2025-05-30 14:31:53,746 ERROR o.s.a.r.l.AbstractMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:602)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:725)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:252)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2173)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2146)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2126)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:463)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:447)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1917)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1898)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1374)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1220)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:60)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1223)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1173)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:640)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:615)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:565)
+	... 12 common frames omitted
+2025-05-30 14:31:53,749 INFO o.s.a.r.c.AbstractConnectionFactory [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Attempting to connect to: [localhost:5672]
+2025-05-30 14:31:53,760 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 16.213 seconds (JVM running for 17.754)
+2025-05-30 14:31:56,086 INFO o.s.a.r.l.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Waiting for workers to finish.
+2025-05-30 14:31:56,086 INFO o.s.a.r.l.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Successfully waited for workers to finish.
+2025-05-30 14:31:56,119 INFO o.s.a.r.l.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Shutdown ignored - container is already stopped
+2025-05-30 14:31:56,121 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 14:31:56,121 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-05-30 14:31:56,289 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-05-30 14:31:56,291 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-05-30 14:35:00,129 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 14:35:00,158 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 28920 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 14:35:00,160 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 14:35:02,178 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 14:35:02,585 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 386 ms. Found 4 JPA repository interfaces.
+2025-05-30 14:35:03,033 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=d5bfb36c-1797-32f8-9c12-5e59197ec38a
+2025-05-30 14:35:04,089 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 14:35:04,106 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 14:35:04,107 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 14:35:04,107 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 14:35:04,543 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 14:35:04,544 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4270 ms
+2025-05-30 14:35:04,613 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 14:35:05,136 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 14:35:05,167 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 14:35:05,524 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 14:35:05,685 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 14:35:06,179 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 14:35:06,471 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 14:35:08,688 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 14:35:08,710 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 14:35:09,075 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 14:35:15,911 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 14:35:18,153 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 14:35:18,313 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 14:35:18,392 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 14:35:20,003 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 14:35:20,004 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 14:35:20,377 INFO o.s.a.r.l.AbstractMessageListenerContainer [main] Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused: no further information
+2025-05-30 14:35:20,410 INFO o.s.a.r.c.AbstractConnectionFactory [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Attempting to connect to: [localhost:5672]
+2025-05-30 14:35:20,448 ERROR o.s.a.r.l.AbstractMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:602)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:725)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:252)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2173)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2146)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2126)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:463)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:447)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1917)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1898)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1374)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1220)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:60)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1223)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1173)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:640)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:615)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:565)
+	... 12 common frames omitted
+2025-05-30 14:35:20,452 INFO o.s.a.r.c.AbstractConnectionFactory [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Attempting to connect to: [localhost:5672]
+2025-05-30 14:35:20,493 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 25.697 seconds (JVM running for 27.594)
+2025-05-30 14:55:49,880 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 14:55:49,911 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 30740 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 14:55:49,913 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 14:55:51,731 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 14:55:52,113 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 364 ms. Found 4 JPA repository interfaces.
+2025-05-30 14:55:52,533 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=d5bfb36c-1797-32f8-9c12-5e59197ec38a
+2025-05-30 14:55:53,645 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 14:55:53,660 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 14:55:53,660 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 14:55:53,661 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 14:55:54,101 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 14:55:54,102 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4077 ms
+2025-05-30 14:55:54,160 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 14:55:54,630 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 14:55:54,659 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 14:55:54,956 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 14:55:55,077 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 14:55:55,463 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 14:55:55,727 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 14:55:57,294 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 14:55:57,308 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 14:55:57,557 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 14:56:02,180 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 14:56:04,126 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 14:56:04,252 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 14:56:04,330 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 14:56:05,744 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 14:56:05,746 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 14:56:05,825 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#5812935:0/SimpleConnection@67c2ff5d [delegate=amqp://guest@127.0.0.1:5672/, localPort= 61481]
+2025-05-30 14:56:05,911 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 19.072 seconds (JVM running for 20.844)
+2025-05-30 14:56:31,924 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 14:56:31,925 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-05-30 14:56:31,927 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Completed initialization in 2 ms
+2025-05-30 14:56:32,158 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-2] Creating book with books controller : Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 14:56:32,193 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-2] Creating book: Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 14:56:33,842 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-2] Category created: com.example.inventorymanagement.CategoryResponse@428a6660
+2025-05-30 14:56:34,171 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-2] Book created: com.example.inventorymanagement.BookRequest@55bdd9c1
+2025-05-30 14:56:34,172 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-2] Book created: Book{id=1, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 14:56:34,185 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-2] Created book with books controller : Book{id=1, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 14:56:50,271 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-3] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 14:56:50,280 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-3] Finding address by postal code: 58051020
+2025-05-30 14:56:51,099 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-3] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 14:56:51,123 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-3] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 14:56:51,285 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-3] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 14:56:51,287 INFO i.b.a.o.SendMailMessageAdapterOut [http-nio-8081-exec-3] Sending email to: kennetholiveira2015@gmail.com
+2025-05-30 14:57:04,388 INFO i.b.a.o.c.i.SendMailMessageClientImpl [http-nio-8081-exec-3] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 14:57:04,389 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-3] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 14:58:07,647 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-6] Reservation received: isbn: 9780201835953 and document: 70943418496
+2025-05-30 14:58:07,648 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-6] Finding book by isbn: 9780201835953
+2025-05-30 14:58:07,947 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-6] Book with ISBN: 9780201835953 is reserved: false
+2025-05-30 14:58:07,948 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-6] Finding student by document: 70943418496
+2025-05-30 14:58:07,990 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-6] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 14:58:07,991 INFO i.b.a.o.PublishReservationMessageToQueueAdapterOut [http-nio-8081-exec-6] Sending message to queue with isbn: 9780201835953 and document: 70943418496
+2025-05-30 14:58:07,992 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-6] Converting into json: isbn: 9780201835953 and document: 70943418496
+2025-05-30 14:58:07,998 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-6] Converted into json: isbn: 9780201835953 and document: 70943418496
+2025-05-30 14:58:07,998 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-6] Saving reservation control repository
+2025-05-30 14:58:08,030 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-6] Reservation control repository saved with id: 9ad02019-9950-47d0-99b7-79bc631ecfdc
+2025-05-30 14:58:08,040 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-6] Message sent to queue with status: PENDING
+2025-05-30 14:58:08,042 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-6] Reservation created
+2025-05-30 14:58:08,057 INFO i.b.a.i.SubscriberReservationMessageQueueAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
+2025-05-30 14:58:08,059 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-30 14:58:08,154 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created successfully with status CONFIRMED
+2025-05-30 14:58:08,154 INFO i.b.a.i.SubscriberReservationMessageQueueAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created
+2025-05-30 14:58:16,263 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-7] Find reservation List by document: 70943418496
+2025-05-30 14:58:16,306 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-7] Books found: com.example.inventorymanagement.BookResponse@116c6df7
+2025-05-30 14:58:16,320 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-7] Reservations found: 1
+2025-05-30 15:16:19,217 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 15:16:19,258 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 3596 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 15:16:19,261 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 15:16:21,310 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 15:16:21,760 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 429 ms. Found 4 JPA repository interfaces.
+2025-05-30 15:16:22,252 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=d5bfb36c-1797-32f8-9c12-5e59197ec38a
+2025-05-30 15:16:24,657 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 15:16:24,690 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:16:24,692 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 15:16:24,693 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 15:16:25,404 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 15:16:25,405 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 6009 ms
+2025-05-30 15:16:25,497 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 15:16:26,481 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 15:16:26,534 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 15:16:26,958 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 15:16:27,152 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 15:16:27,754 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 15:16:28,141 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 15:16:30,443 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 15:16:30,462 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 15:16:30,785 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 15:16:35,320 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 15:16:37,498 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:16:37,630 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:16:37,726 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 15:16:39,633 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:16:39,635 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 15:16:39,733 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#235dacd7:0/SimpleConnection@17596317 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 61953]
+2025-05-30 15:16:39,859 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 23.771 seconds (JVM running for 25.533)
+2025-05-30 15:17:03,026 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 15:17:03,027 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-05-30 15:17:03,029 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 2 ms
+2025-05-30 15:17:03,176 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-1] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 15:17:03,186 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-1] Finding address by postal code: 58051020
+2025-05-30 15:17:04,692 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-1] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 15:17:04,717 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-1] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 15:17:04,963 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-1] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 15:17:04,965 INFO i.b.a.o.SendMailMessageAdapterOut [http-nio-8081-exec-1] Sending email to: kennetholiveira2015@gmail.com
+2025-05-30 15:17:17,664 INFO i.b.a.o.c.i.SendMailMessageClientImpl [http-nio-8081-exec-1] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 15:17:17,677 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-1] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 15:33:13,305 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 15:33:13,329 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 28384 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 15:33:13,331 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 15:33:15,852 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 15:33:16,438 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 560 ms. Found 4 JPA repository interfaces.
+2025-05-30 15:33:17,317 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=82af9289-85f4-3983-99f7-fda4986f1d32
+2025-05-30 15:33:19,548 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 15:33:19,582 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:33:19,584 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 15:33:19,585 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 15:33:20,335 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 15:33:20,336 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 6888 ms
+2025-05-30 15:33:20,418 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 15:33:21,775 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 15:33:21,811 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 15:33:22,704 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 15:33:23,048 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 15:33:23,633 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 15:33:24,043 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 15:33:26,794 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 15:33:26,839 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 15:33:27,455 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 15:33:36,675 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 15:33:39,358 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:33:40,109 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:33:40,254 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 15:33:42,027 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:33:42,029 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 15:33:42,157 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#705dc1a6:0/SimpleConnection@1dbe592f [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62227]
+2025-05-30 15:33:42,271 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 32.19 seconds (JVM running for 33.794)
+2025-05-30 15:36:34,080 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-4] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 15:36:34,080 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-4] Initializing Servlet 'dispatcherServlet'
+2025-05-30 15:36:34,080 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-4] Completed initialization in 0 ms
+2025-05-30 15:36:34,258 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-4] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 15:36:34,273 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-4] Finding address by postal code: 58051020
+2025-05-30 15:36:35,422 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-4] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 15:36:35,448 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-4] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 15:36:35,621 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-4] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 15:36:35,624 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-4] Sending email to: kennetholiveira2015@gmail.com
+2025-05-30 15:36:48,391 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-4] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 15:36:48,402 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-4] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 15:44:09,991 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 15:44:10,021 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 35640 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 15:44:10,023 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 15:44:11,850 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 15:44:12,207 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 338 ms. Found 4 JPA repository interfaces.
+2025-05-30 15:44:12,667 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=82af9289-85f4-3983-99f7-fda4986f1d32
+2025-05-30 15:44:13,883 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 15:44:13,906 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:44:13,907 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 15:44:13,908 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 15:44:14,398 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 15:44:14,398 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4255 ms
+2025-05-30 15:44:14,456 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 15:44:14,906 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 15:44:14,933 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 15:44:15,244 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 15:44:15,366 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 15:44:15,762 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 15:44:16,010 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 15:44:17,563 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 15:44:17,577 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 15:44:17,827 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 15:44:21,268 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 15:44:23,356 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:44:23,491 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:44:23,596 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 15:44:25,190 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:44:25,191 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 15:44:25,322 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#6447dc25:0/SimpleConnection@16576a6 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62465]
+2025-05-30 15:44:25,456 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 18.284 seconds (JVM running for 19.745)
+2025-05-30 15:44:31,674 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 15:44:31,674 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-05-30 15:44:31,676 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Completed initialization in 1 ms
+2025-05-30 15:44:31,802 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 15:44:31,812 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-2] Finding address by postal code: 58051020
+2025-05-30 15:44:32,771 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-2] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 15:44:32,815 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-2] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 15:44:33,129 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-2] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 15:44:33,135 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-2] Sending mail using SmtpMailMessageAdapterOut: io.bookwise.adapters.out.mail.MailMessage@c265b3c
+2025-05-30 15:44:52,349 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-2] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 15:44:52,364 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 15:45:38,990 INFO o.s.a.r.l.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Waiting for workers to finish.
+2025-05-30 15:45:39,179 INFO o.s.a.r.l.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Successfully waited for workers to finish.
+2025-05-30 15:45:39,242 INFO o.s.a.r.l.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Shutdown ignored - container is already stopped
+2025-05-30 15:45:39,246 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 15:45:39,246 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-05-30 15:45:39,259 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-05-30 15:45:39,264 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-05-30 15:45:50,373 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 15:45:50,413 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 4772 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 15:45:50,415 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 15:45:53,164 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 15:45:53,769 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 572 ms. Found 4 JPA repository interfaces.
+2025-05-30 15:45:54,442 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=82af9289-85f4-3983-99f7-fda4986f1d32
+2025-05-30 15:45:55,945 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 15:45:55,961 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:45:55,962 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 15:45:55,962 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 15:45:56,481 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 15:45:56,482 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5921 ms
+2025-05-30 15:45:56,556 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 15:45:57,034 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 15:45:57,060 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 15:45:57,360 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 15:45:57,520 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 15:45:58,079 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 15:45:58,407 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 15:45:59,887 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 15:45:59,902 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 15:46:00,168 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 15:46:03,501 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 15:46:05,465 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:46:05,589 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:46:05,663 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 15:46:07,102 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:46:07,104 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 15:46:07,176 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#5a6d4dee:0/SimpleConnection@1ca55d5 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62493]
+2025-05-30 15:46:07,261 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 20.476 seconds (JVM running for 22.933)
+2025-05-30 15:46:32,608 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 15:46:32,609 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-05-30 15:46:32,611 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 2 ms
+2025-05-30 15:46:32,875 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-1] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 15:46:32,891 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-1] Finding address by postal code: 58051020
+2025-05-30 15:46:33,895 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-1] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 15:46:33,965 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-1] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 15:46:34,611 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-1] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 15:46:34,617 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-1] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
+2025-05-30 15:52:44,516 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 15:52:44,560 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 27976 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 15:52:44,563 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 15:52:47,908 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 15:52:48,481 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 529 ms. Found 4 JPA repository interfaces.
+2025-05-30 15:52:49,627 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=82af9289-85f4-3983-99f7-fda4986f1d32
+2025-05-30 15:52:52,041 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 15:52:52,078 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:52:52,078 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 15:52:52,078 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 15:52:52,893 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 15:52:52,893 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 8175 ms
+2025-05-30 15:52:52,971 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 15:52:53,570 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 15:52:53,585 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 15:52:53,965 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 15:52:54,123 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 15:52:54,849 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 15:52:55,332 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 15:52:57,636 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 15:52:57,656 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 15:52:57,968 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 15:53:03,179 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 15:53:05,723 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:53:05,887 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:53:05,986 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 15:53:07,671 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:53:07,673 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 15:53:07,796 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#4131261:0/SimpleConnection@4b2ca159 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62591]
+2025-05-30 15:53:07,909 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 27.157 seconds (JVM running for 29.781)
+2025-05-30 15:53:35,448 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-4] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 15:53:35,449 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-4] Initializing Servlet 'dispatcherServlet'
+2025-05-30 15:53:35,451 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-4] Completed initialization in 2 ms
+2025-05-30 15:53:35,706 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-4] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 15:53:35,719 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-4] Finding address by postal code: 58051020
+2025-05-30 15:53:36,520 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-4] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 15:53:36,554 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-4] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 15:53:36,809 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-4] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 15:53:36,814 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-4] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
+2025-05-30 15:53:49,514 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-4] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 15:53:49,524 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-4] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 15:53:52,928 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-10] Creating book with books controller : Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 15:53:52,942 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-10] Creating book: Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 15:53:53,703 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-10] Category created: com.example.inventorymanagement.CategoryResponse@72194059
+2025-05-30 15:53:53,922 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-10] Book created: com.example.inventorymanagement.BookRequest@6b51bee2
+2025-05-30 15:53:53,923 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-10] Book created: Book{id=2, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 15:53:53,923 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-10] Created book with books controller : Book{id=2, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 15:54:00,149 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-5] Reservation received: isbn: 9780201835953 and document: 70943418496
+2025-05-30 15:54:00,150 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-5] Finding book by isbn: 9780201835953
+2025-05-30 15:54:00,264 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-5] Book with ISBN: 9780201835953 is reserved: false
+2025-05-30 15:54:00,267 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-5] Finding student by document: 70943418496
+2025-05-30 15:54:00,308 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-5] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 15:54:00,309 INFO i.b.a.o.PublishReservationMessageToQueueAdapterOut [http-nio-8081-exec-5] Sending message to queue with isbn: 9780201835953 and document: 70943418496
+2025-05-30 15:54:00,310 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-5] Converting into json: isbn: 9780201835953 and document: 70943418496
+2025-05-30 15:54:00,318 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-5] Converted into json: isbn: 9780201835953 and document: 70943418496
+2025-05-30 15:54:00,318 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-5] Saving reservation control repository
+2025-05-30 15:54:00,353 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-5] Reservation control repository saved with id: 4c25f084-0ee8-4fb9-929d-a0da4414e7c2
+2025-05-30 15:54:00,365 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-5] Message sent to queue with status: PENDING
+2025-05-30 15:54:00,368 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-5] Reservation created
+2025-05-30 15:54:00,411 INFO i.b.a.i.SubscriberReservationMessageQueueAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
+2025-05-30 15:54:00,413 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-30 15:54:00,530 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created successfully with status CONFIRMED
+2025-05-30 15:54:00,531 INFO i.b.a.i.SubscriberReservationMessageQueueAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created
+2025-05-30 15:54:04,242 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-8] Find reservation List by document: 70943418496
+2025-05-30 15:54:04,286 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-8] Books found: com.example.inventorymanagement.BookResponse@520c4f77
+2025-05-30 15:54:04,298 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-8] Reservations found: 1
+2025-05-30 15:55:58,845 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 15:55:58,877 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 24752 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 15:55:58,880 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 15:56:00,934 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 15:56:01,266 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 312 ms. Found 4 JPA repository interfaces.
+2025-05-30 15:56:01,650 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=82af9289-85f4-3983-99f7-fda4986f1d32
+2025-05-30 15:56:02,646 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 15:56:02,658 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:56:02,659 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 15:56:02,659 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 15:56:03,022 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 15:56:03,022 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4017 ms
+2025-05-30 15:56:03,074 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 15:56:03,489 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 15:56:03,514 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 15:56:03,789 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 15:56:03,918 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 15:56:04,344 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 15:56:04,623 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 15:56:06,190 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 15:56:06,202 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 15:56:06,453 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 15:56:09,791 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 15:56:11,857 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:56:11,981 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 15:56:12,063 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 15:56:13,516 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 15:56:13,518 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 15:56:13,593 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#43d84df1:0/SimpleConnection@d4962bd [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62640]
+2025-05-30 15:56:13,677 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 17.939 seconds (JVM running for 19.56)
+2025-05-30 15:57:40,697 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-5] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 15:57:40,697 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-5] Initializing Servlet 'dispatcherServlet'
+2025-05-30 15:57:40,701 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-5] Completed initialization in 3 ms
+2025-05-30 16:02:48,451 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 16:02:48,490 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 28260 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 16:02:48,493 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 16:02:50,849 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 16:02:51,271 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 399 ms. Found 3 JPA repository interfaces.
+2025-05-30 16:02:51,789 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=57ed9fde-a464-3411-b750-bc9aba2b510a
+2025-05-30 16:02:53,128 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 16:02:53,144 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 16:02:53,144 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 16:02:53,145 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 16:02:53,644 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 16:02:53,644 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5014 ms
+2025-05-30 16:02:53,715 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 16:02:54,204 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 16:02:54,235 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 16:02:54,552 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 16:02:54,688 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 16:02:55,201 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 16:02:55,622 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 16:02:57,466 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 16:02:57,481 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 16:02:57,776 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 16:03:01,769 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 16:03:03,874 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 16:03:03,992 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 16:03:04,070 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 16:03:05,619 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 16:03:05,621 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 16:03:05,692 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#429dde4d:0/SimpleConnection@17e7cc67 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62780]
+2025-05-30 16:03:05,767 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 20.949 seconds (JVM running for 23.636)
+2025-05-30 16:04:14,910 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-10] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 16:04:14,910 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-10] Initializing Servlet 'dispatcherServlet'
+2025-05-30 16:04:14,912 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-10] Completed initialization in 1 ms
+2025-05-30 16:04:15,036 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-10] Creating book with books controller : Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:04:15,052 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-10] Creating book: Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:04:15,616 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-10] Category created: com.example.inventorymanagement.CategoryResponse@2623a9ee
+2025-05-30 16:04:15,655 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-10] Book created: com.example.inventorymanagement.BookRequest@35c10041
+2025-05-30 16:04:15,656 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-10] Book created: Book{id=3, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:04:15,678 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-10] Created book with books controller : Book{id=3, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:04:23,439 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-5] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 16:04:23,447 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-5] Finding address by postal code: 58051020
+2025-05-30 16:04:24,160 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-5] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 16:04:24,182 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-5] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 16:04:24,346 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-5] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 16:04:24,350 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-5] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
+2025-05-30 16:04:36,996 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-5] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 16:04:36,996 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-5] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 16:04:40,823 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-1] Reservation received: isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:04:40,824 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-1] Finding book by isbn: 9780201835953
+2025-05-30 16:04:41,138 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-1] Book with ISBN: 9780201835953 is reserved: false
+2025-05-30 16:04:41,139 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-1] Finding student by document: 70943418496
+2025-05-30 16:04:41,185 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-1] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 16:04:41,187 INFO i.b.a.o.PublishReservationMessageToQueueAdapterOut [http-nio-8081-exec-1] Sending message to queue with isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:04:41,187 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-1] Converting into json: isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:04:41,195 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-1] Converted into json: isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:04:41,196 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-1] Saving reservation control repository
+2025-05-30 16:04:41,227 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-1] Reservation control repository saved with id: 35e1d948-d734-4134-ae28-5806a0fbd44a
+2025-05-30 16:04:41,236 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-1] Message sent to queue with status: PENDING
+2025-05-30 16:04:41,237 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-1] Reservation created
+2025-05-30 16:04:41,257 INFO i.b.a.i.SubscriberReservationMessageQueueAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
+2025-05-30 16:04:41,259 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-30 16:04:41,356 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created successfully with status CONFIRMED
+2025-05-30 16:04:41,359 INFO i.b.a.i.SubscriberReservationMessageQueueAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created
+2025-05-30 16:04:43,666 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-3] Find reservation List by document: 70943418496
+2025-05-30 16:04:43,704 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-3] Books found: com.example.inventorymanagement.BookResponse@5de17cfd
+2025-05-30 16:04:43,719 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-3] Reservations found: 1
+2025-05-30 16:11:08,236 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 16:11:08,289 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 37140 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 16:11:08,292 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 16:11:11,922 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 16:11:12,435 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 486 ms. Found 3 JPA repository interfaces.
+2025-05-30 16:11:13,063 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=57ed9fde-a464-3411-b750-bc9aba2b510a
+2025-05-30 16:11:14,897 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 16:11:14,940 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 16:11:14,946 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 16:11:14,947 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 16:11:15,763 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 16:11:15,764 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 7301 ms
+2025-05-30 16:11:15,887 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 16:11:17,099 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 16:11:17,147 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 16:11:17,821 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 16:11:18,033 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 16:11:19,149 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 16:11:19,559 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 16:11:22,374 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 16:11:22,395 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 16:11:22,790 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 16:11:28,371 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 16:11:30,983 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 16:11:31,160 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 16:11:31,307 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 16:11:33,108 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 16:11:33,110 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 16:11:33,225 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#6a8ab98f:0/SimpleConnection@17e7cc67 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 62956]
+2025-05-30 16:11:33,363 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 28.826 seconds (JVM running for 31.03)
+2025-05-30 16:15:27,312 INFO o.s.a.r.l.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Waiting for workers to finish.
+2025-05-30 16:15:28,038 INFO o.s.a.r.l.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Successfully waited for workers to finish.
+2025-05-30 16:15:28,093 INFO o.s.a.r.l.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Shutdown ignored - container is already stopped
+2025-05-30 16:15:28,095 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 16:15:28,097 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-05-30 16:15:28,106 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-05-30 16:15:28,112 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-05-30 16:15:36,539 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 16:15:36,568 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 33036 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 16:15:36,571 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 16:15:38,530 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 16:15:38,860 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 311 ms. Found 3 JPA repository interfaces.
+2025-05-30 16:15:39,290 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=57ed9fde-a464-3411-b750-bc9aba2b510a
+2025-05-30 16:15:40,295 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 16:15:40,314 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 16:15:40,315 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 16:15:40,315 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 16:15:40,724 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 16:15:40,724 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4008 ms
+2025-05-30 16:15:40,777 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 16:15:41,206 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 16:15:41,243 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 16:15:41,539 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 16:15:41,650 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 16:15:42,022 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 16:15:42,284 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 16:15:43,795 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 16:15:43,812 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 16:15:44,123 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 16:15:49,097 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 16:15:51,752 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 16:15:51,872 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 16:15:51,966 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 16:15:53,544 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 16:15:53,545 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 16:15:53,629 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#6a8ab98f:0/SimpleConnection@6db160b4 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 63007]
+2025-05-30 16:15:53,726 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 20.169 seconds (JVM running for 22.255)
+2025-05-30 16:16:32,261 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 16:16:32,261 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-05-30 16:16:32,264 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Completed initialization in 2 ms
+2025-05-30 16:16:32,421 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-2] Creating book with books controller : Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:16:32,437 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-2] Creating book: Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:16:33,144 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-2] Category created: com.example.inventorymanagement.CategoryResponse@10639398
+2025-05-30 16:16:33,180 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-2] Book created: com.example.inventorymanagement.BookRequest@4376b993
+2025-05-30 16:16:33,180 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-2] Book created: Book{id=4, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:16:33,201 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-2] Created book with books controller : Book{id=4, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:16:37,150 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-3] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 16:16:37,156 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-3] Finding address by postal code: 58051020
+2025-05-30 16:16:37,806 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-3] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 16:16:37,827 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-3] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 16:16:37,987 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-3] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 16:16:37,991 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-3] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
+2025-05-30 16:16:55,676 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-3] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 16:16:55,677 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-3] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 16:18:56,464 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-5] Reservation received: isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:18:56,465 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-5] Finding book by isbn: 9780201835953
+2025-05-30 16:18:56,800 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-5] Book with ISBN: 9780201835953 is reserved: false
+2025-05-30 16:18:56,802 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-5] Finding student by document: 70943418496
+2025-05-30 16:18:56,852 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-5] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 16:18:56,853 INFO i.b.a.o.PublishReservationMessageToQueueAdapterOut [http-nio-8081-exec-5] Sending message to queue with isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:18:56,853 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-5] Converting into json: isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:18:56,861 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-5] Converted into json: isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:18:56,861 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-5] Saving reservation control repository
+2025-05-30 16:18:56,884 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-5] Reservation control repository saved with id: df034f6a-1b20-4240-ba85-438b338938d7
+2025-05-30 16:18:56,895 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-5] Message sent to queue with status: PENDING
+2025-05-30 16:18:56,896 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-5] Reservation created
+2025-05-30 16:18:56,910 INFO i.b.a.i.SubscriberReservationMessageQueueAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
+2025-05-30 16:18:56,912 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-30 16:18:57,001 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created successfully with status CONFIRMED
+2025-05-30 16:18:57,001 INFO i.b.a.i.SubscriberReservationMessageQueueAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created
+2025-05-30 16:45:28,060 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 16:45:28,107 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 18304 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 16:45:28,110 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 16:45:30,688 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 16:45:31,140 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 431 ms. Found 3 JPA repository interfaces.
+2025-05-30 16:45:31,691 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=57ed9fde-a464-3411-b750-bc9aba2b510a
+2025-05-30 16:45:33,017 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 16:45:33,042 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 16:45:33,043 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 16:45:33,044 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 16:45:33,917 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 16:45:33,918 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5653 ms
+2025-05-30 16:45:34,000 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 16:45:34,718 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 16:45:34,748 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 16:45:35,134 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 16:45:35,305 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 16:45:35,886 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 16:45:36,242 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 16:45:38,094 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 16:45:38,112 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 16:45:38,445 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 16:45:43,197 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 16:45:45,241 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 16:45:45,351 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 16:45:45,420 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 16:45:46,824 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 16:45:46,825 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 16:45:46,910 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#260f05ee:0/SimpleConnection@3638a852 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 63625]
+2025-05-30 16:45:46,978 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 22.101 seconds (JVM running for 23.736)
+2025-05-30 16:46:03,962 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 16:46:03,962 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-05-30 16:46:03,964 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 1 ms
+2025-05-30 16:46:04,155 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-1] Creating book with books controller : Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:46:04,177 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-1] Creating book: Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:46:04,885 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-1] Category created: com.example.inventorymanagement.CategoryResponse@7f9e8b59
+2025-05-30 16:46:04,921 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-1] Book created: com.example.inventorymanagement.BookRequest@38713f68
+2025-05-30 16:46:04,922 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-1] Book created: Book{id=5, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:46:04,940 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-1] Created book with books controller : Book{id=5, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 16:46:09,273 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 16:46:09,282 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-2] Finding address by postal code: 58051020
+2025-05-30 16:46:10,079 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-2] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 16:46:10,099 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-2] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 16:46:10,261 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-2] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 16:46:10,264 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-2] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
+2025-05-30 16:46:23,108 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-2] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 16:46:23,109 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 16:46:40,929 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-4] Reservation received: isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:46:40,930 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-4] Finding book by isbn: 9780201835953
+2025-05-30 16:46:41,208 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-4] Book with ISBN: 9780201835953 is reserved: false
+2025-05-30 16:46:41,210 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-4] Finding student by document: 70943418496
+2025-05-30 16:46:41,244 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-4] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 16:46:41,245 INFO i.b.a.o.PublishReservationMessageToQueueAdapterOut [http-nio-8081-exec-4] Sending message to queue with isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:46:41,245 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-4] Converting into json: isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:46:41,253 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-4] Converted into json: isbn: 9780201835953 and document: 70943418496
+2025-05-30 16:46:41,254 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-4] Saving reservation control repository
+2025-05-30 16:46:41,282 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-4] Reservation control repository saved with id: 20517c93-d712-4818-90b0-9d4f2969a5ad
+2025-05-30 16:46:41,292 INFO i.b.a.o.p.PublisherReservationMessageClient [http-nio-8081-exec-4] Message sent to queue with status: PENDING
+2025-05-30 16:46:41,294 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-4] Reservation created
+2025-05-30 16:46:41,309 INFO i.b.a.i.SubscriberReservationMessageQueueAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
+2025-05-30 16:46:41,312 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Finding student by document: 70943418496
+2025-05-30 16:46:41,346 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 16:46:41,347 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-30 16:46:41,422 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created successfully with status CONFIRMED
+2025-05-30 16:46:41,423 INFO i.b.a.o.SmtpMailMessageAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=Reservation Confirmed Successfully, text=Your reservation for the book: 9780201835953 has been confirmed.)
+2025-05-30 16:46:54,104 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 16:46:54,104 INFO i.b.a.i.SubscriberReservationMessageQueueAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created
+2025-05-30 16:52:31,691 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 16:52:31,722 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 460 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 16:52:31,725 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 16:52:34,745 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 16:52:35,444 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 674 ms. Found 3 JPA repository interfaces.
+2025-05-30 16:52:36,292 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=57ed9fde-a464-3411-b750-bc9aba2b510a
+2025-05-30 16:52:38,061 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 16:52:38,096 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 16:52:38,098 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 16:52:38,099 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 16:52:38,860 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 16:52:38,860 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 6950 ms
+2025-05-30 16:52:38,948 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 16:52:39,489 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 16:52:39,518 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 16:52:40,026 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 16:52:40,337 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 16:52:41,471 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 16:52:41,928 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 16:52:43,629 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 16:52:43,646 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 16:52:43,657 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'bookResourceAdapterIn': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [io.bookwise.adapters.in.BookResourceAdapterIn] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+2025-05-30 16:52:43,658 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 16:52:43,658 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [main] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-05-30 16:52:43,669 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2025-05-30 16:52:43,674 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2025-05-30 16:52:43,678 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2025-05-30 16:52:43,699 INFO o.s.b.a.l.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-05-30 16:52:43,742 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'bookResourceAdapterIn': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [io.bookwise.adapters.in.BookResourceAdapterIn] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:289)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1302)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1219)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:953)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at io.bookwise.Bootstrap.main(Bootstrap.java:14)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [io.bookwise.adapters.in.BookResourceAdapterIn] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:267)
+	... 18 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: io/bookwise/application/core/domain/Book
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402)
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
+	... 20 common frames omitted
+Caused by: java.lang.ClassNotFoundException: io.bookwise.application.core.domain.Book
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 24 common frames omitted
+2025-05-30 17:26:31,223 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 17:26:31,256 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 8168 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 17:26:31,258 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 17:26:33,241 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 17:26:33,646 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 384 ms. Found 3 JPA repository interfaces.
+2025-05-30 17:26:34,078 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=6ca79c1d-57e5-3c23-82d3-7ee259880932
+2025-05-30 17:26:35,104 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 17:26:35,121 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 17:26:35,122 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 17:26:35,122 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 17:26:35,536 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 17:26:35,537 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4180 ms
+2025-05-30 17:26:35,597 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 17:26:36,045 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 17:26:36,073 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 17:26:36,365 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 17:26:36,511 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 17:26:36,955 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 17:26:37,230 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 17:26:38,662 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 17:26:38,674 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 17:26:38,918 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 17:26:42,073 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 17:26:44,035 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 17:26:44,144 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 17:26:44,232 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 17:26:45,676 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 17:26:45,678 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 17:26:45,772 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#5ce0f50a:0/SimpleConnection@75051d05 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64446]
+2025-05-30 17:26:45,850 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 17.754 seconds (JVM running for 19.642)
+2025-05-30 17:27:39,375 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 17:27:39,376 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-05-30 17:27:39,380 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 4 ms
+2025-05-30 17:27:39,545 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-1] Creating book with books controller : Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:27:39,560 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-1] Creating book: Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:27:40,286 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-1] Category created: com.example.inventorymanagement.CategoryResponse@169daed7
+2025-05-30 17:27:40,327 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-1] Book created: com.example.inventorymanagement.BookRequest@78067526
+2025-05-30 17:27:40,329 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-1] Book created: Book{id=6, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:27:40,352 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-1] Created book with books controller : Book{id=6, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:27:48,281 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-3] Finding book with isbn with books controller: 9780201835953
+2025-05-30 17:27:48,282 INFO i.b.a.o.c.i.FeatureToggleClientImpl [http-nio-8081-exec-3] Checking if feature test-ff is enabled
+2025-05-30 17:27:48,309 INFO n.f.u.r.ToggleBackupHandlerFile [http-nio-8081-exec-3] Unleash will try to load feature toggle states from temporary backup
+2025-05-30 17:27:49,135 INFO i.b.a.o.c.i.FeatureToggleClientImpl [http-nio-8081-exec-3] Feature test-ff is enabled: false
+2025-05-30 17:27:49,136 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-3] Finding book by isbn: 9780201835953
+2025-05-30 17:27:49,432 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-3] Book with ISBN: 9780201835953 is reserved: false
+2025-05-30 17:27:49,433 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-3] Found book with isbn with books controller: Book{id=1, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=1, name='Software Engineering', description='bla, bla, bla'}, reserved=false}
+2025-05-30 17:27:53,784 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-4] Finding all books with books controller
+2025-05-30 17:27:53,822 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-4] Books found: com.example.inventorymanagement.BookResponse@786b7bb7
+2025-05-30 17:27:53,825 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-4] Book with ISBN: 9780201835953 is reserved: false
+2025-05-30 17:27:53,826 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-4] Found all books with books controller
+2025-05-30 17:29:09,020 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-8] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 17:29:09,030 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-8] Finding address by postal code: 58051020
+2025-05-30 17:29:09,647 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-8] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 17:29:09,671 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-8] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 17:29:09,778 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-8] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 17:29:09,782 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-8] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
+2025-05-30 17:29:22,401 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-8] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 17:29:22,402 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-8] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 17:29:31,951 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-7] Reservation received: isbn: 9780201835953 and document: 70943418496
+2025-05-30 17:29:31,951 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-7] Finding book by isbn: 9780201835953
+2025-05-30 17:29:31,984 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-7] Book with ISBN: 9780201835953 is reserved: false
+2025-05-30 17:29:31,994 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-7] Finding student by document: 70943418496
+2025-05-30 17:29:32,015 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-7] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 17:29:32,015 INFO i.b.a.o.ReservationMessageQueuePublisherPublisherAdapterOut [http-nio-8081-exec-7] Sending message to queue with isbn: 9780201835953 and document: 70943418496
+2025-05-30 17:29:32,062 INFO i.b.a.o.p.ReservationMessageQueuePublisher [http-nio-8081-exec-7] Reservation control repository saved with id: abb42eab-27e6-42eb-a64d-b960afdae63c
+2025-05-30 17:29:32,074 INFO i.b.a.o.p.ReservationMessageQueuePublisher [http-nio-8081-exec-7] Message sent to queue with status: PENDING
+2025-05-30 17:29:32,076 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-7] Reservation created
+2025-05-30 17:29:32,094 INFO i.b.a.i.ReservationMessageQueueListenerAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
+2025-05-30 17:29:32,094 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Finding student by document: 70943418496
+2025-05-30 17:29:32,140 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 17:29:32,140 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-30 17:29:32,229 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created successfully with status CONFIRMED
+2025-05-30 17:29:32,229 INFO i.b.a.o.SmtpMailMessageAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=Reservation Confirmed Successfully, text=Your reservation for the book: 9780201835953 has been confirmed.)
+2025-05-30 17:29:45,044 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 17:29:45,044 INFO i.b.a.i.ReservationMessageQueueListenerAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created
+2025-05-30 17:30:01,385 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-10] Find reservation List by document: 70943418496
+2025-05-30 17:30:01,414 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-10] Books found: com.example.inventorymanagement.BookResponse@33a22d75
+2025-05-30 17:30:01,424 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-10] Reservations found: 1
+2025-05-30 17:32:39,075 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 17:32:39,104 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 36300 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 17:32:39,106 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 17:32:41,036 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 17:32:41,343 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 290 ms. Found 3 JPA repository interfaces.
+2025-05-30 17:32:41,715 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=6ca79c1d-57e5-3c23-82d3-7ee259880932
+2025-05-30 17:32:42,801 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 17:32:42,821 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 17:32:42,822 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 17:32:42,823 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 17:32:43,296 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 17:32:43,297 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4077 ms
+2025-05-30 17:32:43,359 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 17:32:43,769 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 17:32:43,797 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 17:32:44,108 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 17:32:44,231 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 17:32:44,621 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 17:32:44,873 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 17:32:46,270 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 17:32:46,285 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 17:32:46,532 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 17:32:50,217 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 17:32:52,420 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 17:32:52,549 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 17:32:52,643 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 17:32:54,240 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 17:32:54,241 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 17:32:54,319 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#429dde4d:0/SimpleConnection@2fc51562 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64545]
+2025-05-30 17:32:54,396 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 18.208 seconds (JVM running for 19.777)
+2025-05-30 17:33:37,766 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 17:33:37,766 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-05-30 17:33:37,768 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Completed initialization in 2 ms
+2025-05-30 17:33:37,913 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 17:33:37,929 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-2] Finding address by postal code: 58051020
+2025-05-30 17:33:38,736 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-2] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 17:33:38,759 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-2] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 17:33:38,917 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-2] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 17:33:38,921 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-2] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
+2025-05-30 17:33:43,929 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-4] Creating book with books controller : Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:33:43,947 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-4] Creating book: Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:33:44,513 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-4] Category created: com.example.inventorymanagement.CategoryResponse@4c8ce47c
+2025-05-30 17:33:44,550 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-4] Book created: com.example.inventorymanagement.BookRequest@2ae07bfd
+2025-05-30 17:33:44,551 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-4] Book created: Book{id=7, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:33:44,569 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-4] Created book with books controller : Book{id=7, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:33:51,634 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-2] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 17:33:51,635 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 17:33:55,082 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-5] Reservation received: isbn: 9780201835953 and document: 70943418496
+2025-05-30 17:33:55,083 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-5] Finding book by isbn: 9780201835953
+2025-05-30 17:33:55,352 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-5] Book with ISBN: 9780201835953 is reserved: false
+2025-05-30 17:33:55,353 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-5] Finding student by document: 70943418496
+2025-05-30 17:33:55,384 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-5] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 17:33:55,385 INFO i.b.a.o.ReservationMessageQueuePublisherPublisherAdapterOut [http-nio-8081-exec-5] Sending message to queue with isbn: 9780201835953 and document: 70943418496
+2025-05-30 17:33:55,421 INFO i.b.a.o.p.ReservationMessageQueuePublisher [http-nio-8081-exec-5] Reservation control repository saved with id: 01413442-e1c6-496d-969a-9ee45107cc38
+2025-05-30 17:33:55,433 INFO i.b.a.o.p.ReservationMessageQueuePublisher [http-nio-8081-exec-5] Message sent to queue with status: PENDING
+2025-05-30 17:33:55,436 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-5] Reservation created
+2025-05-30 17:33:55,452 INFO i.b.a.i.ReservationMessageQueueListenerAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
+2025-05-30 17:33:55,454 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Finding student by document: 70943418496
+2025-05-30 17:33:55,486 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 17:33:55,488 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-30 17:33:55,544 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created successfully with status CONFIRMED
+2025-05-30 17:33:55,544 INFO i.b.a.o.SmtpMailMessageAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=Reservation Confirmed Successfully, text=Your reservation for the book: 9780201835953 has been confirmed.)
+2025-05-30 17:33:59,072 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-6] Find reservation List by document: 70943418496
+2025-05-30 17:33:59,118 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-6] Books found: com.example.inventorymanagement.BookResponse@6d5b6c3
+2025-05-30 17:33:59,132 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-6] Reservations found: 1
+2025-05-30 17:34:01,079 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-7] Find reservation List by document: 70943418496
+2025-05-30 17:34:01,117 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-7] Books found: com.example.inventorymanagement.BookResponse@40e344f7
+2025-05-30 17:34:01,119 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-7] Reservations found: 1
+2025-05-30 17:34:08,355 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 17:34:08,356 INFO i.b.a.i.ReservationMessageQueueListenerAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created
+2025-05-30 17:45:15,380 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2025-05-30 17:45:15,411 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 17.0.3.1 on 21LAPBRJ117K5R5 with PID 2380 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 17:45:15,413 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 17:45:17,675 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 17:45:18,115 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 420 ms. Found 3 JPA repository interfaces.
+2025-05-30 17:45:18,656 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=1ba98973-fed9-39bd-8473-60eb2bb3dea4
+2025-05-30 17:45:20,043 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2025-05-30 17:45:20,066 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 17:45:20,067 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 17:45:20,068 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2025-05-30 17:45:20,669 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 17:45:20,670 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5154 ms
+2025-05-30 17:45:20,753 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 17:45:21,314 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 17:45:21,347 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-05-30 17:45:21,705 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 17:45:21,843 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2025-05-30 17:45:22,294 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-30 17:45:22,600 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2025-05-30 17:45:24,248 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-30 17:45:24,266 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 17:45:24,596 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-30 17:45:28,355 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-05-30 17:45:30,538 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 17:45:30,656 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-05-30 17:45:30,741 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-30 17:45:32,246 INFO o.s.c.c.u.InetUtils [main] Cannot determine local hostname
+2025-05-30 17:45:32,248 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-05-30 17:45:32,325 INFO o.s.a.r.c.AbstractConnectionFactory [main] Created new connection: rabbitConnectionFactory#58b30e3e:0/SimpleConnection@6d810e94 [delegate=amqp://guest@127.0.0.1:5672/, localPort= 64691]
+2025-05-30 17:45:32,412 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 19.944 seconds (JVM running for 21.536)
+2025-05-30 17:46:03,974 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-30 17:46:03,974 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
+2025-05-30 17:46:03,976 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Completed initialization in 2 ms
+2025-05-30 17:46:04,115 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-30 17:46:04,126 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-2] Finding address by postal code: 58051020
+2025-05-30 17:46:04,831 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-2] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-05-30 17:46:04,854 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-2] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 17:46:05,340 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-2] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-05-30 17:46:05,345 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-2] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
+2025-05-30 17:46:12,175 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-4] Creating book with books controller : Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:46:12,188 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-4] Creating book: Book{id=null, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:46:12,753 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-4] Category created: com.example.inventorymanagement.CategoryResponse@1c8d5aea
+2025-05-30 17:46:12,790 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-4] Book created: com.example.inventorymanagement.BookRequest@542e735a
+2025-05-30 17:46:12,791 INFO i.b.a.o.CreateBookAdapterOut [http-nio-8081-exec-4] Book created: Book{id=8, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:46:12,810 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-4] Created book with books controller : Book{id=8, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=null, name='Software Engineering', description='bla, bla, bla'}, reserved=null}
+2025-05-30 17:46:18,036 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-2] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 17:46:18,036 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-30 17:47:22,433 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-8] Reservation received: isbn: 9780201835953 and document: 70943418496
+2025-05-30 17:47:22,434 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-8] Finding book by isbn: 9780201835953
+2025-05-30 17:47:22,986 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-8] Book with ISBN: 9780201835953 is reserved: false
+2025-05-30 17:47:22,987 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-8] Finding student by document: 70943418496
+2025-05-30 17:47:23,023 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-8] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 17:47:23,025 INFO i.b.a.o.ReservationMessageQueuePublisherAdapterOut [http-nio-8081-exec-8] Sending message to queue with isbn: 9780201835953 and document: 70943418496
+2025-05-30 17:47:23,062 INFO i.b.a.o.p.ReservationMessageQueuePublisher [http-nio-8081-exec-8] Reservation control repository saved with id: f761aa2c-99b4-4ae1-a19d-7fa64d918d06
+2025-05-30 17:47:23,070 INFO i.b.a.o.p.ReservationMessageQueuePublisher [http-nio-8081-exec-8] Message sent to queue with status: PENDING
+2025-05-30 17:47:23,072 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-8] Reservation created
+2025-05-30 17:47:23,089 INFO i.b.a.i.ReservationMessageQueueListenerAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
+2025-05-30 17:47:23,091 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Finding student by document: 70943418496
+2025-05-30 17:47:23,125 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
+2025-05-30 17:47:23,127 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-30 17:47:23,189 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created successfully with status CONFIRMED
+2025-05-30 17:47:23,189 INFO i.b.a.o.SmtpMailMessageAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=Reservation Confirmed Successfully, text=Your reservation for the book: 9780201835953 has been confirmed.)
+2025-05-30 17:47:28,250 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-9] Find reservation List by document: 70943418496
+2025-05-30 17:47:28,288 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-9] Books found: com.example.inventorymanagement.BookResponse@2c76d75a
+2025-05-30 17:47:28,303 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-9] Reservations found: 1
+2025-05-30 17:47:36,374 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Email sent to: kennetholiveira2015@gmail.com
+2025-05-30 17:47:36,374 INFO i.b.a.i.ReservationMessageQueueListenerAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created
+2025-05-30 17:47:44,693 INFO o.s.a.r.l.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Waiting for workers to finish.
+2025-05-30 17:47:45,468 INFO o.s.a.r.l.SimpleMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] Successfully waited for workers to finish.
+2025-05-30 17:47:45,514 INFO o.s.a.r.l.SimpleMessageListenerContainer [SpringApplicationShutdownHook] Shutdown ignored - container is already stopped
+2025-05-30 17:47:45,516 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 17:47:45,517 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SpringApplicationShutdownHook] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2025-05-30 17:47:45,526 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-05-30 17:47:45,530 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-05-30 18:00:41,623 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2025-05-30 18:00:41,855 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 21 with PID 36300 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-05-30 18:00:41,859 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-05-30 18:00:44,695 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-30 18:00:45,075 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 357 ms. Found 3 JPA repository interfaces.
+2025-05-30 18:00:47,092 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8081 (http)
+2025-05-30 18:00:47,124 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-05-30 18:00:47,130 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-05-30 18:00:47,130 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-05-30 18:00:47,374 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-05-30 18:00:47,378 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5362 ms
+2025-05-30 18:00:47,719 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-05-30 18:00:48,358 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-05-30 18:00:48,365 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-05-30 18:00:48,589 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-30 18:00:48,963 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-05-30 18:00:49,086 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-05-30 18:00:50,051 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-30 18:00:50,165 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-30 18:00:50,199 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-30 18:00:52,288 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-30 18:00:52,433 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 18:00:52,477 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookResourceAdapterIn' defined in file [C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes\io\bookwise\adapters\in\BookResourceAdapterIn.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'createBookUseCase' defined in class path resource [io/bookwise/framework/config/adapter/CreateBookAdapterConfig.class]: Unsatisfied dependency expressed through method 'createBookUseCase' parameter 0: Error creating bean with name 'createBookAdapterOut' defined in file [C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes\io\bookwise\adapters\out\CreateBookAdapterOut.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'inventoryManagementClientImpl' defined in file [C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes\io\bookwise\adapters\out\client\impl\InventoryManagementClientImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'io.bookwise.adapters.out.client.BIMServiceClient': Unexpected exception during bean creation
+2025-05-30 18:00:52,478 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-30 18:00:52,491 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2025-05-30 18:00:52,496 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2025-05-30 18:00:52,502 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2025-05-30 18:00:52,529 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-05-30 18:00:52,611 ERROR o.s.b.d.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in io.bookwise.adapters.out.client.impl.InventoryManagementClientImpl required a bean of type 'org.springframework.cloud.openfeign.FeignContext' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.cloud.openfeign.FeignContext' in your configuration.
+

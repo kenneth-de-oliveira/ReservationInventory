@@ -16,9 +16,9 @@ public class CreateCategoryCommand implements InventoryCommand {
 
     @Override
     public void execute() {
-        var categoryRequest = inventoryManagementMapper.mapToCategoryRequest(book.getCategory());
+        var categoryRequest = inventoryManagementMapper.toCategoryRequest(book.getCategory());
         var categoryResponse = inventoryManagementClient.saveCategory(categoryRequest);
-        var categoryDomain = inventoryManagementMapper.mapToCategoryDomain(categoryResponse);
+        var categoryDomain = inventoryManagementMapper.toCategoryDomain(categoryResponse);
         book.setId(categoryDomain.getId());
     }
 

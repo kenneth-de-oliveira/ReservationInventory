@@ -3,119 +3,139 @@ package io.bookwise.adapters.out.mapper;
 import com.example.inventorymanagement.*;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Category;
-import org.springframework.stereotype.Component;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Named;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
-@Component
-public class InventoryManagementMapper {
+@Mapper(componentModel = "spring")
+public interface InventoryManagementMapper {
 
-    public SearchBookRequest mapToSearchBookRequest(String isbn) {
-        return Optional.ofNullable(isbn).map(
-                isbnValue -> {
-                    var searchBookRequest = new SearchBookRequest();
-                    var searchBook = new SearchBook();
-                    searchBook.setIsbn(isbnValue);
-                    searchBookRequest.setBook(searchBook);
-                    return searchBookRequest;
-                }
-        ).orElse(null);
+    @Mapping(target = "book.isbn", source = "isbn")
+    SearchBookRequest toSearchBookRequest(String isbn);
 
-    }
-
-    public List<Book> mapToBookDomainList(BookResponse bookResponse) {
-        return Objects.requireNonNull(Optional.ofNullable(bookResponse)
-                .map(BookResponse::getBook)
-                .map(books -> books.stream().map(this::convertToBookDomain))
-                .orElse(null)).toList();
-    }
-
-    public Book mapToBookDomain(BookResponse bookResponse) {
-        return Optional.ofNullable(bookResponse)
-                .flatMap(response -> response.getBook().stream().findFirst())
-                .map(this::convertToBookDomain)
+    @Named("convertToBookDomain")
+    default Book convertToBookDomain(SearchBook searchBook) {
+        return Optional.ofNullable(searchBook)
+                .map(bookValue -> toBookDomain(bookValue, toCategory(bookValue)))
                 .orElse(null);
     }
 
-    public CategoryRequest mapToCategoryRequest(Category category) {
-        return Optional.ofNullable(category).map(
-                categoryDomain -> {
+    default List<Book> toBookDomainList(BookResponse bookResponse) {
+        return Optional.ofNullable(bookResponse)
+                .map(BookResponse::getBook)
+                .map(books -> books.stream()
+                        .map(this::convertToBookDomain)
+                        .collect(Collectors.toList()))
+                .orElse(null);
+    }
+
+    default Book toBookDomain(BookResponse bookResponse) {
+        return Optional.ofNullable(bookResponse)
+                .map(BookResponse::getBook)
+                .flatMap(books -> books.stream()
+                        .map(this::convertToBookDomain)
+                        .findFirst())
+                .orElse(null);
+    }
+
+    default CategoryRequest toCategoryRequest(Category category) {
+        return Optional.ofNullable(category)
+                .map(this::convertToSearchCategory)
+                .map(searchCategory -> {
                     var categoryRequest = new CategoryRequest();
-                    categoryRequest.setCategory(convertToSearchCategory(category));
+                    categoryRequest.setCategory(searchCategory);
                     return categoryRequest;
-                }
-        ).orElse(null);
+                })
+                .orElse(null);
     }
 
-    public BookRequest mapToBookRequest(Book book) {
-        return Optional.ofNullable(book).map(
-                bookDomain -> {
+    default BookRequest toBookRequest(Book book) {
+        return Optional.ofNullable(book)
+                .map(this::toBook)
+                .map(bookValue -> {
                     var bookRequest = new BookRequest();
-                    bookRequest.setBook(toBook(bookDomain));
+                    bookRequest.setBook(bookValue);
                     return bookRequest;
-                }
-        ).orElse(null);
+                })
+                .orElse(null);
     }
 
-    private com.example.inventorymanagement.Book toBook(Book bookDomain) {
-        var book = new com.example.inventorymanagement.Book();
-        book.setIsbn(bookDomain.getIsbn());
-        book.setTitle(bookDomain.getTitle());
-        book.setAuthorName(bookDomain.getAuthorName());
-        book.setText(bookDomain.getText());
-        book.setCategoryId(bookDomain.getId());
-        return book;
+    default com.example.inventorymanagement.Book toBook(Book bookDomain) {
+        return Optional.ofNullable(bookDomain)
+                .map(bookValue -> {
+                    var book = new com.example.inventorymanagement.Book();
+                    book.setIsbn(bookValue.getIsbn());
+                    book.setTitle(bookValue.getTitle());
+                    book.setAuthorName(bookValue.getAuthorName());
+                    book.setText(bookValue.getText());
+                    book.setCategoryId(bookValue.getId());
+                    return book;
+                })
+                .orElse(null);
     }
 
-    public Category mapToCategoryDomain(CategoryResponse categoryResponse) {
-        Optional<SearchCategory> first = categoryResponse.getCategory().stream().findFirst();
-        return first.map(this::convertToCategoryDomain).orElse(null);
+    default Category toCategoryDomain(CategoryResponse categoryResponse) {
+        return Optional.ofNullable(categoryResponse)
+                .map(CategoryResponse::getCategory)
+                .flatMap(categories -> categories.stream()
+                        .map(this::convertToCategoryDomain)
+                        .findFirst())
+                .orElse(null);
     }
 
-    private SearchCategory convertToSearchCategory(Category category) {
-       return Optional.ofNullable(category).map(
-                categoryDomain -> {
+    default SearchCategory convertToSearchCategory(Category category) {
+        return Optional.ofNullable(category)
+                .map(categoryValue -> {
                     var searchCategory = new SearchCategory();
-                    searchCategory.setName(categoryDomain.getName());
-                    searchCategory.setDescription(categoryDomain.getDescription());
+                    searchCategory.setName(categoryValue.getName());
+                    searchCategory.setDescription(categoryValue.getDescription());
                     return searchCategory;
-                }
-        ).orElse(null);
+                })
+                .orElse(null);
     }
 
-    private Category convertToCategoryDomain(SearchCategory searchCategory) {
-        var category = new Category();
-        category.setId(searchCategory.getId());
-        category.setName(searchCategory.getName());
-        category.setDescription(searchCategory.getDescription());
-        return category;
+    default Category convertToCategoryDomain(SearchCategory searchCategory) {
+        return Optional.ofNullable(searchCategory)
+                .map(categoryValue -> {
+                    var category = new Category();
+                    category.setId(categoryValue.getId());
+                    category.setName(categoryValue.getName());
+                    category.setDescription(categoryValue.getDescription());
+                    return category;
+                })
+                .orElse(null);
     }
 
-    private Book convertToBookDomain(SearchBook searchBook) {
-        Category category = toCategory(searchBook);
-        return toBookDomain(searchBook, category);
+    default Book toBookDomain(SearchBook book, Category category) {
+        return Optional.ofNullable(book)
+                .map(bookValue -> {
+                    var bookDomain = new Book();
+                    bookDomain.setIsbn(bookValue.getIsbn());
+                    bookDomain.setId(bookValue.getId());
+                    bookDomain.setTitle(bookValue.getTitle());
+                    bookDomain.setAuthorName(bookValue.getAuthorName());
+                    bookDomain.setText(bookValue.getText());
+                    bookDomain.setCategory(category);
+                    return bookDomain;
+                })
+                .orElse(null);
     }
 
-    private Book toBookDomain(SearchBook book, Category category) {
-        var bookDomain = new Book();
-        bookDomain.setIsbn(book.getIsbn());
-        bookDomain.setId(book.getId());
-        bookDomain.setTitle(book.getTitle());
-        bookDomain.setAuthorName(book.getAuthorName());
-        bookDomain.setText(book.getText());
-        bookDomain.setCategory(category);
-        return bookDomain;
-    }
-
-    private Category toCategory(SearchBook book) {
-        var searchCategory = book.getCategory();
-        var category = new Category();
-        category.setId(searchCategory.getId());
-        category.setName(searchCategory.getName());
-        category.setDescription(searchCategory.getDescription());
-        return category;
+    default Category toCategory(SearchBook book) {
+        return Optional.ofNullable(book)
+                .map(SearchBook::getCategory)
+                .map(categoryValue -> {
+                    var category = new Category();
+                    category.setId(categoryValue.getId());
+                    category.setName(categoryValue.getName());
+                    category.setDescription(categoryValue.getDescription());
+                    return category;
+                })
+                .orElse(null);
     }
 
 }

@@ -6,7 +6,7 @@ import feign.jackson.JacksonEncoder;
 import io.bookwise.adapters.out.CreateStudentAdapterOut;
 import io.bookwise.adapters.out.FindAddressByPostalCodeAdapterOut;
 import io.bookwise.adapters.out.client.FindAddressByPostalCodeClient;
-import io.bookwise.application.core.ports.out.SendMailMessagePortOut;
+import io.bookwise.application.core.ports.out.SmtpMailMessagePortOut;
 import io.bookwise.application.usecase.CreateStudentUseCase;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -22,11 +22,11 @@ public class CreateStudentAdapterConfig {
     public CreateStudentUseCase createStudentUseCase(
                 CreateStudentAdapterOut createStudentAdapterOut,
                 FindAddressByPostalCodeAdapterOut findAddressByPostalCodeAdapterOut,
-                SendMailMessagePortOut sendMailMessagePortOut) {
+                SmtpMailMessagePortOut smtpMailMessagePortOut) {
         return new CreateStudentUseCase(
                 createStudentAdapterOut,
                 findAddressByPostalCodeAdapterOut,
-                sendMailMessagePortOut);
+                smtpMailMessagePortOut);
     }
 
     @Bean

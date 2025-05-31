@@ -4,13 +4,14 @@
 
 This is an example of a very simplified book inventory system made in an architecture based on ports and adapters using:
 
-* _Java 17_
+* _Java 21_
 * _Maven 3.6.3_
 * Spring Boot
 * Spring Email
 * Spring Data JPA
 * Spring GraphQL
 * Lombok
+* MapStruct
 * Feature Flags
 * RabbitMQ
 * H2 Database

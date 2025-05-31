@@ -2,8 +2,9 @@ package io.bookwise.framework.config.adapter;
 
 import io.bookwise.adapters.out.FindBookAdapterOut;
 import io.bookwise.adapters.out.FindStudentAdapterOut;
-import io.bookwise.adapters.out.PublishReservationMessageToQueueAdapterOut;
+import io.bookwise.adapters.out.ReservationMessageQueuePublisherAdapterOut;
 import io.bookwise.application.core.ports.out.ReservationInventoryPortOut;
+import io.bookwise.application.core.ports.out.SmtpMailMessagePortOut;
 import io.bookwise.application.usecase.ReservationInventoryUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,14 +15,16 @@ public class ReservationInventoryAdapterConfig {
     public ReservationInventoryUseCase reservationInventoryUseCase(
             FindBookAdapterOut findBookAdapterOut,
             FindStudentAdapterOut findStudentAdapterOut,
-            PublishReservationMessageToQueueAdapterOut publishMessageToQueueAdapterOut,
-            ReservationInventoryPortOut reservationInventoryPortOut
+            ReservationMessageQueuePublisherAdapterOut reservationMessageQueuePublisherAdapterOut,
+            ReservationInventoryPortOut reservationInventoryPortOut,
+            SmtpMailMessagePortOut smtpMailMessagePortOut
     ) {
         return new ReservationInventoryUseCase(
                 findBookAdapterOut,
                 findStudentAdapterOut,
-                publishMessageToQueueAdapterOut,
-                reservationInventoryPortOut
+                reservationMessageQueuePublisherAdapterOut,
+                reservationInventoryPortOut,
+                smtpMailMessagePortOut
         );
     }
 }

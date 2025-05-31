@@ -17,7 +17,7 @@ public class ReservationInventoryGraphQLAdapterIn {
     @MutationMapping
     public String reservation(@Argument String isbn, @Argument String document) {
         log.info("Reservation received: isbn: {} and document: {}", isbn, document);
-        var reservationQueue = reservationInventoryPortIn.sendToReservationQueue(isbn, document);
+        var reservationQueue = reservationInventoryPortIn.enqueueReservationRequest(isbn, document);
         log.info("Reservation created");
         return reservationQueue.id().toString();
     }
