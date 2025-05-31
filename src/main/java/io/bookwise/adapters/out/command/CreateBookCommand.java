@@ -16,7 +16,7 @@ public class CreateBookCommand implements InventoryCommand {
 
     @Override
     public void execute() {
-        var bookRequest = inventoryManagementMapper.mapToBookRequest(book);
+        var bookRequest = inventoryManagementMapper.toBookRequest(book);
         inventoryManagementClient.saveBook(bookRequest);
     }
 

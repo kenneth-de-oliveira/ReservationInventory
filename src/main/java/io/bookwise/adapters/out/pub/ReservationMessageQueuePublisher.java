@@ -2,6 +2,7 @@ package io.bookwise.adapters.out.pub;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.bookwise.adapters.out.mapper.ReservationInventoryMapper;
 import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.adapters.out.repository.entity.ReservationControlEntity;
@@ -14,7 +15,6 @@ import org.springframework.stereotype.Component;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-import static io.bookwise.adapters.out.mapper.ReservationInventoryMapper.toRequest;
 import static io.bookwise.adapters.out.repository.dto.ReservationQueue.toReservationQueue;
 import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.PENDING;
 
@@ -27,6 +27,7 @@ public class ReservationMessageQueuePublisher {
     private final ReservationControlRepository reservationControlRepository;
     private final Queue queue;
     private final ObjectMapper objectMapper;
+    private final ReservationInventoryMapper mapper;
 
     public ReservationQueue sendToQueueRequest(String isbn, String document) {
         return Stream.ofNullable(isbn)
@@ -70,7 +71,7 @@ public class ReservationMessageQueuePublisher {
     private String buildReservationJsonMessage(String isbn, String document) {
         return Stream.ofNullable(isbn)
                 .filter(isbnValue -> Objects.nonNull(document))
-                .map(isbnValue -> toRequest(isbnValue, document))
+                .map(isbnValue -> mapper.toRequest(isbnValue, document))
                 .map(request -> {
                     try {
                         return objectMapper.writeValueAsString(request);

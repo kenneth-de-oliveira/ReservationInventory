@@ -14,11 +14,12 @@ import org.springframework.stereotype.Component;
 public class FindAddressByPostalCodeAdapterOut implements FindAddressByPostalCodePortOut {
 
     private final FindAddressByPostalCodeClientImpl findAddressByPostalCodeClientImpl;
+    private final AddressMapper mapper;
 
     @Override
     public Address find(String postalCode) {
         log.info("Finding address by postal code: {}", postalCode);
-        return AddressMapper.toDomain(
+        return mapper.toDomain(
                 findAddressByPostalCodeClientImpl.find(postalCode)
         );
     }

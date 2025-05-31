@@ -2,6 +2,7 @@ package io.bookwise.adapters.out;
 
 import io.bookwise.adapters.out.client.InventoryManagementClient;
 import io.bookwise.adapters.out.mapper.InventoryManagementMapper;
+import io.bookwise.adapters.out.mapper.ReservationInventoryMapper;
 import io.bookwise.adapters.out.processor.ReservationProcessor;
 import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.ReservationInventoryRepository;
@@ -18,7 +19,6 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static io.bookwise.adapters.out.mapper.ReservationInventoryMapper.toEntity;
 import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.CONFIRMED;
 import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.PENDING;
 
@@ -32,6 +32,7 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
     private final InventoryManagementClient inventoryManagementClient;
     private final InventoryManagementMapper inventoryManagementMapper;
     private final List<ReservationProcessor> reservationProcessors;
+    private final ReservationInventoryMapper mapper;
 
     @Override
     public void execute(Reservation reservation) {
@@ -52,7 +53,7 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
     }
 
     public void reserve(Reservation reservation, ReservationControlEntity reservationControlEntity) {
-        repository.save( toEntity(reservation) );
+        repository.save( mapper.toEntity(reservation) );
         this.updateReservationStatus(reservationControlEntity, CONFIRMED);
     }
 
@@ -64,7 +65,7 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
     @Override
     public List<ReserveInfo> findAllByDocument(String document) {
         var response = inventoryManagementClient.findAll();
-        var books = inventoryManagementMapper.mapToBookDomainList(response);
+        var books = inventoryManagementMapper.toBookDomainList(response);
 
         var reservationIsbns = repository.findByDocument(document).stream()
                 .map(ReservationEntity::getIsbn)

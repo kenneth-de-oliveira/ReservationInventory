@@ -24,15 +24,15 @@ public class FindBookAdapterOut implements FindBookPortOut {
     public Optional<Book> findIsbn(String isbn) {
         log.info("Finding book by isbn: {}", isbn);
 
-        return Optional.ofNullable(mapper.mapToSearchBookRequest(isbn))
+        return Optional.ofNullable(mapper.toSearchBookRequest(isbn))
                 .map(serviceClient::findByIsbn)
-                .map(mapper::mapToBookDomain);
+                .map(mapper::toBookDomain);
     }
 
     @Override
     public List<Book> findAll() {
         return Stream.of(serviceClient.findAll())
-                .map(mapper::mapToBookDomain)
+                .map(mapper::toBookDomain)
                 .toList();
     }
 

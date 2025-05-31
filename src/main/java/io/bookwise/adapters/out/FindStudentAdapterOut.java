@@ -16,11 +16,12 @@ import java.util.Optional;
 public class FindStudentAdapterOut implements FindStudentPortOut {
 
     private final StudentRepository repository;
+    private final StudentMapper mapper;
 
     @Override
     public Optional<Student> findByDocument(String document) {
         log.info("Finding student by document: {}", document);
-        Optional<Student> student = repository.findByDocument(document).map(StudentMapper::toDomain);
+        Optional<Student> student = repository.findByDocument(document).map(mapper::toDomain);
         log.info("Student found: {}", student);
         return student;
     }
