@@ -1,12 +1,12 @@
 package io.bookwise.adapters.out.repository.entity;
 
 import io.bookwise.adapters.out.repository.enums.ReservationControlStatus;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
