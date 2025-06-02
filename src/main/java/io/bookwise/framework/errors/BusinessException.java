@@ -15,6 +15,10 @@ public class BusinessException extends RuntimeException {
     super();
   }
 
+  public BusinessException(String message) {
+    super();
+  }
+
   public BusinessException(String code, String reason, String info) {
     super();
     this.code = code;
@@ -28,5 +32,4 @@ public class BusinessException extends RuntimeException {
     this.reason = reason;
     this.info = info;
   }
-
 }
