@@ -3,24 +3,24 @@ package io.bookwise.adapters.out;
 import io.bookwise.adapters.out.client.InventoryManagementClient;
 import io.bookwise.adapters.out.mapper.InventoryManagementMapper;
 import io.bookwise.adapters.out.mapper.ReservationInventoryMapper;
-import io.bookwise.adapters.out.processor.ReservationProcessor;
 import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.ReservationInventoryRepository;
 import io.bookwise.adapters.out.repository.dto.ReserveInfo;
 import io.bookwise.adapters.out.repository.entity.ReservationControlEntity;
 import io.bookwise.adapters.out.repository.entity.ReservationEntity;
-import io.bookwise.adapters.out.repository.enums.ReservationControlStatus;
 import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.ports.out.ReservationInventoryPortOut;
+import io.bookwise.framework.errors.BusinessException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.CONFIRMED;
-import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.PENDING;
 
 @Slf4j
 @Component
@@ -31,35 +31,37 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
     private final ReservationControlRepository reservationControlRepository;
     private final InventoryManagementClient inventoryManagementClient;
     private final InventoryManagementMapper inventoryManagementMapper;
-    private final List<ReservationProcessor> reservationProcessors;
     private final ReservationInventoryMapper mapper;
 
     @Override
     public void execute(Reservation reservation) {
         log.info("Creating reservation for book with ISBN: {} for student with document: {}", reservation.getIsbn(), reservation.getDocument());
-        var reservationControlEntity = reservationControlRepository.findByIsbnAndStatus(reservation.getIsbn(), PENDING);
-        reservationControlEntity.ifPresent(control -> this.processReservation(reservation, control));
+        this.reserve(reservation);
         log.info("Reservation created successfully with status {}", CONFIRMED);
     }
 
-    private void processReservation(Reservation reservation, ReservationControlEntity reservationControlEntity) {
-        reservationProcessors.stream()
-                .filter(reservationProcessor -> reservationProcessor.supportsStatus(reservationControlEntity.getStatus()))
+   public void reserve(Reservation reservation) {
+       Stream.ofNullable(reservation)
+           .map(mapper::toEntity)
+           .map(repository::save)
+           .peek(reservationEntity -> this.saveReservationControl(reservation))
+           .findFirst()
+           .orElseThrow(() -> new BusinessException("Failed to create reservation for book with ISBN: " + reservation.getIsbn()));   }
+
+    private void saveReservationControl(Reservation reservation) {
+        Stream.ofNullable(reservation)
+                .filter(isbnValue -> Objects.nonNull(reservation.getDocument()))
+                .map(reservationValue -> {
+                    var entity = ReservationControlEntity.builder()
+                            .isbn(reservationValue.getIsbn())
+                            .document(reservation.getDocument())
+                            .status(CONFIRMED)
+                            .build();
+                    reservationControlRepository.save(entity);
+                    return entity;
+                })
                 .findFirst()
-                .ifPresentOrElse(
-                        reservationProcessor -> reservationProcessor.process(reservation, reservationControlEntity),
-                        () -> this.updateReservationStatus(reservationControlEntity, ReservationControlStatus.ERROR)
-                );
-    }
-
-    public void reserve(Reservation reservation, ReservationControlEntity reservationControlEntity) {
-        repository.save( mapper.toEntity(reservation) );
-        this.updateReservationStatus(reservationControlEntity, CONFIRMED);
-    }
-
-    private void updateReservationStatus(ReservationControlEntity reservationControlEntity, ReservationControlStatus reservationControlStatus) {
-        reservationControlEntity.setStatus(reservationControlStatus);
-        reservationControlRepository.save(reservationControlEntity);
+                .orElseThrow(() -> new BusinessException("ISBN or Document is null"));
     }
 
     @Override

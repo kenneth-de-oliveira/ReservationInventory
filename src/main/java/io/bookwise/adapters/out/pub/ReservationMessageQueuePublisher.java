@@ -8,6 +8,7 @@ import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.adapters.out.repository.entity.ReservationControlEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.AmqpConnectException;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
@@ -43,8 +44,8 @@ public class ReservationMessageQueuePublisher {
                 .map(isbnValue -> {
                     var messageJson = buildReservationJsonMessage(isbnValue, document);
                     var reservationQueue = saveReservationControl(isbnValue, document);
-                    rabbitTemplate.convertAndSend(queue.getName(), messageJson);
-                    log.info("Message sent to queue with status: {}", PENDING);
+                    this.convertAndSend(isbn, document, messageJson);
+                    log.info("Message sent to queue '{}' for ISBN: {}, Document: {} with status: {}", queue.getName(), isbn, document, PENDING);
                     return reservationQueue;
                 })
                 .findFirst()
@@ -82,6 +83,18 @@ public class ReservationMessageQueuePublisher {
                 })
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("ISBN or Document is null"));
+    }
+
+    private void convertAndSend(String isbn, String document, String messageJson) {
+        Stream.ofNullable(isbn)
+            .filter(isbnValue -> Objects.nonNull(document) && Objects.nonNull(messageJson))
+            .forEach(isbnValue -> {
+                try {
+                    rabbitTemplate.convertAndSend(queue.getName(), messageJson);
+                } catch (AmqpConnectException ex) {
+                    log.warn("AMQP connection failed. Could not send message to queue '{}' for ISBN: {}, Document: {}. Continuing processing.", queue.getName(), isbn, document, ex);
+                }
+            });
     }
 
 }
