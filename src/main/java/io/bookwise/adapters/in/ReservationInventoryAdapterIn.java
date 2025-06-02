@@ -21,9 +21,9 @@ public class ReservationInventoryAdapterIn {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ReservationQueue reservation(@RequestParam String isbn, @RequestParam String document) {
-        log.info("Reservation received: isbn: {} and document: {}", isbn, document);
+        log.info("Reservation with isbn: {} and document: {}", isbn, document);
         var reservationQueue = reservationInventoryPortIn.enqueueReservationRequest(isbn, document);
-        log.info("Reservation created");
+        log.info("Reservation enqueued: {}", reservationQueue.id());
         return reservationQueue;
     }
 

@@ -33,9 +33,10 @@ public class ReservationMessageQueuePublisher {
     public ReservationQueue sendToQueueRequest(String isbn, String document) {
         return Stream.ofNullable(isbn)
                 .filter(isbnValue -> Objects.nonNull(document))
+                .filter(isbnValue -> this.reservationControlRepository.findByIsbnAndStatus(isbnValue, PENDING).isEmpty())
                 .map(isbnValue -> this.processReservation(isbnValue, document))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("ISBN or Document is null"));
+                .orElseThrow(() -> new IllegalArgumentException("A reservation request has already been made."));
     }
 
     private ReservationQueue processReservation(String isbn, String document) {

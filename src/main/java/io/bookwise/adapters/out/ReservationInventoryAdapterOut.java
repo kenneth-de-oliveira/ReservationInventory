@@ -6,8 +6,8 @@ import io.bookwise.adapters.out.mapper.ReservationInventoryMapper;
 import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.ReservationInventoryRepository;
 import io.bookwise.adapters.out.repository.dto.ReserveInfo;
-import io.bookwise.adapters.out.repository.entity.ReservationControlEntity;
 import io.bookwise.adapters.out.repository.entity.ReservationEntity;
+import io.bookwise.adapters.out.repository.enums.ReservationControlStatus;
 import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.ports.out.ReservationInventoryPortOut;
 import io.bookwise.framework.errors.BusinessException;
@@ -44,24 +44,23 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
        Stream.ofNullable(reservation)
            .map(mapper::toEntity)
            .map(repository::save)
-           .peek(reservationEntity -> this.saveReservationControl(reservation))
+           .peek(reservationEntity -> this.updateReservationControl(reservation))
            .findFirst()
-           .orElseThrow(() -> new BusinessException("Failed to create reservation for book with ISBN: " + reservation.getIsbn()));   }
+           .orElseThrow(() -> new BusinessException("Failed to create reservation for book with ISBN: " + reservation.getIsbn()));
+    }
 
-    private void saveReservationControl(Reservation reservation) {
+    private void updateReservationControl(Reservation reservation) {
         Stream.ofNullable(reservation)
                 .filter(isbnValue -> Objects.nonNull(reservation.getDocument()))
-                .map(reservationValue -> {
-                    var entity = ReservationControlEntity.builder()
-                            .isbn(reservationValue.getIsbn())
-                            .document(reservation.getDocument())
-                            .status(CONFIRMED)
-                            .build();
-                    reservationControlRepository.save(entity);
-                    return entity;
+                .peek(reservationValue -> {
+                    reservationControlRepository.findByIsbnAndStatus(reservationValue.getIsbn(), ReservationControlStatus.PENDING)
+                            .ifPresent(existingControl -> {
+                                existingControl.setStatus(ReservationControlStatus.CONFIRMED);
+                                reservationControlRepository.save(existingControl);
+                            });
                 })
                 .findFirst()
-                .orElseThrow(() -> new BusinessException("ISBN or Document is null"));
+                .orElseThrow();
     }
 
     @Override
