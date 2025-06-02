@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 @Slf4j
 @Component
@@ -31,8 +30,10 @@ public class FindBookAdapterOut implements FindBookPortOut {
 
     @Override
     public List<Book> findAll() {
-        return Stream.of(serviceClient.findAll())
-                .map(mapper::toBookDomain)
+        return Optional.ofNullable(serviceClient.findAll())
+                .map(mapper::toBookDomainList)
+                .stream()
+                .flatMap(List::stream)
                 .toList();
     }
 
