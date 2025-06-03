@@ -53,7 +53,7 @@ public class PendingReservationsChecker {
                         log.error("Error processing reservation id={}: {}", reservation.getId(), ex.getMessage(), ex);
                         reservation.setStatus(ERROR);
                         reservation.setUpdatedAt(LocalDateTime.now());
-                        reservation.setErrorDescription(ex.getMessage());
+                        reservation.setErrorDescription(String.format("Error processing reservation: %s", ex.getMessage()));
                         return reservation;
                     }
                 })
@@ -78,7 +78,7 @@ public class PendingReservationsChecker {
                         log.error("Error processing reservation: id={}, isbn={}, document={}, error={}", controlEntity.getId(), controlEntity.getIsbn(), controlEntity.getDocument(), ex.getMessage(), ex);
                         controlEntity.setStatus(ERROR);
                         controlEntity.setUpdatedAt(LocalDateTime.now());
-                        controlEntity.setErrorDescription(ex.getMessage());
+                        controlEntity.setErrorDescription(String.format("Error processing reservation: %s", ex.getMessage()));
                         return controlEntity;
                     }
                 })
