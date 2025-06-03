@@ -52,6 +52,7 @@ public class PendingReservationsChecker {
                     } catch (Exception ex) {
                         log.error("Error processing reservation id={}: {}", reservation.getId(), ex.getMessage(), ex);
                         reservation.setStatus(ERROR);
+                        reservation.setUpdatedAt(LocalDateTime.now());
                         return reservation;
                     }
                 })
@@ -65,17 +66,18 @@ public class PendingReservationsChecker {
 
     private ReservationControlEntity processReservation(ReservationControlEntity reservationControlEntity) {
         return Optional.ofNullable(reservationControlEntity)
-                .map(e -> {
+                .map(controlEntity -> {
                     try {
-                        var reservation = reservationInventoryMapper.toDomain(e.getIsbn(), e.getDocument());
+                        var reservation = reservationInventoryMapper.toDomain(controlEntity.getIsbn(), controlEntity.getDocument());
                         reservationInventoryAdapterOut.execute(reservation);
-                        log.info("Reservation processed: id={}, isbn={}, document={}", e.getId(), e.getIsbn(), e.getDocument());
+                        log.info("Reservation processed: id={}, isbn={}, document={}", controlEntity.getId(), controlEntity.getIsbn(), controlEntity.getDocument());
                         this.notifyReservationByEmail(reservation);
                         return null;
                     } catch (Exception ex) {
-                        log.error("Error processing reservation: id={}, isbn={}, document={}, error={}", e.getId(), e.getIsbn(), e.getDocument(), ex.getMessage(), ex);
-                        e.setStatus(ERROR);
-                        return e;
+                        log.error("Error processing reservation: id={}, isbn={}, document={}, error={}", controlEntity.getId(), controlEntity.getIsbn(), controlEntity.getDocument(), ex.getMessage(), ex);
+                        controlEntity.setStatus(ERROR);
+                        controlEntity.setUpdatedAt(LocalDateTime.now());
+                        return controlEntity;
                     }
                 })
                 .orElse(null);
