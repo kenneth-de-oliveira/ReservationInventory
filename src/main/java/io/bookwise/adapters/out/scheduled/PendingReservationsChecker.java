@@ -13,11 +13,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Optional;
 
-import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.ERROR;
-import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.PENDING;
+import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.*;
 
 /**
  * Scheduled task to process pending reservations every day at midnight.
@@ -36,37 +36,58 @@ public class PendingReservationsChecker {
     private final ReservationInventoryMapper reservationInventoryMapper;
     private final FindStudentAdapterOut findStudentAdapterOut;
 
-    @Scheduled(cron = "0 0 0 * * *")
+    @Scheduled(fixedRate = 60000)
     public void processPendingReservations() {
-        var reservationControlEntities = reservationControlRepository.findByStatus(PENDING);
+        var pendingReservations = reservationControlRepository.findByStatus(PENDING);
+        log.info("Found {} pending reservations", pendingReservations.size());
 
-        log.info("Found {} pending reservations", reservationControlEntities.size());
-
-        var failedReservations = reservationControlEntities.parallelStream()
-                .peek(reservationControlEntity -> log.info("Processing pending reservation: id={}, isbn={}, document={}", reservationControlEntity.getId(), reservationControlEntity.getIsbn(), reservationControlEntity.getDocument()))
-                .map(this::processReservationControl)
+        var toUpdate = pendingReservations.parallelStream()
+                .map(reservation -> {
+                    try {
+                        if (reservationInventoryAdapterOut.checkIfBookIsReservedByIsbn(reservation.getIsbn())) {
+                            return updateReservationStatus(reservation);
+                        } else {
+                            return processReservation(reservation);
+                        }
+                    } catch (Exception ex) {
+                        log.error("Error processing reservation id={}: {}", reservation.getId(), ex.getMessage(), ex);
+                        reservation.setStatus(ERROR);
+                        return reservation;
+                    }
+                })
                 .filter(Objects::nonNull)
                 .toList();
 
-        if (!failedReservations.isEmpty()) {
-            reservationControlRepository.saveAll(failedReservations);
+        if (!toUpdate.isEmpty()) {
+            reservationControlRepository.saveAll(toUpdate);
         }
     }
 
-    private ReservationControlEntity processReservationControl(ReservationControlEntity reservationControlEntity) {
+    private ReservationControlEntity processReservation(ReservationControlEntity reservationControlEntity) {
         return Optional.ofNullable(reservationControlEntity)
-                .map(controlEntity -> {
+                .map(e -> {
                     try {
-                        var reservation = reservationInventoryMapper.toDomain(controlEntity.getIsbn(), controlEntity.getDocument());
+                        var reservation = reservationInventoryMapper.toDomain(e.getIsbn(), e.getDocument());
                         reservationInventoryAdapterOut.execute(reservation);
-                        log.info("Reservation processed: id={}, isbn={}, document={}", controlEntity.getId(), controlEntity.getIsbn(), controlEntity.getDocument());
+                        log.info("Reservation processed: id={}, isbn={}, document={}", e.getId(), e.getIsbn(), e.getDocument());
                         this.notifyReservationByEmail(reservation);
                         return null;
-                    } catch (Exception exception) {
-                        log.error("Error processing reservation: id={}, isbn={}, document={}, error={}", controlEntity.getId(), controlEntity.getIsbn(), controlEntity.getDocument(), exception.getMessage(), exception);
-                        controlEntity.setStatus(ERROR);
-                        return controlEntity;
+                    } catch (Exception ex) {
+                        log.error("Error processing reservation: id={}, isbn={}, document={}, error={}", e.getId(), e.getIsbn(), e.getDocument(), ex.getMessage(), ex);
+                        e.setStatus(ERROR);
+                        return e;
                     }
+                })
+                .orElse(null);
+    }
+
+    private ReservationControlEntity updateReservationStatus(ReservationControlEntity reservationControlEntity) {
+        return Optional.ofNullable(reservationControlEntity)
+                .map(entity -> {
+                    entity.setStatus(CONFIRMED);
+                    entity.setUpdatedAt(LocalDateTime.now());
+                    log.info("Reservation confirmed: id={}, isbn={}, document={}", entity.getId(), entity.getIsbn(), entity.getDocument());
+                    return entity;
                 })
                 .orElse(null);
     }
