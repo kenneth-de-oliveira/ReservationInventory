@@ -27,6 +27,8 @@ public class ReservationControlEntity {
     @Enumerated(EnumType.STRING)
     private ReservationControlStatus status;
 
+    private String errorDescription;
+
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
