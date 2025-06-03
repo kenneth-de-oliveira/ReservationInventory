@@ -32,7 +32,9 @@ public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
 
     @Override
     public void reserve(Reservation reservation) {
-        findStudentPortOut.findByDocument(reservation.getDocument())
+        findStudentPortOut.findByDocument(reservation.getDocument()).stream()
+                .filter(student -> !reservationInventoryPortOut.checkIfBookIsReservedByDocument(student.getDocument()))
+                .findFirst()
                 .map(student -> {
                     reservationInventoryPortOut.execute(reservation);
                     var mail = MailMessage.builder()

@@ -41,13 +41,13 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
         log.info("Reservation created successfully with status {}", CONFIRMED);
     }
 
-   private void reserve(Reservation reservation) {
-       Stream.ofNullable(reservation)
-           .map(mapper::toEntity)
-           .map(repository::save)
-           .peek(reservationEntity -> this.updateReservationControl(reservation))
-           .findFirst()
-           .orElseThrow(() -> new BusinessException("Failed to create reservation for book with ISBN: " + reservation.getIsbn()));
+    private void reserve(Reservation reservation) {
+        Stream.ofNullable(reservation)
+                .map(mapper::toEntity)
+                .map(repository::save)
+                .peek(reservationEntity -> this.updateReservationControl(reservation))
+                .findFirst()
+                .orElseThrow(() -> new BusinessException("Failed to create reservation for book with ISBN: " + reservation.getIsbn()));
     }
 
     private void updateReservationControl(Reservation reservation) {
@@ -87,6 +87,13 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
     public Boolean checkIfBookIsReservedByIsbn(String isbn) {
         var isReserved = repository.existsByIsbn(isbn);
         log.info("Book with ISBN: {} is reserved: {}", isbn, isReserved);
+        return isReserved;
+    }
+
+    @Override
+    public Boolean checkIfBookIsReservedByDocument(String document) {
+        var isReserved = repository.existsByDocument(document);
+        log.info("Student with document: {} has reserved books: {}", document, isReserved);
         return isReserved;
     }
 
