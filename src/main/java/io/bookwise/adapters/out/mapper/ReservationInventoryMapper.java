@@ -21,6 +21,10 @@ public interface ReservationInventoryMapper {
 
     @Mapping(target = "isbn", source = "isbn")
     @Mapping(target = "document", source = "document")
+    Reservation toDomain(String isbn, String document);
+
+    @Mapping(target = "isbn", source = "isbn")
+    @Mapping(target = "document", source = "document")
     ReservationEntity toEntity(String isbn, String document);
 
     @Mapping(target = "isbn", source = "isbn")
