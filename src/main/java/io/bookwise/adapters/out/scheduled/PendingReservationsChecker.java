@@ -19,6 +19,12 @@ import java.util.Optional;
 import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.ERROR;
 import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus.PENDING;
 
+/**
+ * Scheduled task to process pending reservations every day at midnight.
+ * It retrieves all pending reservations, processes them, and sends confirmation emails.
+ *
+ * @author kenneth
+ */
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -30,7 +36,7 @@ public class PendingReservationsChecker {
     private final ReservationInventoryMapper reservationInventoryMapper;
     private final FindStudentAdapterOut findStudentAdapterOut;
 
-    @Scheduled(fixedRate = 60000)
+    @Scheduled(cron = "0 0 0 * * *")
     public void processPendingReservations() {
         var reservationControlEntities = reservationControlRepository.findByStatus(PENDING);
 
