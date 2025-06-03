@@ -36,7 +36,7 @@ public class PendingReservationsChecker {
     private final ReservationInventoryMapper reservationInventoryMapper;
     private final FindStudentAdapterOut findStudentAdapterOut;
 
-    @Scheduled(fixedRate = 60000)
+    @Scheduled(cron = "0 0 0 * * *")
     public void processPendingReservations() {
         var pendingReservations = reservationControlRepository.findByStatus(PENDING);
         log.info("Found {} pending reservations", pendingReservations.size());
