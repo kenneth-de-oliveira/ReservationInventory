@@ -15,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -40,7 +41,7 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
         log.info("Reservation created successfully with status {}", CONFIRMED);
     }
 
-   public void reserve(Reservation reservation) {
+   private void reserve(Reservation reservation) {
        Stream.ofNullable(reservation)
            .map(mapper::toEntity)
            .map(repository::save)
@@ -56,6 +57,7 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
                     reservationControlRepository.findByIsbnAndStatus(reservationValue.getIsbn(), ReservationControlStatus.PENDING)
                             .ifPresent(existingControl -> {
                                 existingControl.setStatus(ReservationControlStatus.CONFIRMED);
+                                existingControl.setUpdatedAt(LocalDateTime.now());
                                 reservationControlRepository.save(existingControl);
                             });
                 })
