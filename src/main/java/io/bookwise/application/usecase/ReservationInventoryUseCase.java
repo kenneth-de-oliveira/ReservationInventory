@@ -33,7 +33,7 @@ public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
     @Override
     public void reserve(Reservation reservation) {
         findStudentPortOut.findByDocument(reservation.getDocument()).stream()
-                .filter(student -> !reservationInventoryPortOut.checkIfBookIsReservedByDocument(student.getDocument()))
+                .filter(student -> !reservationInventoryPortOut.checkIfBookIsReservedByIsbnAndDocument(reservation.getIsbn(), student.getDocument()))
                 .findFirst()
                 .map(student -> {
                     reservationInventoryPortOut.execute(reservation);

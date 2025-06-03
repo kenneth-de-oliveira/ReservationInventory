@@ -9,5 +9,5 @@ public interface ReservationInventoryPortOut {
     void execute(Reservation reservation);
     List<ReserveInfo> findAllByDocument(String document);
     Boolean checkIfBookIsReservedByIsbn(String isbn);
-    Boolean checkIfBookIsReservedByDocument(String document);
+    Boolean checkIfBookIsReservedByIsbnAndDocument(String isbn, String document);
 }
