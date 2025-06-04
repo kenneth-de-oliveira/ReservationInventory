@@ -1,8 +1,8 @@
 package io.bookwise.application.usecase;
 
-import io.bookwise.adapters.out.mail.MailMessage;
-import io.bookwise.adapters.out.repository.dto.CancelReservationRequest;
-import io.bookwise.adapters.out.repository.enums.ReservationControlStatus;
+import io.bookwise.application.core.dto.CancelReservationRequest;
+import io.bookwise.application.core.dto.MailMessage;
+import io.bookwise.application.core.enums.ReservationStatus;
 import io.bookwise.application.core.ports.in.CancelReservationPortIn;
 import io.bookwise.application.core.ports.out.*;
 
@@ -28,7 +28,7 @@ public class CancelReservationUseCase implements CancelReservationPortIn {
 
     @Override
     public void cancel(CancelReservationRequest reserve) {
-        ReservationControlStatus.get(reserve.cancelReservationAction().value())
+        ReservationStatus.get(reserve.action().value())
                 .flatMap(status -> findBookPortOut.findIsbn(reserve.isbn()).stream()
                         .filter(book -> reservationInventoryPortOut.checkIfBookIsReservedByIsbnAndDocument(book.getIsbn(), reserve.document()))
                         .findFirst())

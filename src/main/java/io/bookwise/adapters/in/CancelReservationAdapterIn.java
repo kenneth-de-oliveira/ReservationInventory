@@ -1,6 +1,6 @@
 package io.bookwise.adapters.in;
 
-import io.bookwise.adapters.out.repository.dto.CancelReservationRequest;
+import io.bookwise.application.core.dto.CancelReservationRequest;
 import io.bookwise.application.core.ports.in.CancelReservationPortIn;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

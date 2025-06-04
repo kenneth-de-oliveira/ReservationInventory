@@ -1,11 +1,12 @@
 package io.bookwise.application.usecase;
 
-import io.bookwise.adapters.out.mail.MailMessage;
-import io.bookwise.adapters.out.repository.dto.CancelReservationAction;
-import io.bookwise.adapters.out.repository.dto.CancelReservationRequest;
 import io.bookwise.adapters.out.repository.enums.ReservationControlStatus;
+import io.bookwise.application.core.dto.CancelReservationAction;
+import io.bookwise.application.core.dto.CancelReservationRequest;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Student;
+import io.bookwise.application.core.dto.MailMessage;
+import io.bookwise.application.core.enums.ReservationStatus;
 import io.bookwise.application.core.ports.out.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -55,8 +56,8 @@ class CancelReservationUseCaseTest {
         when(request.document()).thenReturn("doc1");
 
         CancelReservationAction cancelReservationAction = mock(CancelReservationAction.class);
-        when(request.cancelReservationAction()).thenReturn(cancelReservationAction);
-        when(cancelReservationAction.value()).thenReturn(ReservationControlStatus.CANCELLED.getReason());
+        when(request.action()).thenReturn(cancelReservationAction);
+        when(cancelReservationAction.value()).thenReturn(ReservationStatus.CANCELLED.getReason());
 
         when(findBookPortOut.findIsbn(Mockito.anyString())).thenReturn(Optional.of(book));
         when(reservationInventoryPortOut.checkIfBookIsReservedByIsbnAndDocument("123", "doc1")).thenReturn(true);
@@ -84,7 +85,7 @@ class CancelReservationUseCaseTest {
         when(request.document()).thenReturn("doc1");
 
         CancelReservationAction cancelReservationAction = mock(CancelReservationAction.class);
-        when(request.cancelReservationAction()).thenReturn(cancelReservationAction);
+        when(request.action()).thenReturn(cancelReservationAction);
         when(cancelReservationAction.value()).thenReturn(ReservationControlStatus.CANCELLED.getReason());
 
         when(findBookPortOut.findIsbn(Mockito.anyString())).thenReturn(Optional.empty());
