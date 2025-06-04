@@ -5,9 +5,7 @@ import io.bookwise.adapters.out.repository.dto.CancelReservationRequest;
 import io.bookwise.adapters.out.repository.enums.ReservationControlStatus;
 import io.bookwise.application.core.ports.in.CancelReservationPortIn;
 import io.bookwise.application.core.ports.out.*;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 public class CancelReservationUseCase implements CancelReservationPortIn {
 
     private final CancelReservationPortOut cancelReservationPortOut;
