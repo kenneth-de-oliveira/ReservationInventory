@@ -1,6 +1,6 @@
 package io.bookwise.application.usecase;
 
-import io.bookwise.adapters.out.mail.MailMessage;
+import io.bookwise.application.core.dto.MailMessage;
 import io.bookwise.adapters.out.repository.dto.ReserveInfo;
 import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.domain.Book;

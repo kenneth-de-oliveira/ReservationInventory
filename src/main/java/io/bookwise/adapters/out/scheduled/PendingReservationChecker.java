@@ -3,7 +3,7 @@ package io.bookwise.adapters.out.scheduled;
 import io.bookwise.adapters.out.FindStudentAdapterOut;
 import io.bookwise.adapters.out.ReservationInventoryAdapterOut;
 import io.bookwise.adapters.out.SmtpMailMessageAdapterOut;
-import io.bookwise.adapters.out.mail.MailMessage;
+import io.bookwise.application.core.dto.MailMessage;
 import io.bookwise.adapters.out.mapper.ReservationInventoryMapper;
 import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.entity.ReservationControlEntity;
