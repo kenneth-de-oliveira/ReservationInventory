@@ -22,8 +22,7 @@ public class SmtpMailMessageClientImpl implements SmtpMailMessageClient {
             javaMailSender.send(message);
             log.info("Email sent to: {}", mailMessage.getTo());
         } catch (Exception ex) {
-            log.error("Error sending email: {}", ex.getMessage());
-            throw new RuntimeException(ex.getMessage(), ex);
+            log.error("Error sending email: {}", ex.getMessage(), ex);
         }
     }
 
