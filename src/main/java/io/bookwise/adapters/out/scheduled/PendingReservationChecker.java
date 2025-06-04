@@ -99,12 +99,11 @@ public class PendingReservationChecker {
     private void notifyReservationByEmail(Reservation reservation) {
         findStudentAdapterOut.findByDocument(reservation.getDocument())
                 .ifPresent(student -> {
-                    var mailMessage = MailMessage.builder()
+                    smtpMailMessageAdapterOut.sendMail(MailMessage.builder()
                             .to(student.getEmail())
                             .subject("Reservation Confirmed Successfully")
                             .text(String.format("Your reservation for the book: %s has been confirmed.", reservation.getIsbn()))
-                            .build();
-                    smtpMailMessageAdapterOut.sendMail(mailMessage);
+                            .build());
                 });
     }
 
