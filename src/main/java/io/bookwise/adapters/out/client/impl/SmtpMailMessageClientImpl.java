@@ -18,12 +18,12 @@ public class SmtpMailMessageClientImpl implements SmtpMailMessageClient {
     @Override
     public void sendMail(MailMessage mailMessage) {
         try {
-            log.info("Sending mail to: {}, subject: {}", mailMessage.getTo(), mailMessage.getSubject());
+            log.info("Sending mail to: {}, subject: {}, text: {}", mailMessage.getTo(), mailMessage.getSubject(), mailMessage.getText());
             var message = buildSimpleMailMessage(mailMessage);
             javaMailSender.send(message);
             log.info("Email sent successfully to: {}", mailMessage.getTo());
         } catch (Exception ex) {
-            log.error("Error sending email to: {}, subject: {}. Error: {}", mailMessage.getTo(), mailMessage.getSubject(), ex.getMessage(), ex);
+            log.error("Error sending email: {}", ex.getMessage(), ex);
         }
     }
 
