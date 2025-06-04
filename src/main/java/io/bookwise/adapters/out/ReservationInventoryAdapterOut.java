@@ -83,6 +83,12 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
         return reservations;
     }
 
+    public void deleteByIsbnAndDocument(String isbn, String document) {
+        log.info("Deleting reservation for ISBN: {} and student: {}", isbn, document);
+        repository.deleteByIsbnAndDocument(isbn, document);
+        log.info("Reservation deleted successfully for ISBN: {} and student: {}", isbn, document);
+    }
+
     @Override
     public Boolean checkIfBookIsReservedByIsbn(String isbn) {
         var isReserved = repository.existsByIsbn(isbn);
@@ -96,5 +102,4 @@ public class ReservationInventoryAdapterOut implements ReservationInventoryPortO
         log.info("Book with ISBN: {} is reserved by document {}: {}", isbn, document, isReserved);
         return isReserved;
     }
-
 }

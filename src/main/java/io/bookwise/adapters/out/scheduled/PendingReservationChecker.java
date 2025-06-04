@@ -28,7 +28,7 @@ import static io.bookwise.adapters.out.repository.enums.ReservationControlStatus
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class PendingReservationsChecker {
+public class PendingReservationChecker {
 
     private final ReservationControlRepository reservationControlRepository;
     private final ReservationInventoryAdapterOut reservationInventoryAdapterOut;

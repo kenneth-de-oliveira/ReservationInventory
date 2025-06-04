@@ -20,7 +20,7 @@ public class CancelReservationAdapterIn {
     public void cancel(@RequestBody CancelReservationRequest reserve) {
         log.info("Cancel reservation request for ISBN: {}", reserve.isbn());
         cancelReservationPortIn.cancel(reserve);
-        log.info("Reservation cancelled for ISBN: {}", reserve.isbn());
+        log.info("Reservation cancellation request for ISBN: {}", reserve.isbn());
     }
 
 }
