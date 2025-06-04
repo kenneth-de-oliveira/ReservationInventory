@@ -1,6 +1,6 @@
 package io.bookwise.adapters.out.client;
 
-import io.bookwise.adapters.out.mail.MailMessage;
+import io.bookwise.application.core.dto.MailMessage;
 
 public interface SmtpMailMessageClient {
     void sendMail(MailMessage mailMessage);
