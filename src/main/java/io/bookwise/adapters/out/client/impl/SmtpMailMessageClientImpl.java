@@ -1,7 +1,7 @@
 package io.bookwise.adapters.out.client.impl;
 
 import io.bookwise.adapters.out.client.SmtpMailMessageClient;
-import io.bookwise.adapters.out.mail.MailMessage;
+import io.bookwise.application.core.dto.MailMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.SimpleMailMessage;
@@ -18,9 +18,10 @@ public class SmtpMailMessageClientImpl implements SmtpMailMessageClient {
     @Override
     public void sendMail(MailMessage mailMessage) {
         try {
+            log.info("Sending mail to: {}, subject: {}, text: {}", mailMessage.getTo(), mailMessage.getSubject(), mailMessage.getText());
             var message = buildSimpleMailMessage(mailMessage);
             javaMailSender.send(message);
-            log.info("Email sent to: {}", mailMessage.getTo());
+            log.info("Email sent successfully to: {}", mailMessage.getTo());
         } catch (Exception ex) {
             log.error("Error sending email: {}", ex.getMessage(), ex);
         }

@@ -1,6 +1,6 @@
 package io.bookwise.application.usecase;
 
-import io.bookwise.adapters.out.mail.MailMessage;
+import io.bookwise.application.core.dto.MailMessage;
 import io.bookwise.application.core.domain.Address;
 import io.bookwise.application.core.domain.Student;
 import io.bookwise.application.core.ports.out.CreateStudentPortOut;
