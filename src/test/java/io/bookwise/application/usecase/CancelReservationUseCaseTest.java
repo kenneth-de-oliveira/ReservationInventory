@@ -2,7 +2,7 @@ package io.bookwise.application.usecase;
 
 import io.bookwise.adapters.out.repository.enums.ReservationControlStatus;
 import io.bookwise.application.core.dto.CancelReservationAction;
-import io.bookwise.application.core.dto.CancelReservationRequest;
+import io.bookwise.application.core.dto.CancelReservation;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Student;
 import io.bookwise.application.core.dto.MailMessage;
@@ -48,7 +48,7 @@ class CancelReservationUseCaseTest {
     @Test
     void shouldCancelReservationSuccessfully() {
 
-        CancelReservationRequest request = mock(CancelReservationRequest.class);
+        CancelReservation request = mock(CancelReservation.class);
 
         Book book = mock(Book.class);
         when(book.getIsbn()).thenReturn("123");
@@ -77,7 +77,7 @@ class CancelReservationUseCaseTest {
     @Test
     void shouldThrowExceptionWhenReservationNotFoundOrAlreadyCancelled() {
 
-        CancelReservationRequest request = mock(CancelReservationRequest.class);
+        CancelReservation request = mock(CancelReservation.class);
 
         Book book = mock(Book.class);
         when(book.getIsbn()).thenReturn("123");
