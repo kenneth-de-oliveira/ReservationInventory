@@ -70,19 +70,39 @@ class CancelReservationUseCaseTest {
     @Test
     void shouldThrowExceptionWhenReservationNotFoundOrAlreadyCancelled() {
 
-        Reservation request = mock(Reservation.class);
+        Reservation reservation = mock(Reservation.class);
 
         Book book = mock(Book.class);
         when(book.getIsbn()).thenReturn("123");
-        when(request.getIsbn()).thenReturn("123");
-        when(request.getDocument()).thenReturn("doc1");
+        when(reservation.getIsbn()).thenReturn("123");
+        when(reservation.getDocument()).thenReturn("doc1");
 
         when(findBookPortOut.findIsbn(Mockito.anyString())).thenReturn(Optional.empty());
 
-        assertThrows(RuntimeException.class, () -> cancelReservationUseCase.cancel(request));
+        assertThrows(RuntimeException.class, () -> cancelReservationUseCase.cancel(reservation));
 
         verify(findBookPortOut).findIsbn(Mockito.anyString());
 
+    }
+
+    @Test
+    void shouldThrowExceptionWhenStudentNotFound() {
+        Reservation reservation = mock(Reservation.class);
+        Book book = mock(Book.class);
+
+        when(book.getIsbn()).thenReturn("123");
+        when(reservation.getIsbn()).thenReturn("123");
+        when(reservation.getDocument()).thenReturn("doc1");
+
+        when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(book));
+        when(reservationInventoryPortOut.checkIfBookIsReservedByIsbnAndDocument("123", "doc1")).thenReturn(true);
+        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.empty());
+
+        assertThrows(RuntimeException.class, () -> cancelReservationUseCase.cancel(reservation));
+
+        verify(findBookPortOut).findIsbn(anyString());
+        verify(reservationInventoryPortOut).checkIfBookIsReservedByIsbnAndDocument("123", "doc1");
+        verify(findStudentPortOut).findByDocument(anyString());
     }
 
 
