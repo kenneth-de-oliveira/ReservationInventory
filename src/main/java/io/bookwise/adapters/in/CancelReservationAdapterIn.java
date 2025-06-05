@@ -1,6 +1,6 @@
 package io.bookwise.adapters.in;
 
-import io.bookwise.application.core.dto.CancelReservation;
+import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.ports.in.CancelReservationPortIn;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,10 +17,10 @@ public class CancelReservationAdapterIn {
 
     @PatchMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void cancel(@RequestBody CancelReservation reserve) {
-        log.info("Cancel reservation request for ISBN: {}", reserve.isbn());
-        cancelReservationPortIn.cancel(reserve);
-        log.info("Reservation cancellation request for ISBN: {}", reserve.isbn());
+    public void cancel(@RequestBody Reservation reservation) {
+        log.info("Cancel reservation request for ISBN: {}", reservation.getIsbn());
+        cancelReservationPortIn.cancel(reservation);
+        log.info("Reservation cancellation request for ISBN: {}", reservation.getIsbn());
     }
 
 }

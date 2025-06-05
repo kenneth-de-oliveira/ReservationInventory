@@ -1,12 +1,9 @@
 package io.bookwise.application.usecase;
 
-import io.bookwise.adapters.out.repository.enums.ReservationControlStatus;
-import io.bookwise.application.core.dto.CancelReservationAction;
-import io.bookwise.application.core.dto.CancelReservation;
 import io.bookwise.application.core.domain.Book;
+import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.domain.Student;
 import io.bookwise.application.core.dto.MailMessage;
-import io.bookwise.application.core.enums.ReservationStatus;
 import io.bookwise.application.core.ports.out.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -48,16 +45,12 @@ class CancelReservationUseCaseTest {
     @Test
     void shouldCancelReservationSuccessfully() {
 
-        CancelReservation request = mock(CancelReservation.class);
+        Reservation reservation = mock(Reservation.class);
 
         Book book = mock(Book.class);
         when(book.getIsbn()).thenReturn("123");
-        when(request.isbn()).thenReturn("123");
-        when(request.document()).thenReturn("doc1");
-
-        CancelReservationAction cancelReservationAction = mock(CancelReservationAction.class);
-        when(request.action()).thenReturn(cancelReservationAction);
-        when(cancelReservationAction.value()).thenReturn(ReservationStatus.CANCELLED.getReason());
+        when(reservation.getIsbn()).thenReturn("123");
+        when(reservation.getDocument()).thenReturn("doc1");
 
         when(findBookPortOut.findIsbn(Mockito.anyString())).thenReturn(Optional.of(book));
         when(reservationInventoryPortOut.checkIfBookIsReservedByIsbnAndDocument("123", "doc1")).thenReturn(true);
@@ -67,9 +60,9 @@ class CancelReservationUseCaseTest {
 
         when(findStudentPortOut.findByDocument(Mockito.anyString())).thenReturn(Optional.of(student));
 
-        assertDoesNotThrow(() -> cancelReservationUseCase.cancel(request));
+        assertDoesNotThrow(() -> cancelReservationUseCase.cancel(reservation));
 
-        verify(cancelReservationPortOut).execute(request);
+        verify(cancelReservationPortOut).execute(reservation);
         verify(smtpMailMessagePortOut).sendMail(any(MailMessage.class));
 
     }
@@ -77,16 +70,12 @@ class CancelReservationUseCaseTest {
     @Test
     void shouldThrowExceptionWhenReservationNotFoundOrAlreadyCancelled() {
 
-        CancelReservation request = mock(CancelReservation.class);
+        Reservation request = mock(Reservation.class);
 
         Book book = mock(Book.class);
         when(book.getIsbn()).thenReturn("123");
-        when(request.isbn()).thenReturn("123");
-        when(request.document()).thenReturn("doc1");
-
-        CancelReservationAction cancelReservationAction = mock(CancelReservationAction.class);
-        when(request.action()).thenReturn(cancelReservationAction);
-        when(cancelReservationAction.value()).thenReturn(ReservationControlStatus.CANCELLED.getReason());
+        when(request.getIsbn()).thenReturn("123");
+        when(request.getDocument()).thenReturn("doc1");
 
         when(findBookPortOut.findIsbn(Mockito.anyString())).thenReturn(Optional.empty());
 

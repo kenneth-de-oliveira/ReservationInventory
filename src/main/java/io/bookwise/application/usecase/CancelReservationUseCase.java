@@ -1,8 +1,7 @@
 package io.bookwise.application.usecase;
 
-import io.bookwise.application.core.dto.CancelReservation;
+import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.dto.MailMessage;
-import io.bookwise.application.core.enums.ReservationStatus;
 import io.bookwise.application.core.ports.in.CancelReservationPortIn;
 import io.bookwise.application.core.ports.out.*;
 
@@ -27,14 +26,13 @@ public class CancelReservationUseCase implements CancelReservationPortIn {
     }
 
     @Override
-    public void cancel(CancelReservation reserve) {
-        ReservationStatus.get(reserve.action().value())
-                .flatMap(status -> findBookPortOut.findIsbn(reserve.isbn()).stream()
-                        .filter(book -> reservationInventoryPortOut.checkIfBookIsReservedByIsbnAndDocument(book.getIsbn(), reserve.document()))
-                        .findFirst())
+    public void cancel(Reservation reservation) {
+        findBookPortOut.findIsbn(reservation.getIsbn()).stream()
+                .filter(book -> reservationInventoryPortOut.checkIfBookIsReservedByIsbnAndDocument(book.getIsbn(), reservation.getDocument()))
+                .findFirst()
                 .ifPresentOrElse(book -> {
-                    var student = findStudentPortOut.findByDocument(reserve.document()).orElseThrow(() -> new RuntimeException("Student not found"));
-                    cancelReservationPortOut.execute(reserve);
+                    var student = findStudentPortOut.findByDocument(reservation.getDocument()).orElseThrow(() -> new RuntimeException("Student not found"));
+                    cancelReservationPortOut.execute(reservation);
                     smtpMailMessagePortOut.sendMail(MailMessage.builder()
                             .to(student.getEmail())
                             .subject("Reservation Cancelled Successfully")

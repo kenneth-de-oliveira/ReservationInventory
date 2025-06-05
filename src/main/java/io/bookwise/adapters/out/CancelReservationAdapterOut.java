@@ -2,7 +2,7 @@ package io.bookwise.adapters.out;
 
 import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.entity.ReservationControlEntity;
-import io.bookwise.application.core.dto.CancelReservation;
+import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.ports.out.CancelReservationPortOut;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,31 +23,31 @@ public class CancelReservationAdapterOut implements CancelReservationPortOut {
     private final ReservationControlRepository reservationControlRepository;
 
     @Override
-    public void execute(CancelReservation reserve) {
-        log.info("Cancel reservation of book for ISBN: {} for student: {}", reserve.isbn(), reserve.document());
-        this.cancel(reserve);
-        log.info("The cancellation of the Reservation was successfully requested for ISBN: {} and student: {}", reserve.isbn(), reserve.document());
+    public void execute(Reservation reservation) {
+        log.info("Cancel reservation of book for ISBN: {} for student: {}", reservation.getIsbn(), reservation.getDocument());
+        this.cancel(reservation);
+        log.info("The cancellation of the Reservation was successfully requested for ISBN: {} and student: {}", reservation.getIsbn(), reservation.getDocument());
     }
 
-    private void cancel(CancelReservation reserve) {
-        Stream.ofNullable(reserve)
-                .filter(cancelReservationRequest -> this.reservationControlRepository.findByIsbnAndStatus(cancelReservationRequest.isbn(), CANCELLED_REQUEST).isEmpty())
+    private void cancel(Reservation reservation) {
+        Stream.ofNullable(reservation)
+                .filter(reservationValue -> this.reservationControlRepository.findByIsbnAndStatus(reservationValue.getIsbn(), CANCELLED_REQUEST).isEmpty())
                 .peek(this::saveCancelledReservationRequest)
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("Reservation already cancelled for ISBN: " + reserve.isbn() + " and student: " + reserve.document()));
+                .orElseThrow(() -> new RuntimeException("Reservation already cancelled for ISBN: " + reservation.getIsbn() + " and student: " + reservation.getDocument()));
     }
 
-    private void saveCancelledReservationRequest(CancelReservation reserve) {
-        Stream.ofNullable(reserve)
-                .filter(isbnValue -> Objects.nonNull(isbnValue.isbn()))
-                .peek(reservationValue -> reservationControlRepository.findByIsbnAndStatus(reservationValue.isbn(), CONFIRMED)
+    private void saveCancelledReservationRequest(Reservation reservation) {
+        Stream.ofNullable(reservation)
+                .filter(reservationValue -> Objects.nonNull(reservationValue.getIsbn()))
+                .peek(reservationValue -> reservationControlRepository.findByIsbnAndStatus(reservationValue.getIsbn(), CONFIRMED)
                         .ifPresent(existingControl -> {
                             existingControl.setStatus(CANCELLED_REQUEST);
                             existingControl.setUpdatedAt(LocalDateTime.now());
                             reservationControlRepository.save(existingControl);
                         }))
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("Failed to request cancellation of book reservation for ISBN: " + reserve.isbn() + " and student: " + reserve.document()));
+                .orElseThrow(() -> new RuntimeException("Failed to request cancellation of book reservation for ISBN: " + reservation.getIsbn() + " and student: " + reservation.getDocument()));
     }
 
     public void cancelReservation(ReservationControlEntity reservationControlEntity) {

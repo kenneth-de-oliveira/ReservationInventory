@@ -1,7 +1,7 @@
 package io.bookwise.application.core.ports.in;
 
-import io.bookwise.application.core.dto.CancelReservation;
+import io.bookwise.application.core.domain.Reservation;
 
 public interface CancelReservationPortIn {
-    void cancel(CancelReservation reserve);
+    void cancel(Reservation reservation);
 }
