@@ -34,7 +34,7 @@ public class CancelReservationAdapterOut implements CancelReservationPortOut {
                 .filter(reservationValue -> this.reservationControlRepository.findByIsbnAndStatus(reservationValue.getIsbn(), CANCELLED_REQUEST).isEmpty())
                 .peek(this::saveCancelledReservationRequest)
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("Reservation already cancelled for ISBN: " + reservation.getIsbn() + " and student: " + reservation.getDocument()));
+                .orElseThrow(() -> new RuntimeException("A reservation cancelled request has already been made."));
     }
 
     private void saveCancelledReservationRequest(Reservation reservation) {
