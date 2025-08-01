@@ -3,8 +3,9 @@ package io.bookwise.application.usecase;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Reservation;
 import io.bookwise.application.core.domain.Student;
-import io.bookwise.application.core.dto.MailMessage;
-import io.bookwise.application.core.ports.out.*;
+import io.bookwise.application.core.ports.out.CancelReservationPortOut;
+import io.bookwise.application.core.ports.out.FindBookPortOut;
+import io.bookwise.application.core.ports.out.ReservationInventoryPortOut;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,11 +25,7 @@ class CancelReservationUseCaseTest {
 
     private FindBookPortOut findBookPortOut;
 
-    private FindStudentPortOut findStudentPortOut;
-
     private ReservationInventoryPortOut reservationInventoryPortOut;
-
-    private SmtpMailMessagePortOut smtpMailMessagePortOut;
 
     private CancelReservationUseCase cancelReservationUseCase;
 
@@ -36,10 +33,8 @@ class CancelReservationUseCaseTest {
     void setUp() {
         cancelReservationPortOut = mock(CancelReservationPortOut.class);
         findBookPortOut = mock(FindBookPortOut.class);
-        findStudentPortOut = mock(FindStudentPortOut.class);
         reservationInventoryPortOut = mock(ReservationInventoryPortOut.class);
-        smtpMailMessagePortOut = mock(SmtpMailMessagePortOut.class);
-        cancelReservationUseCase = new CancelReservationUseCase(cancelReservationPortOut, findBookPortOut, findStudentPortOut, reservationInventoryPortOut, smtpMailMessagePortOut);
+        cancelReservationUseCase = new CancelReservationUseCase(cancelReservationPortOut, findBookPortOut, reservationInventoryPortOut);
     }
 
     @Test
@@ -58,12 +53,9 @@ class CancelReservationUseCaseTest {
         Student student = mock(Student.class);
         when(student.getEmail()).thenReturn("student@email.com");
 
-        when(findStudentPortOut.findByDocument(Mockito.anyString())).thenReturn(Optional.of(student));
-
         assertDoesNotThrow(() -> cancelReservationUseCase.cancel(reservation));
 
         verify(cancelReservationPortOut).execute(reservation);
-        verify(smtpMailMessagePortOut).sendMail(any(MailMessage.class));
 
     }
 
@@ -84,26 +76,5 @@ class CancelReservationUseCaseTest {
         verify(findBookPortOut).findIsbn(Mockito.anyString());
 
     }
-
-    @Test
-    void shouldThrowExceptionWhenStudentNotFound() {
-        Reservation reservation = mock(Reservation.class);
-        Book book = mock(Book.class);
-
-        when(book.getIsbn()).thenReturn("123");
-        when(reservation.getIsbn()).thenReturn("123");
-        when(reservation.getDocument()).thenReturn("doc1");
-
-        when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(book));
-        when(reservationInventoryPortOut.checkIfBookIsReservedByIsbnAndDocument("123", "doc1")).thenReturn(true);
-        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.empty());
-
-        assertThrows(RuntimeException.class, () -> cancelReservationUseCase.cancel(reservation));
-
-        verify(findBookPortOut).findIsbn(anyString());
-        verify(reservationInventoryPortOut).checkIfBookIsReservedByIsbnAndDocument("123", "doc1");
-        verify(findStudentPortOut).findByDocument(anyString());
-    }
-
 
 }
