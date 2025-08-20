@@ -7,7 +7,6 @@ This is an example of a very simplified book inventory system made in an archite
 * _Java 21_
 * _Maven 3.6.3_
 * Spring Boot
-* Spring Email
 * Spring Data JPA
 * Spring GraphQL
 * Lombok
