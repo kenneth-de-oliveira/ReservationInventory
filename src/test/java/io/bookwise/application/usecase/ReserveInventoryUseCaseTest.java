@@ -1,6 +1,6 @@
 package io.bookwise.application.usecase;
 
-import io.bookwise.application.core.dto.MailMessage;
+import io.bookwise.application.core.dto.Email;
 import io.bookwise.adapters.out.repository.dto.ReserveInfo;
 import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.domain.Book;
@@ -39,12 +39,12 @@ class ReserveInventoryUseCaseTest {
     private ReservationInventoryPortOut reservationInventoryPortOut;
 
     @Mock
-    private SmtpMailMessagePortOut smtpMailMessagePortOut;
+    private EmailServicePortOut emailServicePortOut;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        reservationInventoryUseCase = new ReservationInventoryUseCase(findBookPortOut, findStudentPortOut, reservationMessageQueuePublisherPortOut, reservationInventoryPortOut, smtpMailMessagePortOut);
+        reservationInventoryUseCase = new ReservationInventoryUseCase(findBookPortOut, findStudentPortOut, reservationMessageQueuePublisherPortOut, reservationInventoryPortOut, emailServicePortOut);
     }
 
     @Test
@@ -130,7 +130,7 @@ class ReserveInventoryUseCaseTest {
        assertDoesNotThrow(() -> reservationInventoryUseCase.reserve(reservation));
 
        verify(reservationInventoryPortOut).execute(reservation);
-       verify(smtpMailMessagePortOut).sendMail(any(MailMessage.class));
+       verify(emailServicePortOut).sendEmail(any(Email.class));
    }
 
 }

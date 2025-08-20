@@ -1,9 +1,9 @@
 package io.bookwise.adapters.out.scheduled;
 
+import io.bookwise.adapters.out.EmailServiceAdapterOut;
 import io.bookwise.adapters.out.FindStudentAdapterOut;
 import io.bookwise.adapters.out.ReservationInventoryAdapterOut;
-import io.bookwise.adapters.out.SmtpMailMessageAdapterOut;
-import io.bookwise.application.core.dto.MailMessage;
+import io.bookwise.application.core.dto.Email;
 import io.bookwise.adapters.out.mapper.ReservationInventoryMapper;
 import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.entity.ReservationControlEntity;
@@ -32,7 +32,7 @@ public class PendingReservationChecker {
 
     private final ReservationControlRepository reservationControlRepository;
     private final ReservationInventoryAdapterOut reservationInventoryAdapterOut;
-    private final SmtpMailMessageAdapterOut smtpMailMessageAdapterOut;
+    private final EmailServiceAdapterOut emailServiceAdapterOut;
     private final ReservationInventoryMapper reservationInventoryMapper;
     private final FindStudentAdapterOut findStudentAdapterOut;
 
@@ -99,7 +99,7 @@ public class PendingReservationChecker {
     private void notifyReservationByEmail(Reservation reservation) {
         findStudentAdapterOut.findByDocument(reservation.getDocument())
                 .ifPresent(student -> {
-                    smtpMailMessageAdapterOut.sendMail(MailMessage.builder()
+                    emailServiceAdapterOut.sendEmail(Email.builder()
                             .to(student.getEmail())
                             .subject("Reservation Confirmed Successfully")
                             .text(String.format("Your reservation for the book: %s has been confirmed.", reservation.getIsbn()))

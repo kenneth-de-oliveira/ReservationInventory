@@ -1,6 +1,6 @@
 package io.bookwise.application.core.dto;
 
-public class MailMessage {
+public class Email {
 
     private String to;
     private String subject;
@@ -20,14 +20,14 @@ public class MailMessage {
 
     @Override
     public String toString() {
-        return "MailMessage{" +
+        return "Email{" +
                 "to='" + to + '\'' +
                 ", subject='" + subject + '\'' +
                 ", text='" + text + '\'' +
                 '}';
     }
 
-    private MailMessage(Builder builder) {
+    private Email(Builder builder) {
         this.to = builder.to;
         this.subject = builder.subject;
         this.text = builder.text;
@@ -57,8 +57,8 @@ public class MailMessage {
             return this;
         }
 
-        public MailMessage build() {
-            return new MailMessage(this);
+        public Email build() {
+            return new Email(this);
         }
     }
 

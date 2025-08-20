@@ -1,11 +1,11 @@
 package io.bookwise.adapters.out.scheduled;
 
 import io.bookwise.adapters.out.CancelReservationAdapterOut;
+import io.bookwise.adapters.out.EmailServiceAdapterOut;
 import io.bookwise.adapters.out.FindStudentAdapterOut;
-import io.bookwise.adapters.out.SmtpMailMessageAdapterOut;
 import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.entity.ReservationControlEntity;
-import io.bookwise.application.core.dto.MailMessage;
+import io.bookwise.application.core.dto.Email;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -32,7 +32,7 @@ public class CancelledReservationChecker {
 
     private final ReservationControlRepository reservationControlRepository;
     private final CancelReservationAdapterOut cancelReservationAdapterOut;
-    private final SmtpMailMessageAdapterOut smtpMailMessageAdapterOut;
+    private final EmailServiceAdapterOut emailServiceAdapterOut;
     private final FindStudentAdapterOut findStudentAdapterOut;
 
     @Scheduled(cron = "0 0 0 * * *")
@@ -78,8 +78,8 @@ public class CancelledReservationChecker {
     private void notifyCancelReservationByEmail(ReservationControlEntity reservationControlEntity) {
         findStudentAdapterOut.findByDocument(reservationControlEntity.getDocument())
                 .ifPresent(student -> {
-                    smtpMailMessageAdapterOut.sendMail(
-                            MailMessage.builder()
+                    emailServiceAdapterOut.sendEmail(
+                            Email.builder()
                                     .to(student.getEmail())
                                     .subject("Reservation Cancelled Successfully")
                                     .text(String.format("Your reservation for the book: %s has been cancelled.", reservationControlEntity.getIsbn()))

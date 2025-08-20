@@ -1,6 +1,6 @@
 package io.bookwise.application.usecase;
 
-import io.bookwise.application.core.dto.MailMessage;
+import io.bookwise.application.core.dto.Email;
 import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.adapters.out.repository.dto.ReserveInfo;
 import io.bookwise.application.core.domain.Reservation;
@@ -15,19 +15,19 @@ public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
     private final FindStudentPortOut findStudentPortOut;
     private final ReservationMessageQueuePublisherPortOut reservationMessageQueuePublisherPortOut;
     private final ReservationInventoryPortOut reservationInventoryPortOut;
-    private final SmtpMailMessagePortOut smtpMailMessagePortOut;
+    private final EmailServicePortOut emailServicePortOut;
 
     public ReservationInventoryUseCase(
             FindBookPortOut findBookPortOut,
             FindStudentPortOut findStudentPortOut,
             ReservationMessageQueuePublisherPortOut reservationMessageQueuePublisherPortOut,
             ReservationInventoryPortOut reservationInventoryPortOut,
-            SmtpMailMessagePortOut smtpMailMessagePortOut) {
+            EmailServicePortOut emailServicePortOut) {
         this.findBookPortOut = findBookPortOut;
         this.findStudentPortOut = findStudentPortOut;
         this.reservationMessageQueuePublisherPortOut = reservationMessageQueuePublisherPortOut;
         this.reservationInventoryPortOut = reservationInventoryPortOut;
-        this.smtpMailMessagePortOut = smtpMailMessagePortOut;
+        this.emailServicePortOut = emailServicePortOut;
     }
 
     @Override
@@ -37,12 +37,12 @@ public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
                 .findFirst()
                 .map(student -> {
                     reservationInventoryPortOut.execute(reservation);
-                    var mail = MailMessage.builder()
+                    var email = Email.builder()
                             .to(student.getEmail())
                             .subject("Reservation Confirmed Successfully")
                             .text(String.format("Your reservation for the book: %s has been confirmed.", reservation.getIsbn()))
                             .build();
-                    smtpMailMessagePortOut.sendMail(mail);
+                    emailServicePortOut.sendEmail(email);
                     return null;
                 });
     }

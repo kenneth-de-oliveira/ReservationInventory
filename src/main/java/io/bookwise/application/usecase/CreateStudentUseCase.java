@@ -1,37 +1,37 @@
 package io.bookwise.application.usecase;
 
-import io.bookwise.application.core.dto.MailMessage;
+import io.bookwise.application.core.dto.Email;
 import io.bookwise.application.core.domain.Student;
 import io.bookwise.application.core.ports.in.CreateStudentPortIn;
 import io.bookwise.application.core.ports.out.CreateStudentPortOut;
 import io.bookwise.application.core.ports.out.FindAddressByPostalCodePortOut;
-import io.bookwise.application.core.ports.out.SmtpMailMessagePortOut;
+import io.bookwise.application.core.ports.out.EmailServicePortOut;
 
 public class CreateStudentUseCase implements CreateStudentPortIn {
 
     private final CreateStudentPortOut createStudentPortOut;
     private final FindAddressByPostalCodePortOut findAddressByPostalCodePortOut;
-    private final SmtpMailMessagePortOut smtpMailMessagePortOut;
+    private final EmailServicePortOut emailServicePortOut;
 
     public CreateStudentUseCase(
             CreateStudentPortOut createStudentPortOut,
             FindAddressByPostalCodePortOut findAddressByPostalCodePortOut,
-            SmtpMailMessagePortOut smtpMailMessagePortOut) {
+            EmailServicePortOut emailServicePortOut) {
         this.createStudentPortOut = createStudentPortOut;
         this.findAddressByPostalCodePortOut = findAddressByPostalCodePortOut;
-        this.smtpMailMessagePortOut = smtpMailMessagePortOut;
+        this.emailServicePortOut = emailServicePortOut;
     }
 
     @Override
     public Student create(Student student) {
         this.findAddressByPostalCode(student);
         student = createStudentPortOut.create(student);
-        var mail = MailMessage.builder()
+        var email = Email.builder()
                 .to(student.getEmail())
                 .subject("ReservationInventory - Email Confirmation")
                 .text("Your email has been confirmed successfully!")
                 .build();
-        smtpMailMessagePortOut.sendMail(mail);
+        emailServicePortOut.sendEmail(email);
         return student;
     }
 

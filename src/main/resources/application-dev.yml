@@ -34,5 +34,7 @@ spring:
 api:
   inventory-management:
     url: ${API_INVENTORY_MANAGEMENT_URL:http://localhost:8080/BIM-WS/InventoryManagementWS}
+  email-service:
+    url: ${API_EMAIL_SERVICE_URL:http://localhost:8083/api/v1/emails}
   viacep:
     url: ${API_VIACEP_URL:https://viacep.com.br/ws}
