@@ -130,7 +130,7 @@ class ReserveInventoryUseCaseTest {
        assertDoesNotThrow(() -> reservationInventoryUseCase.reserve(reservation));
 
        verify(reservationInventoryPortOut).execute(reservation);
-       verify(emailServicePortOut).sendEmail(any(Email.class));
+       verify(emailServicePortOut).send(any(Email.class));
    }
 
 }

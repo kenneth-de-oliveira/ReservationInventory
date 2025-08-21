@@ -78,7 +78,7 @@ public class CancelledReservationChecker {
     private void notifyCancelReservationByEmail(ReservationControlEntity reservationControlEntity) {
         findStudentAdapterOut.findByDocument(reservationControlEntity.getDocument())
                 .ifPresent(student -> {
-                    emailServiceAdapterOut.sendEmail(
+                    emailServiceAdapterOut.send(
                             Email.builder()
                                     .to(student.getEmail())
                                     .subject("Reservation Cancelled Successfully")

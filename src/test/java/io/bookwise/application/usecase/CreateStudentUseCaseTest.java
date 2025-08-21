@@ -37,7 +37,7 @@ public class CreateStudentUseCaseTest {
         Student student = new Student("123456789", "John Doe", "johndoe@gmail.com", address);
 
         when(createStudentPortOut.create(Mockito.any())).thenReturn(student);
-        doNothing().when(emailServicePortOut).sendEmail(Mockito.any(Email.class));
+        doNothing().when(emailServicePortOut).send(Mockito.any(Email.class));
         when(findAddressByPostalCodePortOut.find("12345678")).thenReturn(address);
 
         Assertions.assertDoesNotThrow(() -> {
@@ -46,7 +46,7 @@ public class CreateStudentUseCaseTest {
 
         verify(createStudentPortOut).create(student);
         verify(findAddressByPostalCodePortOut).find("12345678");
-        verify(emailServicePortOut).sendEmail(Mockito.any(Email.class));
+        verify(emailServicePortOut).send(Mockito.any(Email.class));
     }
 
 }

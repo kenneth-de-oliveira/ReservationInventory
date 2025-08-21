@@ -19,11 +19,11 @@ public class EmailServiceClientImpl implements EmailServiceClient {
     private final EmailServiceClient emailServiceClient;
 
     @Override
-    public void sendEmail(EmailRequest request) {
+    public void send(EmailRequest request) {
 
         handleExceptions(() -> {
             log.info("Sending mail to: {}, subject: {}, text: {}", request.getTo(), request.getSubject(), request.getText());
-            emailServiceClient.sendEmail(request);
+            emailServiceClient.send(request);
             log.info("Email sent successfully to: {}", request.getTo());
             return null;
         }, ex -> {

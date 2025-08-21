@@ -8,6 +8,6 @@ public interface EmailServiceClient {
 
     @RequestLine("POST")
     @Headers("Content-Type: application/json")
-    void sendEmail(EmailRequest emailRequest);
+    void send(EmailRequest emailRequest);
 
 }

@@ -99,7 +99,7 @@ public class PendingReservationChecker {
     private void notifyReservationByEmail(Reservation reservation) {
         findStudentAdapterOut.findByDocument(reservation.getDocument())
                 .ifPresent(student -> {
-                    emailServiceAdapterOut.sendEmail(Email.builder()
+                    emailServiceAdapterOut.send(Email.builder()
                             .to(student.getEmail())
                             .subject("Reservation Confirmed Successfully")
                             .text(String.format("Your reservation for the book: %s has been confirmed.", reservation.getIsbn()))

@@ -20,21 +20,15 @@ public class EmailServiceAdapterOut implements EmailServicePortOut {
     private final EmailServiceClient emailServiceClient;
 
     @Override
-    public void sendEmail(Email email) {
-        Stream.ofNullable(email)
-                .filter(mailValue -> Objects.nonNull(mailValue.getTo()) && Objects.nonNull(mailValue.getSubject()) && Objects.nonNull(mailValue.getText()))
-                .forEach(mailValue -> {
-                    try {
-                        emailServiceClient.sendEmail(
-                                EmailRequest.builder()
-                                        .to(email.getTo())
-                                        .subject(email.getSubject())
-                                        .text(email.getText())
-                                        .build());
-                    } catch (FeignException ex) {
-                        log.warn("Failed to send email to: {}, subject: {}. Continuing processing.", email.getTo(), email.getSubject());
-                    }
-                });
+    public void send(Email email) {
+        Stream.ofNullable(email).filter(mailValue -> Objects.nonNull(mailValue.getTo()) && Objects.nonNull(mailValue.getSubject()) && Objects.nonNull(mailValue.getText())).forEach(mailValue -> {
+            try {
+                var request = EmailRequest.builder().to(email.getTo()).subject(email.getSubject()).text(email.getText()).build();
+                emailServiceClient.send(request);
+            } catch (FeignException ex) {
+                log.warn("Failed to send email to: {}, subject: {}. Continuing processing.", email.getTo(), email.getSubject());
+            }
+        });
     }
 
 }

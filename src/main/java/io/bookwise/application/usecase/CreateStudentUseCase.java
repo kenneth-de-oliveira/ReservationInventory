@@ -31,7 +31,7 @@ public class CreateStudentUseCase implements CreateStudentPortIn {
                 .subject("ReservationInventory - Email Confirmation")
                 .text("Your email has been confirmed successfully!")
                 .build();
-        emailServicePortOut.sendEmail(email);
+        emailServicePortOut.send(email);
         return student;
     }
 

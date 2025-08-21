@@ -42,7 +42,7 @@ public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
                             .subject("Reservation Confirmed Successfully")
                             .text(String.format("Your reservation for the book: %s has been confirmed.", reservation.getIsbn()))
                             .build();
-                    emailServicePortOut.sendEmail(email);
+                    emailServicePortOut.send(email);
                     return null;
                 });
     }
