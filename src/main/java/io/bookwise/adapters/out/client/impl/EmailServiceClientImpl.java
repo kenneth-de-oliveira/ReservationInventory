@@ -2,7 +2,7 @@ package io.bookwise.adapters.out.client.impl;
 
 import feign.FeignException;
 import io.bookwise.adapters.out.client.EmailServiceClient;
-import io.bookwise.adapters.out.client.dto.EmailRequest;
+import io.bookwise.adapters.out.client.dto.EmailDTO;
 import io.bookwise.framework.errors.GenericErrorsEnum;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,12 +19,12 @@ public class EmailServiceClientImpl implements EmailServiceClient {
     private final EmailServiceClient emailServiceClient;
 
     @Override
-    public void send(EmailRequest request) {
+    public void send(EmailDTO emailDTO) {
 
         handleExceptions(() -> {
-            log.info("Sending mail to: {}, subject: {}, text: {}", request.getTo(), request.getSubject(), request.getText());
-            emailServiceClient.send(request);
-            log.info("Email sent successfully to: {}", request.getTo());
+            log.info("Sending mail to: {}, subject: {}, text: {}", emailDTO.getTo(), emailDTO.getSubject(), emailDTO.getText());
+            emailServiceClient.send(emailDTO);
+            log.info("Email sent successfully to: {}", emailDTO.getTo());
             return null;
         }, ex -> {
             if (ex instanceof FeignException) {

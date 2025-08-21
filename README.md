@@ -71,7 +71,7 @@ Create a new student **POST**: localhost:8080/api/v1/students
 {
   "document": "51436427606",
   "name": "Kenneth de Oliveira Soares",
-  "emailRequest": "kennetholiveira2015@gmail.com",
+  "email": "kennetholiveira2015@gmail.com",
   "address": {
     "postalCode": "58051020"
   }
