@@ -19,18 +19,6 @@ spring:
   h2:
     console.enabled: true
 
-  mail:
-    host: ${MAIL_HOST:smtp.mailtrap.io}
-    port: ${MAIL_PORT:587}
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-
 api:
   inventory-management:
     url: ${API_INVENTORY_MANAGEMENT_URL:http://localhost:8080/BIM-WS/InventoryManagementWS}

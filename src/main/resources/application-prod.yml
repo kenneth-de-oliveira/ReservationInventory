@@ -17,18 +17,6 @@ spring:
   jpa:
     database-platform: ${DATASOURCE_PLATFORM}
 
-  mail:
-    host: ${MAIL_HOST}
-    port: ${MAIL_PORT}
-    username: ${MAIL_USERNAME}
-    password: ${MAIL_PASSWORD}
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-
 api:
   inventory-management:
     url: ${API_INVENTORY_MANAGEMENT_URL}
