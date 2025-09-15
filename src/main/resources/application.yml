@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: reservationInventory
+    name: ms-reservation-inventory
 
   graphql:
     graphiql:
@@ -19,7 +19,7 @@ spring:
 
 mq:
   queues:
-    reservationInventory: reservationInventory
+    reservationInventory: ms-reservation-inventory
 
 featuretoggle:
   EnvName: ${FEATURE_TOGGLE_NAME}

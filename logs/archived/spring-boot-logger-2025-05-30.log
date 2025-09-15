@@ -717,7 +717,7 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 2025-05-30 16:52:41,928 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
 2025-05-30 16:52:43,629 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2025-05-30 16:52:43,646 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-30 16:52:43,657 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'bookResourceAdapterIn': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [io.bookwise.adapters.in.BookResourceAdapterIn] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+2025-05-30 16:52:43,657 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'bookResourceAdapterIn': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [in.adapters.com.example.BookResourceAdapterIn] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
 2025-05-30 16:52:43,658 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-05-30 16:52:43,658 INFO o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [main] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2025-05-30 16:52:43,669 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
@@ -727,7 +727,7 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2025-05-30 16:52:43,742 ERROR o.s.b.SpringApplication [main] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'bookResourceAdapterIn': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [io.bookwise.adapters.in.BookResourceAdapterIn] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'bookResourceAdapterIn': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [in.adapters.com.example.BookResourceAdapterIn] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:289)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1302)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1219)
@@ -746,8 +746,8 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at io.bookwise.Bootstrap.main(Bootstrap.java:14)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [io.bookwise.adapters.in.BookResourceAdapterIn] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
+	at com.example.Bootstrap.main(Bootstrap.java:14)
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [in.adapters.com.example.BookResourceAdapterIn] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@1d44bcfa]
 	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485)
 	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:321)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:267)
@@ -758,7 +758,7 @@ Caused by: java.lang.NoClassDefFoundError: io/bookwise/application/core/domain/B
 	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504)
 	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467)
 	... 20 common frames omitted
-Caused by: java.lang.ClassNotFoundException: io.bookwise.application.core.domain.Book
+Caused by: java.lang.ClassNotFoundException: domain.core.application.com.example.Book
 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
 	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
 	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
@@ -1014,7 +1014,7 @@ Caused by: java.lang.ClassNotFoundException: io.bookwise.application.core.domain
 	Maximum pool size: undefined/unknown
 2025-05-30 18:00:52,288 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2025-05-30 18:00:52,433 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-30 18:00:52,477 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookResourceAdapterIn' defined in file [C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes\io\bookwise\adapters\in\BookResourceAdapterIn.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'createBookUseCase' defined in class path resource [io/bookwise/framework/config/adapter/CreateBookAdapterConfig.class]: Unsatisfied dependency expressed through method 'createBookUseCase' parameter 0: Error creating bean with name 'createBookAdapterOut' defined in file [C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes\io\bookwise\adapters\out\CreateBookAdapterOut.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'inventoryManagementClientImpl' defined in file [C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes\io\bookwise\adapters\out\client\impl\InventoryManagementClientImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'io.bookwise.adapters.out.client.BIMServiceClient': Unexpected exception during bean creation
+2025-05-30 18:00:52,477 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookResourceAdapterIn' defined in file [C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes\io\bookwise\adapters\in\BookResourceAdapterIn.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'createBookUseCase' defined in class path resource [io/bookwise/framework/config/adapter/CreateBookAdapterConfig.class]: Unsatisfied dependency expressed through method 'createBookUseCase' parameter 0: Error creating bean with name 'createBookAdapterOut' defined in file [C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes\io\bookwise\adapters\out\CreateBookAdapterOut.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'inventoryManagementClientImpl' defined in file [C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes\io\bookwise\adapters\out\client\impl\InventoryManagementClientImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'client.out.adapters.com.example.BIMServiceClient': Unexpected exception during bean creation
 2025-05-30 18:00:52,478 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-05-30 18:00:52,491 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
 2025-05-30 18:00:52,496 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
@@ -1030,7 +1030,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in io.bookwise.adapters.out.client.impl.InventoryManagementClientImpl required a bean of type 'org.springframework.cloud.openfeign.FeignContext' that could not be found.
+Parameter 0 of constructor in impl.client.out.adapters.com.example.InventoryManagementClientImpl required a bean of type 'org.springframework.cloud.openfeign.FeignContext' that could not be found.
 
 
 Action:

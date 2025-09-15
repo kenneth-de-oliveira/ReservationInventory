@@ -1,0 +1,40 @@
+package com.example.adapter.out;
+
+import com.example.adapter.out.client.InventoryManagementClient;
+import com.example.adapter.out.mapper.InventoryManagementMapper;
+import com.example.application.core.domain.Book;
+import com.example.application.core.port.out.FindBookPortOut;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Optional;
+
+@Slf4j
+@Component
+@RequiredArgsConstructor
+public class FindBookAdapterOut implements FindBookPortOut {
+
+    private final InventoryManagementClient serviceClient;
+    private final InventoryManagementMapper mapper;
+
+    @Override
+    public Optional<Book> findIsbn(String isbn) {
+        log.info("Finding book by isbn: {}", isbn);
+
+        return Optional.ofNullable(mapper.toSearchBookRequest(isbn))
+                .map(serviceClient::findByIsbn)
+                .map(mapper::toBookDomain);
+    }
+
+    @Override
+    public List<Book> findAll() {
+        return Optional.ofNullable(serviceClient.findAll())
+                .map(mapper::toBookDomainList)
+                .stream()
+                .flatMap(List::stream)
+                .toList();
+    }
+
+}
