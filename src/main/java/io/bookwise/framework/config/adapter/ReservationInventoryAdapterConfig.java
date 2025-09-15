@@ -1,7 +1,7 @@
 package io.bookwise.framework.config.adapter;
 
 import io.bookwise.adapters.out.FindBookAdapterOut;
-import io.bookwise.adapters.out.FindStudentAdapterOut;
+import io.bookwise.adapters.out.FindUserAdapterOut;
 import io.bookwise.adapters.out.ReservationMessageQueuePublisherAdapterOut;
 import io.bookwise.application.core.ports.out.ReservationInventoryPortOut;
 import io.bookwise.application.core.ports.out.EmailServicePortOut;
@@ -14,14 +14,14 @@ public class ReservationInventoryAdapterConfig {
     @Bean
     public ReservationInventoryUseCase reservationInventoryUseCase(
             FindBookAdapterOut findBookAdapterOut,
-            FindStudentAdapterOut findStudentAdapterOut,
+            FindUserAdapterOut findUserAdapterOut,
             ReservationMessageQueuePublisherAdapterOut reservationMessageQueuePublisherAdapterOut,
             ReservationInventoryPortOut reservationInventoryPortOut,
             EmailServicePortOut emailServicePortOut
     ) {
         return new ReservationInventoryUseCase(
                 findBookAdapterOut,
-                findStudentAdapterOut,
+                findUserAdapterOut,
                 reservationMessageQueuePublisherAdapterOut,
                 reservationInventoryPortOut,
                 emailServicePortOut

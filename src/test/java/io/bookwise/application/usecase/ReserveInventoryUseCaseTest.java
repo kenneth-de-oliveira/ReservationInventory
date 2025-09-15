@@ -5,7 +5,7 @@ import io.bookwise.adapters.out.repository.dto.ReserveInfo;
 import io.bookwise.adapters.out.repository.dto.ReservationQueue;
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Reservation;
-import io.bookwise.application.core.domain.Student;
+import io.bookwise.application.core.domain.User;
 import io.bookwise.application.core.ports.out.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,7 +30,7 @@ class ReserveInventoryUseCaseTest {
     private FindBookPortOut findBookPortOut;
 
     @Mock
-    private FindStudentPortOut findStudentPortOut;
+    private FindUserPortOut findUserPortOut;
 
     @Mock
     private ReservationMessageQueuePublisherPortOut reservationMessageQueuePublisherPortOut;
@@ -44,7 +44,7 @@ class ReserveInventoryUseCaseTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        reservationInventoryUseCase = new ReservationInventoryUseCase(findBookPortOut, findStudentPortOut, reservationMessageQueuePublisherPortOut, reservationInventoryPortOut, emailServicePortOut);
+        reservationInventoryUseCase = new ReservationInventoryUseCase(findBookPortOut, findUserPortOut, reservationMessageQueuePublisherPortOut, reservationInventoryPortOut, emailServicePortOut);
     }
 
     @Test
@@ -57,7 +57,7 @@ class ReserveInventoryUseCaseTest {
     @Test
     void reservationShouldThrowExceptionWhenStudentNotFound() {
         when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(new Book()));
-        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.empty());
+        when(findUserPortOut.findByDocument(anyString())).thenReturn(Optional.empty());
 
         assertThrows(RuntimeException.class, () -> reservationInventoryUseCase.enqueueReservationRequest("123", "456"));
     }
@@ -65,7 +65,7 @@ class ReserveInventoryUseCaseTest {
     @Test
     void reservationShouldThrowExceptionWhenBookIsAlreadyReserved() {
         when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(new Book()));
-        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.of(new Student()));
+        when(findUserPortOut.findByDocument(anyString())).thenReturn(Optional.of(new User()));
         when(reservationInventoryPortOut.checkIfBookIsReservedByIsbn(anyString())).thenReturn(true);
 
         assertThrows(RuntimeException.class, () -> reservationInventoryUseCase.enqueueReservationRequest("123", "456"));
@@ -77,12 +77,12 @@ class ReserveInventoryUseCaseTest {
         book.setIsbn("123");
         book.setReserved(false);
 
-        Student student = new Student();
-        student.setDocument("123");
+        User user = new User();
+        user.setDocument("123");
 
         when(findBookPortOut.findIsbn(anyString())).thenReturn(Optional.of(book));
         when(reservationInventoryPortOut.checkIfBookIsReservedByIsbn(anyString())).thenReturn(false);
-        when(findStudentPortOut.findByDocument(anyString())).thenReturn(Optional.of(student));
+        when(findUserPortOut.findByDocument(anyString())).thenReturn(Optional.of(user));
         when(reservationMessageQueuePublisherPortOut.sendToQueueRequest(anyString(), anyString()))
                 .thenReturn(new ReservationQueue(UUID.randomUUID()));
 
@@ -122,10 +122,10 @@ class ReserveInventoryUseCaseTest {
        reservation.setDocument("123");
        reservation.setIsbn("isbn-1");
 
-       Student student = new Student();
-       student.setEmail("student@email.com");
+       User user = new User();
+       user.setEmail("student@email.com");
 
-       when(findStudentPortOut.findByDocument("123")).thenReturn(Optional.of(student));
+       when(findUserPortOut.findByDocument("123")).thenReturn(Optional.of(user));
 
        assertDoesNotThrow(() -> reservationInventoryUseCase.reserve(reservation));
 

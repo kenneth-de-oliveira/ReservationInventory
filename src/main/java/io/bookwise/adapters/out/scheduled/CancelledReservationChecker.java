@@ -2,7 +2,7 @@ package io.bookwise.adapters.out.scheduled;
 
 import io.bookwise.adapters.out.CancelReservationAdapterOut;
 import io.bookwise.adapters.out.EmailServiceAdapterOut;
-import io.bookwise.adapters.out.FindStudentAdapterOut;
+import io.bookwise.adapters.out.FindUserAdapterOut;
 import io.bookwise.adapters.out.repository.ReservationControlRepository;
 import io.bookwise.adapters.out.repository.entity.ReservationControlEntity;
 import io.bookwise.application.core.dto.Email;
@@ -33,7 +33,7 @@ public class CancelledReservationChecker {
     private final ReservationControlRepository reservationControlRepository;
     private final CancelReservationAdapterOut cancelReservationAdapterOut;
     private final EmailServiceAdapterOut emailServiceAdapterOut;
-    private final FindStudentAdapterOut findStudentAdapterOut;
+    private final FindUserAdapterOut findUserAdapterOut;
 
     @Scheduled(cron = "0 0 0 * * *")
     public void processCancelledReservations() {
@@ -76,7 +76,7 @@ public class CancelledReservationChecker {
     }
 
     private void notifyCancelReservationByEmail(ReservationControlEntity reservationControlEntity) {
-        findStudentAdapterOut.findByDocument(reservationControlEntity.getDocument())
+        findUserAdapterOut.findByDocument(reservationControlEntity.getDocument())
                 .ifPresent(student -> {
                     emailServiceAdapterOut.send(
                             Email.builder()

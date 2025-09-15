@@ -1,7 +1,7 @@
 package io.bookwise.adapters.out.scheduled;
 
 import io.bookwise.adapters.out.EmailServiceAdapterOut;
-import io.bookwise.adapters.out.FindStudentAdapterOut;
+import io.bookwise.adapters.out.FindUserAdapterOut;
 import io.bookwise.adapters.out.ReservationInventoryAdapterOut;
 import io.bookwise.application.core.dto.Email;
 import io.bookwise.adapters.out.mapper.ReservationInventoryMapper;
@@ -34,7 +34,7 @@ public class PendingReservationChecker {
     private final ReservationInventoryAdapterOut reservationInventoryAdapterOut;
     private final EmailServiceAdapterOut emailServiceAdapterOut;
     private final ReservationInventoryMapper reservationInventoryMapper;
-    private final FindStudentAdapterOut findStudentAdapterOut;
+    private final FindUserAdapterOut findUserAdapterOut;
 
     @Scheduled(cron = "0 0 0 * * *")
     public void processPendingReservations() {
@@ -97,7 +97,7 @@ public class PendingReservationChecker {
     }
 
     private void notifyReservationByEmail(Reservation reservation) {
-        findStudentAdapterOut.findByDocument(reservation.getDocument())
+        findUserAdapterOut.findByDocument(reservation.getDocument())
                 .ifPresent(student -> {
                     emailServiceAdapterOut.send(Email.builder()
                             .to(student.getEmail())

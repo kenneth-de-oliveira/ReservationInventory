@@ -636,14 +636,14 @@ java.lang.RuntimeException: Error creating category: javax.xml.bind.JAXBExceptio
 2025-05-31 09:48:47,947 ERROR i.b.f.e.ControllerExceptionHandler [http-nio-8081-exec-6] Error(code=500, reason=Internal Server Error, message=Unexpected Error: Error finding all books: javax.xml.bind.JAXBException: Implementation of JAXB-API has not been found on module path or classpath.
  - with linked exception:
 [java.lang.ClassNotFoundException: com.sun.xml.internal.bind.v2.ContextFactory], status=500, referenceError=null, baseType=null, schemaLocation=null, type=null)
-2025-05-31 09:48:54,715 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-8] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-31 09:48:54,715 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-8] Creating user with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
 2025-05-31 09:48:54,717 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-8] Finding address by postal code: 58051020
 2025-05-31 09:48:55,244 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-8] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
-2025-05-31 09:48:55,251 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-8] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 09:48:55,251 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-8] Creating user: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 09:48:55,482 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-8] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
 2025-05-31 09:48:55,487 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-8] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
 2025-05-31 09:49:08,541 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-8] Email sent to: kennetholiveira2015@gmail.com
-2025-05-31 09:49:08,553 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-8] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 09:49:08,553 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-8] Created user with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 09:49:18,702 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-9] Reservation received: isbn: 9780201835953 and document: 70943418496
 2025-05-31 09:49:18,703 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-9] Finding book by isbn: 9780201835953
 2025-05-31 09:49:18,708 ERROR i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-9] Error finding Book by isbn: : javax.xml.bind.JAXBException: Implementation of JAXB-API has not been found on module path or classpath.
@@ -1463,30 +1463,30 @@ Caused by: java.lang.ClassNotFoundException: feign.ResponseInterceptor
 2025-05-31 10:15:15,911 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-4] Reservation received: isbn: 9780201835953 and document: 70943418496
 2025-05-31 10:15:15,912 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-4] Finding book by isbn: 9780201835953
 2025-05-31 10:15:15,961 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-4] Book with ISBN: 9780201835953 is reserved: false
-2025-05-31 10:15:15,962 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-4] Finding student by document: 70943418496
+2025-05-31 10:15:15,962 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-4] Finding user by document: 70943418496
 2025-05-31 10:15:15,997 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-4] Student found: Optional.empty
 2025-05-31 10:15:16,004 ERROR i.b.f.e.ControllerExceptionHandler [http-nio-8081-exec-4] Error(code=500, reason=Internal Server Error, message=Unexpected Error: Student not Found, status=500, referenceError=null, baseType=null, schemaLocation=null, type=null)
-2025-05-31 10:15:25,098 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-6] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-31 10:15:25,098 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-6] Creating user with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
 2025-05-31 10:15:25,099 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-6] Finding address by postal code: 58051020
 2025-05-31 10:15:25,605 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-6] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
-2025-05-31 10:15:25,612 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-6] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 10:15:25,612 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-6] Creating user: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 10:15:25,730 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-6] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
 2025-05-31 10:15:25,733 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-6] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
 2025-05-31 10:15:38,412 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-6] Email sent to: kennetholiveira2015@gmail.com
-2025-05-31 10:15:38,423 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-6] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 10:15:38,423 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-6] Created user with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 10:15:51,055 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-9] Reservation received: isbn: 9780201835953 and document: 70943418496
 2025-05-31 10:15:51,056 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-9] Finding book by isbn: 9780201835953
 2025-05-31 10:15:51,098 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-9] Book with ISBN: 9780201835953 is reserved: false
-2025-05-31 10:15:51,098 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-9] Finding student by document: 70943418496
+2025-05-31 10:15:51,098 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-9] Finding user by document: 70943418496
 2025-05-31 10:15:51,119 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-9] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
 2025-05-31 10:15:51,120 INFO i.b.a.o.ReservationMessageQueuePublisherAdapterOut [http-nio-8081-exec-9] Sending message to queue with isbn: 9780201835953 and document: 70943418496
 2025-05-31 10:15:51,145 INFO i.b.a.o.p.ReservationMessageQueuePublisher [http-nio-8081-exec-9] Reservation control repository saved with id: f70f7052-ede0-4cde-ab75-bcf6fea51c46
 2025-05-31 10:15:51,165 INFO i.b.a.o.p.ReservationMessageQueuePublisher [http-nio-8081-exec-9] Message sent to queue with status: PENDING
 2025-05-31 10:15:51,168 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-9] Reservation created
 2025-05-31 10:15:51,191 INFO i.b.a.i.ReservationMessageQueueListenerAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
-2025-05-31 10:15:51,193 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Finding student by document: 70943418496
+2025-05-31 10:15:51,193 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Finding user by document: 70943418496
 2025-05-31 10:15:51,241 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
-2025-05-31 10:15:51,242 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-31 10:15:51,242 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for user with document: 70943418496
 2025-05-31 10:15:51,286 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created successfully with status CONFIRMED
 2025-05-31 10:15:51,287 INFO i.b.a.o.SmtpMailMessageAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=Reservation Confirmed Successfully, text=Your reservation for the book: 9780201835953 has been confirmed.)
 2025-05-31 10:16:03,796 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Email sent to: kennetholiveira2015@gmail.com
@@ -1736,14 +1736,14 @@ Caused by: java.lang.ClassNotFoundException: feign.ResponseInterceptor
 2025-05-31 10:46:43,717 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-05-31 10:46:43,718 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
 2025-05-31 10:46:43,721 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 2 ms
-2025-05-31 10:46:43,894 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-1] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-31 10:46:43,894 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-1] Creating user with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
 2025-05-31 10:46:43,896 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-1] Finding address by postal code: 58051020
 2025-05-31 10:46:44,660 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-1] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
-2025-05-31 10:46:44,668 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-1] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 10:46:44,668 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-1] Creating user: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 10:46:44,843 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-1] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
 2025-05-31 10:46:44,846 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-1] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
 2025-05-31 10:46:57,835 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-1] Email sent to: kennetholiveira2015@gmail.com
-2025-05-31 10:46:57,848 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-1] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 10:46:57,848 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-1] Created user with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 10:50:15,198 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
 2025-05-31 10:50:15,335 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 21 with PID 20472 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
 2025-05-31 10:50:15,338 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
@@ -1784,14 +1784,14 @@ Caused by: java.lang.ClassNotFoundException: feign.ResponseInterceptor
 2025-05-31 10:50:43,804 INFO o.a.j.l.DirectJDKLog [http-nio-8081-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-05-31 10:50:43,804 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Initializing Servlet 'dispatcherServlet'
 2025-05-31 10:50:43,810 INFO o.s.w.s.FrameworkServlet [http-nio-8081-exec-2] Completed initialization in 5 ms
-2025-05-31 10:50:44,040 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-31 10:50:44,040 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Creating user with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
 2025-05-31 10:50:44,043 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-2] Finding address by postal code: 58051020
 2025-05-31 10:50:44,955 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-2] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
-2025-05-31 10:50:44,967 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-2] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 10:50:44,967 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-2] Creating user: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 10:50:45,243 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-2] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
 2025-05-31 10:50:45,248 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-2] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
 2025-05-31 10:50:58,514 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-2] Email sent to: kennetholiveira2015@gmail.com
-2025-05-31 10:50:58,527 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 10:50:58,527 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-2] Created user with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 11:14:32,355 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
 2025-05-31 11:14:32,513 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 21 with PID 28244 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
 2025-05-31 11:14:32,516 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
@@ -1860,27 +1860,27 @@ Caused by: java.lang.ClassNotFoundException: feign.ResponseInterceptor
 2025-05-31 11:15:39,711 INFO i.b.a.o.c.i.InventoryManagementClientImpl [http-nio-8081-exec-3] Books found: {"book":[{"id":1,"title":"The Mythical Man-Month","authorName":"Frederick P. Brooks Jr.","text":"bla bla bla","isbn":"9780201835953","category":{"id":1,"name":"Software Engineering","description":"bla, bla, bla 123"}}]}
 2025-05-31 11:15:39,714 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-3] Book with ISBN: 9780201835953 is reserved: false
 2025-05-31 11:15:39,715 INFO i.b.a.i.BookResourceAdapterIn [http-nio-8081-exec-3] Found all books with books controller
-2025-05-31 11:15:48,190 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-7] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-31 11:15:48,190 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-7] Creating user with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
 2025-05-31 11:15:48,191 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [http-nio-8081-exec-7] Finding address by postal code: 58051020
 2025-05-31 11:15:48,666 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [http-nio-8081-exec-7] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
-2025-05-31 11:15:48,673 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-7] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 11:15:48,673 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-7] Creating user: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 11:15:48,818 INFO i.b.a.o.CreateStudentAdapterOut [http-nio-8081-exec-7] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
 2025-05-31 11:15:48,822 INFO i.b.a.o.SmtpMailMessageAdapterOut [http-nio-8081-exec-7] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
 2025-05-31 11:16:06,508 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [http-nio-8081-exec-7] Email sent to: kennetholiveira2015@gmail.com
-2025-05-31 11:16:06,509 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-7] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 11:16:06,509 INFO i.b.a.i.StudentResourceAdapterIn [http-nio-8081-exec-7] Created user with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 11:16:20,131 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-8] Reservation received: isbn: 9780201835953 and document: 70943418496
 2025-05-31 11:16:20,131 INFO i.b.a.o.FindBookAdapterOut [http-nio-8081-exec-8] Finding book by isbn: 9780201835953
 2025-05-31 11:16:20,165 INFO i.b.a.o.ReservationInventoryAdapterOut [http-nio-8081-exec-8] Book with ISBN: 9780201835953 is reserved: false
-2025-05-31 11:16:20,166 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-8] Finding student by document: 70943418496
+2025-05-31 11:16:20,166 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-8] Finding user by document: 70943418496
 2025-05-31 11:16:20,217 INFO i.b.a.o.FindStudentAdapterOut [http-nio-8081-exec-8] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
 2025-05-31 11:16:20,218 INFO i.b.a.o.ReservationMessageQueuePublisherAdapterOut [http-nio-8081-exec-8] Sending message to queue with isbn: 9780201835953 and document: 70943418496
 2025-05-31 11:16:20,248 INFO i.b.a.o.p.ReservationMessageQueuePublisher [http-nio-8081-exec-8] Reservation control repository saved with id: 139d4485-9d7d-4537-84a2-d72b8f95ec73
 2025-05-31 11:16:20,271 INFO i.b.a.o.p.ReservationMessageQueuePublisher [http-nio-8081-exec-8] Message sent to queue with status: PENDING
 2025-05-31 11:16:20,274 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-8] Reservation created
 2025-05-31 11:16:20,298 INFO i.b.a.i.ReservationMessageQueueListenerAdapterIn [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
-2025-05-31 11:16:20,299 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Finding student by document: 70943418496
+2025-05-31 11:16:20,299 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Finding user by document: 70943418496
 2025-05-31 11:16:20,346 INFO i.b.a.o.FindStudentAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
-2025-05-31 11:16:20,347 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-31 11:16:20,347 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Creating reservation for book with ISBN: 9780201835953 for user with document: 70943418496
 2025-05-31 11:16:20,388 INFO i.b.a.o.ReservationInventoryAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Reservation created successfully with status CONFIRMED
 2025-05-31 11:16:20,388 INFO i.b.a.o.SmtpMailMessageAdapterOut [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=Reservation Confirmed Successfully, text=Your reservation for the book: 9780201835953 has been confirmed.)
 2025-05-31 11:16:24,505 INFO i.b.a.i.ReservationInventoryAdapterIn [http-nio-8081-exec-9] Find reservation List by document: 70943418496
@@ -1970,27 +1970,27 @@ Caused by: java.lang.ClassNotFoundException: feign.ResponseInterceptor
 2025-05-31 11:28:32,040 INFO i.b.a.o.FindBookAdapterOut [tomcat-handler-5] Finding book by isbn: 9780201835953
 2025-05-31 11:28:32,098 INFO i.b.a.o.ReservationInventoryAdapterOut [tomcat-handler-5] Book with ISBN: 9780201835953 is reserved: false
 2025-05-31 11:28:32,099 INFO i.b.a.i.BookResourceAdapterIn [tomcat-handler-5] Found book with isbn with books controller: Book{id=1, title='The Mythical Man-Month', authorName='Frederick P. Brooks Jr.', text='bla bla bla', isbn='9780201835953', category=Category{id=1, name='Software Engineering', description='bla, bla, bla 123'}, reserved=false}
-2025-05-31 11:28:37,461 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-6] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-31 11:28:37,461 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-6] Creating user with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
 2025-05-31 11:28:37,462 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [tomcat-handler-6] Finding address by postal code: 58051020
 2025-05-31 11:28:37,926 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [tomcat-handler-6] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
-2025-05-31 11:28:37,934 INFO i.b.a.o.CreateStudentAdapterOut [tomcat-handler-6] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 11:28:37,934 INFO i.b.a.o.CreateStudentAdapterOut [tomcat-handler-6] Creating user: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 11:28:38,097 INFO i.b.a.o.CreateStudentAdapterOut [tomcat-handler-6] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
 2025-05-31 11:28:38,102 INFO i.b.a.o.SmtpMailMessageAdapterOut [tomcat-handler-6] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
 2025-05-31 11:28:56,299 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [tomcat-handler-6] Email sent to: kennetholiveira2015@gmail.com
-2025-05-31 11:28:56,299 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-6] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 11:28:56,299 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-6] Created user with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 11:29:04,778 INFO i.b.a.i.ReservationInventoryAdapterIn [tomcat-handler-7] Reservation received: isbn: 9780201835953 and document: 70943418496
 2025-05-31 11:29:04,779 INFO i.b.a.o.FindBookAdapterOut [tomcat-handler-7] Finding book by isbn: 9780201835953
 2025-05-31 11:29:04,821 INFO i.b.a.o.ReservationInventoryAdapterOut [tomcat-handler-7] Book with ISBN: 9780201835953 is reserved: false
-2025-05-31 11:29:04,822 INFO i.b.a.o.FindStudentAdapterOut [tomcat-handler-7] Finding student by document: 70943418496
+2025-05-31 11:29:04,822 INFO i.b.a.o.FindStudentAdapterOut [tomcat-handler-7] Finding user by document: 70943418496
 2025-05-31 11:29:04,865 INFO i.b.a.o.FindStudentAdapterOut [tomcat-handler-7] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
 2025-05-31 11:29:04,866 INFO i.b.a.o.ReservationMessageQueuePublisherAdapterOut [tomcat-handler-7] Sending message to queue with isbn: 9780201835953 and document: 70943418496
 2025-05-31 11:29:04,891 INFO i.b.a.o.p.ReservationMessageQueuePublisher [tomcat-handler-7] Reservation control repository saved with id: 3b5e517b-4f11-4306-b949-eca8ae6e5458
 2025-05-31 11:29:04,912 INFO i.b.a.o.p.ReservationMessageQueuePublisher [tomcat-handler-7] Message sent to queue with status: PENDING
 2025-05-31 11:29:04,913 INFO i.b.a.i.ReservationInventoryAdapterIn [tomcat-handler-7] Reservation created
 2025-05-31 11:29:04,931 INFO i.b.a.i.ReservationMessageQueueListenerAdapterIn [rabbit-simple-0] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
-2025-05-31 11:29:04,933 INFO i.b.a.o.FindStudentAdapterOut [rabbit-simple-0] Finding student by document: 70943418496
+2025-05-31 11:29:04,933 INFO i.b.a.o.FindStudentAdapterOut [rabbit-simple-0] Finding user by document: 70943418496
 2025-05-31 11:29:04,988 INFO i.b.a.o.FindStudentAdapterOut [rabbit-simple-0] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
-2025-05-31 11:29:04,990 INFO i.b.a.o.ReservationInventoryAdapterOut [rabbit-simple-0] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-31 11:29:04,990 INFO i.b.a.o.ReservationInventoryAdapterOut [rabbit-simple-0] Creating reservation for book with ISBN: 9780201835953 for user with document: 70943418496
 2025-05-31 11:29:05,051 INFO i.b.a.o.ReservationInventoryAdapterOut [rabbit-simple-0] Reservation created successfully with status CONFIRMED
 2025-05-31 11:29:05,052 INFO i.b.a.o.SmtpMailMessageAdapterOut [rabbit-simple-0] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=Reservation Confirmed Successfully, text=Your reservation for the book: 9780201835953 has been confirmed.)
 2025-05-31 11:29:15,708 INFO i.b.a.i.ReservationInventoryAdapterIn [tomcat-handler-8] Find reservation List by document: 70943418496
@@ -2102,27 +2102,27 @@ Caused by: java.lang.ClassNotFoundException: feign.ResponseInterceptor
 2025-05-31 11:55:07,194 INFO i.b.a.o.c.i.InventoryManagementClientImpl [tomcat-handler-3] Books found: {"book":[{"id":1,"title":"The Mythical Man-Month","authorName":"Frederick P. Brooks Jr.","text":"bla bla bla","isbn":"9780201835953","category":{"id":1,"name":"Software Engineering","description":"bla, bla, bla 123"}}]}
 2025-05-31 11:55:07,197 INFO i.b.a.o.ReservationInventoryAdapterOut [tomcat-handler-3] Book with ISBN: 9780201835953 is reserved: false
 2025-05-31 11:55:07,198 INFO i.b.a.i.BookResourceAdapterIn [tomcat-handler-3] Found all books with books controller
-2025-05-31 11:55:11,861 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-4] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-31 11:55:11,861 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-4] Creating user with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
 2025-05-31 11:55:11,862 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [tomcat-handler-4] Finding address by postal code: 58051020
 2025-05-31 11:55:12,376 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [tomcat-handler-4] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
-2025-05-31 11:55:12,382 INFO i.b.a.o.CreateStudentAdapterOut [tomcat-handler-4] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 11:55:12,382 INFO i.b.a.o.CreateStudentAdapterOut [tomcat-handler-4] Creating user: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 11:55:12,511 INFO i.b.a.o.CreateStudentAdapterOut [tomcat-handler-4] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
 2025-05-31 11:55:12,515 INFO i.b.a.o.SmtpMailMessageAdapterOut [tomcat-handler-4] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
 2025-05-31 11:55:25,429 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [tomcat-handler-4] Email sent to: kennetholiveira2015@gmail.com
-2025-05-31 11:55:25,430 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-4] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 11:55:25,430 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-4] Created user with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 11:55:33,471 INFO i.b.a.i.ReservationInventoryAdapterIn [tomcat-handler-5] Reservation received: isbn: 9780201835953 and document: 70943418496
 2025-05-31 11:55:33,471 INFO i.b.a.o.FindBookAdapterOut [tomcat-handler-5] Finding book by isbn: 9780201835953
 2025-05-31 11:55:33,505 INFO i.b.a.o.ReservationInventoryAdapterOut [tomcat-handler-5] Book with ISBN: 9780201835953 is reserved: false
-2025-05-31 11:55:33,506 INFO i.b.a.o.FindStudentAdapterOut [tomcat-handler-5] Finding student by document: 70943418496
+2025-05-31 11:55:33,506 INFO i.b.a.o.FindStudentAdapterOut [tomcat-handler-5] Finding user by document: 70943418496
 2025-05-31 11:55:33,559 INFO i.b.a.o.FindStudentAdapterOut [tomcat-handler-5] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
 2025-05-31 11:55:33,559 INFO i.b.a.o.ReservationMessageQueuePublisherAdapterOut [tomcat-handler-5] Sending message to queue with isbn: 9780201835953 and document: 70943418496
 2025-05-31 11:55:33,592 INFO i.b.a.o.p.ReservationMessageQueuePublisher [tomcat-handler-5] Reservation control repository saved with id: e4ca3281-2497-450f-aed1-7b4fd2d5104f
 2025-05-31 11:55:33,620 INFO i.b.a.o.p.ReservationMessageQueuePublisher [tomcat-handler-5] Message sent to queue with status: PENDING
 2025-05-31 11:55:33,622 INFO i.b.a.i.ReservationInventoryAdapterIn [tomcat-handler-5] Reservation created
 2025-05-31 11:55:33,645 INFO i.b.a.i.ReservationMessageQueueListenerAdapterIn [rabbit-simple-0] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
-2025-05-31 11:55:33,648 INFO i.b.a.o.FindStudentAdapterOut [rabbit-simple-0] Finding student by document: 70943418496
+2025-05-31 11:55:33,648 INFO i.b.a.o.FindStudentAdapterOut [rabbit-simple-0] Finding user by document: 70943418496
 2025-05-31 11:55:33,703 INFO i.b.a.o.FindStudentAdapterOut [rabbit-simple-0] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
-2025-05-31 11:55:33,706 INFO i.b.a.o.ReservationInventoryAdapterOut [rabbit-simple-0] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-31 11:55:33,706 INFO i.b.a.o.ReservationInventoryAdapterOut [rabbit-simple-0] Creating reservation for book with ISBN: 9780201835953 for user with document: 70943418496
 2025-05-31 11:55:33,769 INFO i.b.a.o.ReservationInventoryAdapterOut [rabbit-simple-0] Reservation created successfully with status CONFIRMED
 2025-05-31 11:55:33,770 INFO i.b.a.o.SmtpMailMessageAdapterOut [rabbit-simple-0] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=Reservation Confirmed Successfully, text=Your reservation for the book: 9780201835953 has been confirmed.)
 2025-05-31 11:55:36,855 INFO i.b.a.i.ReservationInventoryAdapterIn [tomcat-handler-6] Find reservation List by document: 70943418496
@@ -2192,27 +2192,27 @@ Caused by: java.lang.ClassNotFoundException: feign.ResponseInterceptor
 2025-05-31 11:59:50,586 INFO i.b.a.o.c.i.InventoryManagementClientImpl [tomcat-handler-3] Books found: {"book":[{"id":1,"title":"The Mythical Man-Month","authorName":"Frederick P. Brooks Jr.","text":"bla bla bla","isbn":"9780201835953","category":{"id":1,"name":"Software Engineering","description":"bla, bla, bla 123"}}]}
 2025-05-31 11:59:50,590 INFO i.b.a.o.ReservationInventoryAdapterOut [tomcat-handler-3] Book with ISBN: 9780201835953 is reserved: false
 2025-05-31 11:59:50,591 INFO i.b.a.i.BookResourceAdapterIn [tomcat-handler-3] Found all books with books controller
-2025-05-31 12:00:05,862 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-4] Creating student with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-05-31 12:00:05,862 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-4] Creating user with students controller : Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
 2025-05-31 12:00:05,862 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [tomcat-handler-4] Finding address by postal code: 58051020
 2025-05-31 12:00:07,090 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [tomcat-handler-4] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
-2025-05-31 12:00:07,105 INFO i.b.a.o.CreateStudentAdapterOut [tomcat-handler-4] Creating student: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 12:00:07,105 INFO i.b.a.o.CreateStudentAdapterOut [tomcat-handler-4] Creating user: Student{id=null, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 12:00:07,224 INFO i.b.a.o.CreateStudentAdapterOut [tomcat-handler-4] Student created: StudentEntity(id=1, document=70943418496, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
 2025-05-31 12:00:07,224 INFO i.b.a.o.SmtpMailMessageAdapterOut [tomcat-handler-4] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=ReservationInventory - Email Confirmation, text=Your email has been confirmed successfully!)
 2025-05-31 12:00:19,891 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [tomcat-handler-4] Email sent to: kennetholiveira2015@gmail.com
-2025-05-31 12:00:19,892 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-4] Created student with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-05-31 12:00:19,892 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-4] Created user with students controller : Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
 2025-05-31 12:00:47,291 INFO i.b.a.i.ReservationInventoryAdapterIn [tomcat-handler-5] Reservation received: isbn: 9780201835953 and document: 70943418496
 2025-05-31 12:00:47,291 INFO i.b.a.o.FindBookAdapterOut [tomcat-handler-5] Finding book by isbn: 9780201835953
 2025-05-31 12:00:47,337 INFO i.b.a.o.ReservationInventoryAdapterOut [tomcat-handler-5] Book with ISBN: 9780201835953 is reserved: false
-2025-05-31 12:00:47,338 INFO i.b.a.o.FindStudentAdapterOut [tomcat-handler-5] Finding student by document: 70943418496
+2025-05-31 12:00:47,338 INFO i.b.a.o.FindStudentAdapterOut [tomcat-handler-5] Finding user by document: 70943418496
 2025-05-31 12:00:47,383 INFO i.b.a.o.FindStudentAdapterOut [tomcat-handler-5] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
 2025-05-31 12:00:47,385 INFO i.b.a.o.ReservationMessageQueuePublisherAdapterOut [tomcat-handler-5] Sending message to queue with isbn: 9780201835953 and document: 70943418496
 2025-05-31 12:00:47,412 INFO i.b.a.o.p.ReservationMessageQueuePublisher [tomcat-handler-5] Reservation control repository saved with id: 6a4e9780-e8e2-4a57-9ace-f3b5a7596b87
 2025-05-31 12:00:47,435 INFO i.b.a.o.p.ReservationMessageQueuePublisher [tomcat-handler-5] Message sent to queue with status: PENDING
 2025-05-31 12:00:47,436 INFO i.b.a.i.ReservationInventoryAdapterIn [tomcat-handler-5] Reservation created
 2025-05-31 12:00:47,453 INFO i.b.a.i.ReservationMessageQueueListenerAdapterIn [rabbit-simple-0] Received message queue: {"isbn":"9780201835953","document":"70943418496"}
-2025-05-31 12:00:47,455 INFO i.b.a.o.FindStudentAdapterOut [rabbit-simple-0] Finding student by document: 70943418496
+2025-05-31 12:00:47,455 INFO i.b.a.o.FindStudentAdapterOut [rabbit-simple-0] Finding user by document: 70943418496
 2025-05-31 12:00:47,504 INFO i.b.a.o.FindStudentAdapterOut [rabbit-simple-0] Student found: Optional[Student{id=1, document='70943418496', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}]
-2025-05-31 12:00:47,505 INFO i.b.a.o.ReservationInventoryAdapterOut [rabbit-simple-0] Creating reservation for book with ISBN: 9780201835953 for student with document: 70943418496
+2025-05-31 12:00:47,505 INFO i.b.a.o.ReservationInventoryAdapterOut [rabbit-simple-0] Creating reservation for book with ISBN: 9780201835953 for user with document: 70943418496
 2025-05-31 12:00:47,555 INFO i.b.a.o.ReservationInventoryAdapterOut [rabbit-simple-0] Reservation created successfully with status CONFIRMED
 2025-05-31 12:00:47,556 INFO i.b.a.o.SmtpMailMessageAdapterOut [rabbit-simple-0] Sending mail using SmtpMailMessageAdapterOut: MailMessage(to=kennetholiveira2015@gmail.com, subject=Reservation Confirmed Successfully, text=Your reservation for the book: 9780201835953 has been confirmed.)
 2025-05-31 12:01:00,137 INFO i.b.a.o.c.i.SmtpMailMessageClientImpl [rabbit-simple-0] Email sent to: kennetholiveira2015@gmail.com
@@ -2220,3 +2220,941 @@ Caused by: java.lang.ClassNotFoundException: feign.ResponseInterceptor
 2025-05-31 12:01:25,463 INFO i.b.a.i.ReservationInventoryAdapterIn [tomcat-handler-6] Find reservation List by document: 70943418496
 2025-05-31 12:01:25,494 INFO i.b.a.o.c.i.InventoryManagementClientImpl [tomcat-handler-6] Books found: {"book":[{"id":1,"title":"The Mythical Man-Month","authorName":"Frederick P. Brooks Jr.","text":"bla bla bla","isbn":"9780201835953","category":{"id":1,"name":"Software Engineering","description":"bla, bla, bla 123"}}]}
 2025-05-31 12:01:25,510 INFO i.b.a.o.ReservationInventoryAdapterOut [tomcat-handler-6] Reservations found: 1
+2025-09-08 15:34:03,812 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-09-08 15:34:04,039 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 21 with PID 14688 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-09-08 15:34:04,048 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-09-08 15:34:07,824 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08 15:34:08,364 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 521 ms. Found 3 JPA repository interfaces.
+2025-09-08 15:34:09,132 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=a6cc7a09-a29c-360b-8e65-3b4e6533cac4
+2025-09-08 15:34:10,696 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8081 (http)
+2025-09-08 15:34:10,733 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-09-08 15:34:10,746 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-09-08 15:34:10,747 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-09-08 15:34:11,026 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-09-08 15:34:11,030 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 6729 ms
+2025-09-08 15:34:11,130 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-09-08 15:34:11,833 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-09-08 15:34:11,838 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-09-08 15:34:11,873 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-09-08 15:34:12,397 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08 15:34:12,851 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-08 15:34:12,986 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-09-08 15:34:14,434 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08 15:34:14,655 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08 15:34:17,263 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08 15:34:17,384 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08 15:34:17,765 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-08 15:34:18,728 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-08 15:34:22,370 INFO o.s.g.e.DefaultSchemaResourceGraphQlSourceBuilder [main] Loaded 1 resource(s) in the GraphQL schema.
+2025-09-08 15:34:23,110 INFO o.s.g.e.DefaultSchemaResourceGraphQlSourceBuilder [main] GraphQL schema inspection:
+	Unmapped fields: {Query=[_empty]}
+	Unmapped registrations: {}
+	Unmapped arguments: {}
+	Skipped types: []
+2025-09-08 15:34:23,194 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-09-08 15:34:24,086 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-09-08 15:34:24,156 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8081 (http) with context path '/'
+2025-09-08 15:34:24,176 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:24,198 INFO o.s.a.r.l.AbstractMessageListenerContainer [main] Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:34:24,230 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-0] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:24,234 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-0] Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:622)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:726)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2249)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2222)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2202)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1960)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1924)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1479)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1320)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:311)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:668)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:637)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:584)
+	... 12 common frames omitted
+2025-09-08 15:34:24,245 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-0] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:24,283 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 23.117 seconds (process running for 26.075)
+2025-09-08 15:34:29,275 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-0] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:34:29,283 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-0] Restarting Consumer@b729651: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:34:29,286 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-1] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:29,289 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-1] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:34:29,289 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-1] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:34,322 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-1] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:34:34,322 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-1] Restarting Consumer@4dfb6ac5: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:34:34,324 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-2] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:34,336 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-2] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:34:34,336 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-2] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:39,417 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-2] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:34:39,417 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-2] Restarting Consumer@77aa97a7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:34:39,419 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-3] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:39,420 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-3] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:34:39,421 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-3] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:44,457 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-3] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:34:44,457 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-3] Restarting Consumer@12f8d1b7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:34:44,459 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-4] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:44,462 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-4] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:34:44,463 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-4] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:49,536 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-4] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:34:49,536 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-4] Restarting Consumer@692ea2c3: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:34:49,539 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-5] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:49,542 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-5] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:34:49,543 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-5] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:49,689 INFO o.a.j.l.DirectJDKLog [tomcat-handler-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-08 15:34:49,690 INFO o.s.w.s.FrameworkServlet [tomcat-handler-1] Initializing Servlet 'dispatcherServlet'
+2025-09-08 15:34:49,695 INFO o.s.w.s.FrameworkServlet [tomcat-handler-1] Completed initialization in 2 ms
+2025-09-08 15:34:49,942 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-1] Creating user with students controller : Student{id=null, document='45616771007', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-09-08 15:34:49,944 INFO i.b.a.o.FindAddressByPostalCodeAdapterOut [tomcat-handler-1] Finding address by postal code: 58051020
+2025-09-08 15:34:50,856 INFO i.b.a.o.c.i.FindAddressByPostalCodeClientImpl [tomcat-handler-1] Address found by postal code: AddressResponse[street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020]
+2025-09-08 15:34:50,865 INFO i.b.a.o.CreateStudentAdapterOut [tomcat-handler-1] Creating user: Student{id=null, document='45616771007', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-09-08 15:34:51,109 INFO i.b.a.o.CreateStudentAdapterOut [tomcat-handler-1] Student created: StudentEntity(id=1, document=45616771007, name=Kenneth de Oliveira Soares, email=kennetholiveira2015@gmail.com, address=AddressEntity(id=1, street=Rua Hermelinda Henriques de Araújo, city=João Pessoa, state=PB, postalCode=58051-020))
+2025-09-08 15:34:51,114 INFO i.b.a.o.EmailServiceAdapterOut [tomcat-handler-1] Sending mail to: kennetholiveira2015@gmail.com, subject: ReservationInventory - Email Confirmation, text: Your email has been confirmed successfully!
+2025-09-08 15:34:54,278 INFO i.b.a.o.EmailServiceAdapterOut [tomcat-handler-1] Email sent successfully to: kennetholiveira2015@gmail.com
+2025-09-08 15:34:54,295 INFO i.b.a.i.StudentResourceAdapterIn [tomcat-handler-1] Created user with students controller : Student{id=1, document='45616771007', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=1, street='Rua Hermelinda Henriques de Araújo', city='João Pessoa', state='PB', postalCode='58051-020'}}
+2025-09-08 15:34:54,569 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-5] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:34:54,570 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-5] Restarting Consumer@1b226551: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:34:54,572 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-6] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:54,576 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-6] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:34:54,577 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-6] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:59,610 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-6] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:34:59,610 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-6] Restarting Consumer@21bd9a5c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:34:59,613 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-7] Attempting to connect to: [localhost:5672]
+2025-09-08 15:34:59,616 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-7] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:34:59,616 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-7] Attempting to connect to: [localhost:5672]
+2025-09-08 15:35:04,672 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-7] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:35:04,674 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-7] Restarting Consumer@5bc86af1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:35:04,678 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-8] Attempting to connect to: [localhost:5672]
+2025-09-08 15:35:04,691 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-8] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:35:04,693 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-8] Attempting to connect to: [localhost:5672]
+2025-09-08 15:35:09,735 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-8] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:35:09,735 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-8] Restarting Consumer@2f9a5c7e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:35:09,737 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-9] Attempting to connect to: [localhost:5672]
+2025-09-08 15:35:09,750 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-9] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:35:09,750 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-9] Attempting to connect to: [localhost:5672]
+2025-09-08 15:35:14,782 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-9] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:35:14,783 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-9] Restarting Consumer@38410136: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:35:14,787 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-10] Attempting to connect to: [localhost:5672]
+2025-09-08 15:35:14,794 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-10] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:35:14,794 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-10] Attempting to connect to: [localhost:5672]
+2025-09-08 15:35:19,824 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-10] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:35:19,824 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-10] Restarting Consumer@6ef266c8: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:35:19,826 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-11] Attempting to connect to: [localhost:5672]
+2025-09-08 15:35:19,838 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-11] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:35:19,838 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-11] Attempting to connect to: [localhost:5672]
+2025-09-08 15:35:24,896 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-11] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-08 15:35:24,896 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-11] Restarting Consumer@32e19c6b: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-08 15:35:24,898 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-12] Attempting to connect to: [localhost:5672]
+2025-09-08 15:35:24,900 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-12] Failed to check/redeclare auto-delete queue(s).
+2025-09-08 15:35:24,900 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-12] Attempting to connect to: [localhost:5672]
+2025-09-12 17:14:34,221 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-09-12 17:14:34,397 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 21 with PID 18252 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-09-12 17:14:34,399 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-09-12 17:14:38,790 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-12 17:14:39,441 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 614 ms. Found 3 JPA repository interfaces.
+2025-09-12 17:14:40,324 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=b6192131-0a98-3554-a93f-69f0b85dc422
+2025-09-12 17:14:41,845 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8081 (http)
+2025-09-12 17:14:41,872 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-09-12 17:14:41,883 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-09-12 17:14:41,884 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-09-12 17:14:42,148 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-09-12 17:14:42,152 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 7383 ms
+2025-09-12 17:14:42,397 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-09-12 17:14:43,287 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-09-12 17:14:43,292 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-09-12 17:14:43,322 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-09-12 17:14:44,329 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-12 17:14:44,596 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-12 17:14:44,722 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-09-12 17:14:45,713 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-12 17:14:45,894 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-12 17:14:47,831 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-12 17:14:47,923 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-12 17:14:48,224 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-12 17:14:48,930 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-12 17:14:49,865 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'findAddressByPostalCodeClientImpl' defined in file [C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes\io\bookwise\adapters\out\client\impl\FindAddressByPostalCodeClientImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'findAddressByPostalCodeClientImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2025-09-12 17:14:49,876 WARN o.s.c.s.AbstractApplicationContext [main] Exception thrown from ApplicationListener handling ContextClosedEvent
+org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'taskScheduler': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:220)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:265)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:222)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:145)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:452)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:458)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:385)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1139)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1102)
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:114)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:211)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:638)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at io.bookwise.Bootstrap.main(Bootstrap.java:16)
+2025-09-12 17:14:49,884 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-12 17:14:49,897 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2025-09-12 17:14:49,903 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2025-09-12 17:14:49,904 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2025-09-12 17:14:49,937 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-09-12 17:14:49,991 ERROR o.s.b.d.LoggingFailureAnalysisReporter [main] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+┌──->──┐
+|  findAddressByPostalCodeClientImpl defined in file [C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes\io\bookwise\adapters\out\client\impl\FindAddressByPostalCodeClientImpl.class]
+└──<-──┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+2025-09-12 17:18:30,747 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-09-12 17:18:30,894 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 21 with PID 22232 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-09-12 17:18:30,894 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-09-12 17:18:31,905 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [io.bookwise.adapters.out.mapper.AddressMapperImpl]
+2025-09-12 17:18:32,195 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [io.bookwise.adapters.out.mapper.AddressMapperImpl]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:251)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:189)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:314)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:246)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:165)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:417)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at io.bookwise.Bootstrap.main(Bootstrap.java:16)
+Caused by: java.io.FileNotFoundException: class path resource [io/bookwise/adapters/out/mapper/AddressMapper.class] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:215)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.getClassReader(SimpleMetadataReader.java:54)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:48)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:103)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:86)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:73)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:81)
+	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:630)
+	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getInterfaces(ConfigurationClassParser.java:956)
+	at org.springframework.context.annotation.ConfigurationClassParser.processInterfaces(ConfigurationClassParser.java:396)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:342)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:246)
+	... 18 common frames omitted
+2025-09-12 17:19:46,118 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-09-12 17:19:46,221 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 21 with PID 24016 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-09-12 17:19:46,221 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-09-12 17:19:47,004 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [io.bookwise.adapters.out.mapper.AddressMapperImpl]
+2025-09-12 17:19:47,325 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [io.bookwise.adapters.out.mapper.AddressMapperImpl]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:251)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:189)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:314)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:246)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:165)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:417)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at io.bookwise.Bootstrap.main(Bootstrap.java:16)
+Caused by: java.io.FileNotFoundException: class path resource [io/bookwise/adapters/out/mapper/AddressMapper.class] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:215)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.getClassReader(SimpleMetadataReader.java:54)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:48)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:103)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:86)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:73)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:81)
+	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:630)
+	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getInterfaces(ConfigurationClassParser.java:956)
+	at org.springframework.context.annotation.ConfigurationClassParser.processInterfaces(ConfigurationClassParser.java:396)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:342)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:246)
+	... 18 common frames omitted
+2025-09-12 17:23:16,488 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-09-12 17:23:16,616 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 21 with PID 32416 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-09-12 17:23:16,616 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-09-12 17:23:19,159 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-12 17:23:19,571 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 397 ms. Found 2 JPA repository interfaces.
+2025-09-12 17:23:20,385 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=c3eb90d3-ca40-3bb7-9759-f31eca57f63e
+2025-09-12 17:23:21,820 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8081 (http)
+2025-09-12 17:23:21,852 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-09-12 17:23:21,867 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-09-12 17:23:21,871 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-09-12 17:23:22,211 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-09-12 17:23:22,211 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5409 ms
+2025-09-12 17:23:22,399 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-09-12 17:23:23,075 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-09-12 17:23:23,081 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-09-12 17:23:23,114 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-09-12 17:23:23,554 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-12 17:23:23,746 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-12 17:23:23,888 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-09-12 17:23:24,893 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-12 17:23:25,041 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-12 17:23:27,243 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-12 17:23:27,345 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-12 17:23:27,728 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-12 17:23:28,795 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-12 17:23:31,823 INFO o.s.g.e.DefaultSchemaResourceGraphQlSourceBuilder [main] Loaded 1 resource(s) in the GraphQL schema.
+2025-09-12 17:23:32,397 INFO o.s.g.e.DefaultSchemaResourceGraphQlSourceBuilder [main] GraphQL schema inspection:
+	Unmapped fields: {Query=[_empty]}
+	Unmapped registrations: {}
+	Unmapped arguments: {}
+	Skipped types: []
+2025-09-12 17:23:32,478 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-09-12 17:23:34,359 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-09-12 17:23:34,477 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8081 (http) with context path '/'
+2025-09-12 17:23:34,495 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-09-12 17:23:34,518 INFO o.s.a.r.l.AbstractMessageListenerContainer [main] Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:23:34,560 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-0] Attempting to connect to: [localhost:5672]
+2025-09-12 17:23:34,566 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-0] Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:622)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:726)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2249)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2222)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2202)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1960)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1924)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1479)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1320)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:311)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:668)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:637)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:584)
+	... 12 common frames omitted
+2025-09-12 17:23:34,576 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-0] Attempting to connect to: [localhost:5672]
+2025-09-12 17:23:34,631 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 19.675 seconds (process running for 21.465)
+2025-09-12 17:23:39,746 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-0] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:23:39,755 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-0] Restarting Consumer@3027fe42: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:23:39,758 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-1] Attempting to connect to: [localhost:5672]
+2025-09-12 17:23:39,761 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-1] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:23:39,761 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-1] Attempting to connect to: [localhost:5672]
+2025-09-12 17:23:44,932 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-1] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:23:44,933 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-1] Restarting Consumer@77d54bbe: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:23:44,934 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-2] Attempting to connect to: [localhost:5672]
+2025-09-12 17:23:44,948 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-2] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:23:44,948 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-2] Attempting to connect to: [localhost:5672]
+2025-09-12 17:23:50,083 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-2] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:23:50,084 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-2] Restarting Consumer@5e831216: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:23:50,085 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-3] Attempting to connect to: [localhost:5672]
+2025-09-12 17:23:50,098 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-3] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:23:50,098 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-3] Attempting to connect to: [localhost:5672]
+2025-09-12 17:23:55,281 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-3] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:23:55,282 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-3] Restarting Consumer@30375bcd: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:23:55,283 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-4] Attempting to connect to: [localhost:5672]
+2025-09-12 17:23:55,296 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-4] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:23:55,296 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-4] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:00,464 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-4] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:00,464 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-4] Restarting Consumer@7310e5e3: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:00,466 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-5] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:00,494 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-5] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:00,495 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-5] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:05,675 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-5] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:05,676 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-5] Restarting Consumer@4f59ec43: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:05,677 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-6] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:05,706 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-6] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:05,707 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-6] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:10,870 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-6] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:10,871 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-6] Restarting Consumer@474b429e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:10,873 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-7] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:10,875 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-7] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:10,876 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-7] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:16,010 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-7] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:16,011 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-7] Restarting Consumer@38435249: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:16,012 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-8] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:16,026 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-8] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:16,027 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-8] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:21,205 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-8] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:21,206 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-8] Restarting Consumer@31a14c46: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:21,208 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-9] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:21,210 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-9] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:21,211 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-9] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:26,434 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-9] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:26,434 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-9] Restarting Consumer@971d047: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:26,436 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-10] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:26,449 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-10] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:26,450 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-10] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:31,610 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-10] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:31,610 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-10] Restarting Consumer@1418da3b: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:31,612 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-11] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:31,625 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-11] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:31,625 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-11] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:36,828 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-11] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:36,829 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-11] Restarting Consumer@2543d2a1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:36,830 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-12] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:36,844 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-12] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:36,844 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-12] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:42,006 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-12] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:42,007 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-12] Restarting Consumer@2a465809: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:42,008 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-13] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:42,010 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-13] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:42,011 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-13] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:47,182 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-13] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:47,182 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-13] Restarting Consumer@1c458e90: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:47,182 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-14] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:47,182 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-14] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:47,182 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-14] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:52,339 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-14] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:52,339 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-14] Restarting Consumer@4c6db464: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:52,339 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-15] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:52,370 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-15] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:52,370 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-15] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:57,549 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-15] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:24:57,549 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-15] Restarting Consumer@7b8ab5d6: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:24:57,549 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-16] Attempting to connect to: [localhost:5672]
+2025-09-12 17:24:57,565 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-16] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:24:57,565 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-16] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:02,722 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-16] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:02,722 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-16] Restarting Consumer@1e77b2d1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:02,722 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-17] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:02,738 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-17] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:02,738 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-17] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:07,893 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-17] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:07,893 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-17] Restarting Consumer@5d3a2840: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:07,893 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-18] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:07,893 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-18] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:07,893 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-18] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:13,066 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-18] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:13,066 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-18] Restarting Consumer@2dc10c68: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:13,068 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-19] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:13,097 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-19] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:13,097 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-19] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:18,214 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-19] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:18,215 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-19] Restarting Consumer@26eacd03: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:18,216 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-20] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:18,219 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-20] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:18,219 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-20] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:23,374 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-20] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:23,374 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-20] Restarting Consumer@6cfcb4f0: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:23,376 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-21] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:23,378 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-21] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:23,379 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-21] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:28,523 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-21] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:28,523 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-21] Restarting Consumer@332ae5a6: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:28,525 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-22] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:28,527 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-22] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:28,528 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-22] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:33,674 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-22] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:33,674 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-22] Restarting Consumer@36a3b93e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:33,676 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-23] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:33,678 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-23] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:33,678 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-23] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:38,897 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-23] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:38,897 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-23] Restarting Consumer@14be44f1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:38,898 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-24] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:38,928 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-24] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:38,928 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-24] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:44,124 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-24] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:44,124 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-24] Restarting Consumer@785437bc: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:44,127 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-25] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:44,139 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-25] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:44,140 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-25] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:49,297 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-25] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:49,297 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-25] Restarting Consumer@403c780b: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:49,299 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-26] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:49,312 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-26] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:49,313 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-26] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:54,488 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-26] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:54,489 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-26] Restarting Consumer@1f9e3e7f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:54,490 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-27] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:54,492 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-27] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:54,492 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-27] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:59,665 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-27] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:25:59,665 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-27] Restarting Consumer@5c1442b5: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:25:59,665 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-28] Attempting to connect to: [localhost:5672]
+2025-09-12 17:25:59,665 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-28] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:25:59,665 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-28] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:04,814 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-28] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:26:04,814 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-28] Restarting Consumer@39b8f999: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:26:04,814 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-29] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:04,829 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-29] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:26:04,829 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-29] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:09,950 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-29] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:26:09,950 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-29] Restarting Consumer@380d3bd8: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:26:09,950 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-30] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:09,982 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-30] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:26:09,982 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-30] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:15,148 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-30] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:26:15,148 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-30] Restarting Consumer@391a008d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:26:15,148 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-31] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:15,164 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-31] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:26:15,164 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-31] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:20,305 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-31] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:26:20,306 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-31] Restarting Consumer@6e1d94b0: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:26:20,308 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-32] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:20,310 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-32] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:26:20,311 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-32] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:25,484 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-32] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:26:25,484 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-32] Restarting Consumer@6885575e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:26:25,484 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-33] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:25,499 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-33] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:26:25,499 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-33] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:30,556 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-33] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:26:30,556 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-33] Restarting Consumer@43b98ee5: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:26:30,558 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-34] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:30,560 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-34] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:26:30,560 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-34] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:35,685 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-34] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:26:35,685 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-34] Restarting Consumer@22bd1859: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:26:35,686 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-35] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:35,700 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-35] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:26:35,700 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-35] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:40,851 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-35] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:26:40,851 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-35] Restarting Consumer@2113f16c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:26:40,853 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-36] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:40,891 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-36] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:26:40,893 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-36] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:46,067 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-36] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:26:46,067 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-36] Restarting Consumer@64d0cdd4: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:26:46,068 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-37] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:46,083 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-37] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:26:46,083 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-37] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:51,264 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-37] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:26:51,264 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-37] Restarting Consumer@876ed0a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:26:51,265 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-38] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:51,279 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-38] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:26:51,279 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-38] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:56,449 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-38] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:26:56,449 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-38] Restarting Consumer@6a99ef89: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:26:56,450 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-39] Attempting to connect to: [localhost:5672]
+2025-09-12 17:26:56,469 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-39] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:26:56,469 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-39] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:01,670 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-39] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:27:01,670 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-39] Restarting Consumer@cf9cbd6: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:27:01,670 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-40] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:01,673 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-40] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:27:01,673 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-40] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:06,863 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-40] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:27:06,863 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-40] Restarting Consumer@40750ee7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:27:06,864 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-41] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:06,879 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-41] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:27:06,879 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-41] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:12,031 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-41] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:27:12,032 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-41] Restarting Consumer@43b3d69a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:27:12,033 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-42] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:12,062 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-42] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:27:12,063 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-42] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:17,216 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-42] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:27:17,216 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-42] Restarting Consumer@9da65b4: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:27:17,217 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-43] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:17,246 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-43] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:27:17,246 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-43] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:22,441 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-43] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:27:22,442 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-43] Restarting Consumer@75e37179: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:27:22,444 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-44] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:22,473 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-44] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:27:22,474 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-44] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:27,637 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-44] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:27:27,637 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-44] Restarting Consumer@119b8fa9: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:27:27,639 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-45] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:27,641 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-45] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:27:27,641 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-45] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:32,781 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-45] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:27:32,781 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-45] Restarting Consumer@22571101: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:27:32,781 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-46] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:32,781 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-46] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:27:32,781 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-46] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:37,969 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-46] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:27:37,969 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-46] Restarting Consumer@6b420366: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:27:37,970 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-47] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:37,985 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-47] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:27:37,985 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-47] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:40,842 INFO o.a.j.l.DirectJDKLog [tomcat-handler-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-12 17:27:40,842 INFO o.s.w.s.FrameworkServlet [tomcat-handler-1] Initializing Servlet 'dispatcherServlet'
+2025-09-12 17:27:40,844 INFO o.s.w.s.FrameworkServlet [tomcat-handler-1] Completed initialization in 2 ms
+2025-09-12 17:27:40,920 ERROR i.b.f.e.ControllerExceptionHandler [tomcat-handler-1] Error(code=500, reason=Internal Server Error, message=Unexpected Error: No static resource api/v1/users., status=500, referenceError=null, baseType=null, schemaLocation=null, type=null)
+2025-09-12 17:27:43,157 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-47] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:27:43,158 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-47] Restarting Consumer@66688b42: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:27:43,160 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-48] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:43,188 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-48] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:27:43,188 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-48] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:48,332 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-48] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:27:48,332 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-48] Restarting Consumer@4cdafc43: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:27:48,333 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-49] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:48,363 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-49] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:27:48,363 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-49] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:53,547 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-49] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:27:53,547 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-49] Restarting Consumer@453c796e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:27:53,549 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-50] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:53,562 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-50] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:27:53,562 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-50] Attempting to connect to: [localhost:5672]
+2025-09-12 17:27:58,270 INFO o.s.a.r.l.SimpleMessageListenerContainer [rabbit-simple-51] Waiting for workers to finish.
+2025-09-12 17:27:58,270 INFO o.s.a.r.l.SimpleMessageListenerContainer [rabbit-simple-51] Successfully waited for workers to finish.
+2025-09-12 17:27:58,287 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-12 17:27:58,294 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-09-12 17:27:58,297 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-09-12 17:28:04,434 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-09-12 17:28:04,568 INFO o.s.b.StartupInfoLogger [main] Starting Bootstrap using Java 21 with PID 18120 (C:\Users\koliveiras\workspace-study\ReservationInventory\target\classes started by koliveiras in C:\Users\koliveiras\workspace-study\ReservationInventory)
+2025-09-12 17:28:04,573 INFO o.s.b.SpringApplication [main] The following 1 profile is active: "dev"
+2025-09-12 17:28:06,545 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-12 17:28:06,863 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 306 ms. Found 2 JPA repository interfaces.
+2025-09-12 17:28:07,544 INFO o.s.c.c.s.GenericScope [main] BeanFactory id=c3eb90d3-ca40-3bb7-9759-f31eca57f63e
+2025-09-12 17:28:08,543 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8081 (http)
+2025-09-12 17:28:08,566 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2025-09-12 17:28:08,574 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2025-09-12 17:28:08,576 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-09-12 17:28:08,714 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-09-12 17:28:08,717 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3959 ms
+2025-09-12 17:28:08,778 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2025-09-12 17:28:09,197 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-09-12 17:28:09,202 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2025-09-12 17:28:09,222 INFO o.s.b.a.h.H2ConsoleAutoConfiguration [main] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-09-12 17:28:09,498 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-12 17:28:09,629 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-09-12 17:28:09,702 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-09-12 17:28:10,397 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-12 17:28:10,498 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-12 17:28:12,021 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-12 17:28:12,105 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-12 17:28:12,426 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-12 17:28:13,151 INFO o.s.d.j.r.q.QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-12 17:28:15,564 INFO o.s.g.e.DefaultSchemaResourceGraphQlSourceBuilder [main] Loaded 1 resource(s) in the GraphQL schema.
+2025-09-12 17:28:15,976 INFO o.s.g.e.DefaultSchemaResourceGraphQlSourceBuilder [main] GraphQL schema inspection:
+	Unmapped fields: {Query=[_empty]}
+	Unmapped registrations: {}
+	Unmapped arguments: {}
+	Skipped types: []
+2025-09-12 17:28:16,039 INFO o.s.b.a.g.s.GraphQlWebMvcAutoConfiguration [main] GraphQL endpoint HTTP POST /graphql
+2025-09-12 17:28:16,648 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2025-09-12 17:28:16,734 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8081 (http) with context path '/'
+2025-09-12 17:28:16,749 INFO o.s.a.r.c.AbstractConnectionFactory [main] Attempting to connect to: [localhost:5672]
+2025-09-12 17:28:16,765 INFO o.s.a.r.l.AbstractMessageListenerContainer [main] Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:28:16,790 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-0] Attempting to connect to: [localhost:5672]
+2025-09-12 17:28:16,793 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-0] Failed to check/redeclare auto-delete queue(s).
+org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+	at org.springframework.amqp.rabbit.support.RabbitExceptionTranslator.convertRabbitAccessException(RabbitExceptionTranslator.java:61)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:622)
+	at org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createConnection(CachingConnectionFactory.java:726)
+	at org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.createConnection(ConnectionFactoryUtils.java:257)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.doExecute(RabbitTemplate.java:2249)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2222)
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.execute(RabbitTemplate.java:2202)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueInfo(RabbitAdmin.java:467)
+	at org.springframework.amqp.rabbit.core.RabbitAdmin.getQueueProperties(RabbitAdmin.java:451)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.attemptDeclarations(AbstractMessageListenerContainer.java:1960)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.redeclareElementsIfNecessary(AbstractMessageListenerContainer.java:1924)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.initialize(SimpleMessageListenerContainer.java:1479)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1320)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:311)
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at com.rabbitmq.client.impl.SocketFrameHandlerFactory.create(SocketFrameHandlerFactory.java:61)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1249)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:1198)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connectAddresses(AbstractConnectionFactory.java:668)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.connect(AbstractConnectionFactory.java:637)
+	at org.springframework.amqp.rabbit.connection.AbstractConnectionFactory.createBareConnection(AbstractConnectionFactory.java:584)
+	... 12 common frames omitted
+2025-09-12 17:28:16,800 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-0] Attempting to connect to: [localhost:5672]
+2025-09-12 17:28:16,835 INFO o.s.b.StartupInfoLogger [main] Started Bootstrap in 14.124 seconds (process running for 16.108)
+2025-09-12 17:28:21,984 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-0] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:28:21,984 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-0] Restarting Consumer@fd9512f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:28:21,995 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-1] Attempting to connect to: [localhost:5672]
+2025-09-12 17:28:21,995 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-1] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:28:21,995 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-1] Attempting to connect to: [localhost:5672]
+2025-09-12 17:28:23,015 INFO o.a.j.l.DirectJDKLog [tomcat-handler-0] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-12 17:28:23,015 INFO o.s.w.s.FrameworkServlet [tomcat-handler-0] Initializing Servlet 'dispatcherServlet'
+2025-09-12 17:28:23,015 INFO o.s.w.s.FrameworkServlet [tomcat-handler-0] Completed initialization in 0 ms
+2025-09-12 17:28:23,224 INFO i.b.a.i.UserResourceAdapterIn [tomcat-handler-0] Creating user: User{id=null, document='45616771007', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=null}
+2025-09-12 17:28:23,224 ERROR i.b.a.i.UserResourceAdapterIn [tomcat-handler-0] Error creating user: Not implemented yet
+2025-09-12 17:28:23,236 ERROR i.b.f.e.ControllerExceptionHandler [tomcat-handler-0] Error(code=500, reason=Internal Server Error, message=Unexpected Error: Not implemented yet, status=500, referenceError=null, baseType=null, schemaLocation=null, type=null)
+java.lang.RuntimeException: Not implemented yet
+	at io.bookwise.adapters.out.CreateUserAdapterOut.create(CreateUserAdapterOut.java:16)
+	at io.bookwise.application.usecase.CreateUserUseCase.create(CreateUserUseCase.java:17)
+	at io.bookwise.adapters.in.UserResourceAdapterIn.create(UserResourceAdapterIn.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:311)
+2025-09-12 17:28:27,172 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-1] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:28:27,173 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-1] Restarting Consumer@35677743: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:28:27,174 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-2] Attempting to connect to: [localhost:5672]
+2025-09-12 17:28:27,176 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-2] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:28:27,176 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-2] Attempting to connect to: [localhost:5672]
+2025-09-12 17:28:32,298 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-2] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:28:32,298 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-2] Restarting Consumer@75670a3c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:28:32,298 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-3] Attempting to connect to: [localhost:5672]
+2025-09-12 17:28:32,298 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-3] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:28:32,298 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-3] Attempting to connect to: [localhost:5672]
+2025-09-12 17:28:37,425 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-3] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:28:37,425 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-3] Restarting Consumer@5668ab0d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:28:37,425 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-4] Attempting to connect to: [localhost:5672]
+2025-09-12 17:28:37,441 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-4] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:28:37,441 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-4] Attempting to connect to: [localhost:5672]
+2025-09-12 17:28:37,771 INFO i.b.a.i.UserResourceAdapterIn [tomcat-handler-3] Creating user: User{id=null, document='45616771007', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=null}
+2025-09-12 17:29:14,639 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m5s326ms636µs100ns).
+2025-09-12 17:29:14,639 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-4] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:29:14,640 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-4] Restarting Consumer@55b75718: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:29:14,643 ERROR i.b.a.i.UserResourceAdapterIn [tomcat-handler-3] Error creating user: Not implemented yet
+2025-09-12 17:29:14,645 ERROR i.b.f.e.ControllerExceptionHandler [tomcat-handler-3] Error(code=500, reason=Internal Server Error, message=Unexpected Error: Not implemented yet, status=500, referenceError=null, baseType=null, schemaLocation=null, type=null)
+java.lang.RuntimeException: Not implemented yet
+	at io.bookwise.adapters.out.CreateUserAdapterOut.create(CreateUserAdapterOut.java:16)
+	at io.bookwise.application.usecase.CreateUserUseCase.create(CreateUserUseCase.java:17)
+	at io.bookwise.adapters.in.UserResourceAdapterIn.create(UserResourceAdapterIn.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:311)
+2025-09-12 17:29:14,646 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-5] Attempting to connect to: [localhost:5672]
+2025-09-12 17:29:14,647 INFO i.b.a.i.UserResourceAdapterIn [tomcat-handler-5] Creating user: User{id=null, document='45616771007', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-09-12 17:29:14,651 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-5] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:29:14,651 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-5] Attempting to connect to: [localhost:5672]
+2025-09-12 17:29:15,384 ERROR i.b.a.i.UserResourceAdapterIn [tomcat-handler-5] Error creating user: Not implemented yet
+2025-09-12 17:29:15,385 ERROR i.b.f.e.ControllerExceptionHandler [tomcat-handler-5] Error(code=500, reason=Internal Server Error, message=Unexpected Error: Not implemented yet, status=500, referenceError=null, baseType=null, schemaLocation=null, type=null)
+java.lang.RuntimeException: Not implemented yet
+	at io.bookwise.adapters.out.CreateUserAdapterOut.create(CreateUserAdapterOut.java:16)
+	at io.bookwise.application.usecase.CreateUserUseCase.create(CreateUserUseCase.java:17)
+	at io.bookwise.adapters.in.UserResourceAdapterIn.create(UserResourceAdapterIn.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:311)
+2025-09-12 17:29:19,294 INFO i.b.a.i.UserResourceAdapterIn [tomcat-handler-7] Creating user: User{id=null, document='45616771007', name='Kenneth de Oliveira Soares', email='kennetholiveira2015@gmail.com', address=Address{id=null, street='null', city='null', state='null', postalCode='58051020'}}
+2025-09-12 17:29:23,495 WARN o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-5] Consumer raised exception, processing can restart if the connection factory supports it. Exception summary: org.springframework.amqp.AmqpConnectException: java.net.ConnectException: Connection refused: no further information
+2025-09-12 17:29:23,496 INFO o.s.a.r.l.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer [rabbit-simple-5] Restarting Consumer@538ee4da: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2025-09-12 17:29:23,499 ERROR i.b.a.i.UserResourceAdapterIn [tomcat-handler-7] Error creating user: Not implemented yet
+2025-09-12 17:29:23,501 ERROR i.b.f.e.ControllerExceptionHandler [tomcat-handler-7] Error(code=500, reason=Internal Server Error, message=Unexpected Error: Not implemented yet, status=500, referenceError=null, baseType=null, schemaLocation=null, type=null)
+java.lang.RuntimeException: Not implemented yet
+	at io.bookwise.adapters.out.CreateUserAdapterOut.create(CreateUserAdapterOut.java:16)
+	at io.bookwise.application.usecase.CreateUserUseCase.create(CreateUserUseCase.java:17)
+	at io.bookwise.adapters.in.UserResourceAdapterIn.create(UserResourceAdapterIn.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at java.base/java.lang.VirtualThread.run(VirtualThread.java:311)
+2025-09-12 17:29:23,501 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-6] Attempting to connect to: [localhost:5672]
+2025-09-12 17:29:23,505 ERROR o.s.a.r.l.AbstractMessageListenerContainer [rabbit-simple-6] Failed to check/redeclare auto-delete queue(s).
+2025-09-12 17:29:23,505 INFO o.s.a.r.c.AbstractConnectionFactory [rabbit-simple-6] Attempting to connect to: [localhost:5672]

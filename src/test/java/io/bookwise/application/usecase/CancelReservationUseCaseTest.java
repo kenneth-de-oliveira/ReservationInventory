@@ -2,7 +2,7 @@ package io.bookwise.application.usecase;
 
 import io.bookwise.application.core.domain.Book;
 import io.bookwise.application.core.domain.Reservation;
-import io.bookwise.application.core.domain.Student;
+import io.bookwise.application.core.domain.User;
 import io.bookwise.application.core.ports.out.CancelReservationPortOut;
 import io.bookwise.application.core.ports.out.FindBookPortOut;
 import io.bookwise.application.core.ports.out.ReservationInventoryPortOut;
@@ -50,8 +50,8 @@ class CancelReservationUseCaseTest {
         when(findBookPortOut.findIsbn(Mockito.anyString())).thenReturn(Optional.of(book));
         when(reservationInventoryPortOut.checkIfBookIsReservedByIsbnAndDocument("123", "doc1")).thenReturn(true);
 
-        Student student = mock(Student.class);
-        when(student.getEmail()).thenReturn("student@email.com");
+        User user = mock(User.class);
+        when(user.getEmail()).thenReturn("user@email.com");
 
         assertDoesNotThrow(() -> cancelReservationUseCase.cancel(reservation));
 

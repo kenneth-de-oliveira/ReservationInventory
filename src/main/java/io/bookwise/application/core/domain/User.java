@@ -1,6 +1,6 @@
 package io.bookwise.application.core.domain;
 
-public class Student {
+public class User {
 
     private Long id;
     private String document;
@@ -8,10 +8,10 @@ public class Student {
     private String email;
     private Address address;
 
-    public Student() {
+    public User() {
     }
 
-    public Student(String document, String name, String email, Address address) {
+    public User(String document, String name, String email, Address address) {
         this.document = document;
         this.name = name;
         this.email = email;
@@ -60,7 +60,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "User{" +
                 "id=" + id +
                 ", document='" + document + '\'' +
                 ", name='" + name + '\'' +

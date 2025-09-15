@@ -12,19 +12,19 @@ import java.util.List;
 public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
 
     private final FindBookPortOut findBookPortOut;
-    private final FindStudentPortOut findStudentPortOut;
+    private final FindUserPortOut findUserPortOut;
     private final ReservationMessageQueuePublisherPortOut reservationMessageQueuePublisherPortOut;
     private final ReservationInventoryPortOut reservationInventoryPortOut;
     private final EmailServicePortOut emailServicePortOut;
 
     public ReservationInventoryUseCase(
             FindBookPortOut findBookPortOut,
-            FindStudentPortOut findStudentPortOut,
+            FindUserPortOut findUserPortOut,
             ReservationMessageQueuePublisherPortOut reservationMessageQueuePublisherPortOut,
             ReservationInventoryPortOut reservationInventoryPortOut,
             EmailServicePortOut emailServicePortOut) {
         this.findBookPortOut = findBookPortOut;
-        this.findStudentPortOut = findStudentPortOut;
+        this.findUserPortOut = findUserPortOut;
         this.reservationMessageQueuePublisherPortOut = reservationMessageQueuePublisherPortOut;
         this.reservationInventoryPortOut = reservationInventoryPortOut;
         this.emailServicePortOut = emailServicePortOut;
@@ -32,7 +32,7 @@ public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
 
     @Override
     public void reserve(Reservation reservation) {
-        findStudentPortOut.findByDocument(reservation.getDocument()).stream()
+        findUserPortOut.findByDocument(reservation.getDocument()).stream()
                 .filter(student -> !reservationInventoryPortOut.checkIfBookIsReservedByIsbnAndDocument(reservation.getIsbn(), student.getDocument()))
                 .findFirst()
                 .map(student -> {
@@ -59,7 +59,7 @@ public class ReservationInventoryUseCase implements ReservationInventoryPortIn {
                 .filter(book -> !book.isReserved())
                 .findFirst()
                 .map(book -> {
-                    var student = findStudentPortOut.findByDocument(document).orElseThrow(() -> new RuntimeException("Student not Found"));
+                    var student = findUserPortOut.findByDocument(document).orElseThrow(() -> new RuntimeException("Student not Found"));
                     return reservationMessageQueuePublisherPortOut.sendToQueueRequest(book.getIsbn(), student.getDocument());
                 }).orElseThrow(() -> new RuntimeException("Book is already reserved or not found"));
     }
