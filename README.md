@@ -1,6 +1,4 @@
-# Hexagonal Architecture PoC - Reservation-Inventory
-
-[![hexagonal-architecture](https://alistair.cockburn.us/wp-content/uploads/2017/03/logo285x146-half.png)](https://alistair.cockburn.us/hexagonal-architecture/)
+# ms-reservation-inventory
 
 This is an example of a very simplified book inventory system made in an architecture based on ports and adapters using:
 

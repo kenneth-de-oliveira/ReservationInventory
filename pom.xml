@@ -12,10 +12,10 @@
 	</parent>
 
 	<groupId>io.bookwise</groupId>
-	<artifactId>ReservationInventory</artifactId>
+	<artifactId>ms-reservation-inventory</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ReservationInventory</name>
-	<description>Projeto de Inventário de Livros</description>
+	<name>ms-reservation-inventory</name>
+	<description>Microservice reservation inventory</description>
 
 	<properties>
 		<java.version>21</java.version>
