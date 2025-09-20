@@ -2,7 +2,7 @@ package com.example.adapter.out.client;
 
 import com.example.inventorymanagement.*;
 import com.example.adapter.out.client.dto.RetrieveAllBooksRequest;
-import com.example.framework.config.adapter.SoapAdapterConfig;
+import com.example.infrastructure.config.adapter.SoapAdapterConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

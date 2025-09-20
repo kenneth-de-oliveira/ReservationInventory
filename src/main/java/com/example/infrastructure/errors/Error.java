@@ -1,4 +1,4 @@
-package com.example.framework.errors;
+package com.example.infrastructure.errors;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

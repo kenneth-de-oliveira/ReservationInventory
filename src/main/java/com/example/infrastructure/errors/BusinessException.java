@@ -1,4 +1,4 @@
-package com.example.framework.errors;
+package com.example.infrastructure.errors;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

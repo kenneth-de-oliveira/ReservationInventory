@@ -22,5 +22,7 @@ api:
     url: ${API_INVENTORY_MANAGEMENT_URL}
   email-service:
     url: ${API_EMAIL_SERVICE_URL}
+  user-management-service:
+    url: ${API_USER_MANAGEMENT_SERVICE_URL}
   viacep:
     url: ${API_VIACEP_URL}

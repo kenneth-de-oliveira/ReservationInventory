@@ -1,4 +1,4 @@
-package com.example.framework.config.adapter;
+package com.example.infrastructure.config.adapter;
 
 import com.example.application.core.port.out.CancelReservationPortOut;
 import com.example.application.core.port.out.FindBookPortOut;

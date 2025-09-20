@@ -1,4 +1,4 @@
-package com.example.framework.config.adapter;
+package com.example.infrastructure.config.adapter;
 
 import com.example.adapter.out.CreateBookAdapterOut;
 import com.example.application.usecase.CreateBookUseCase;

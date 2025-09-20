@@ -1,4 +1,4 @@
-package com.example.framework.config.adapter;
+package com.example.infrastructure.config.adapter;
 
 import com.example.adapter.out.FindBookAdapterOut;
 import com.example.adapter.out.FindUserAdapterOut;

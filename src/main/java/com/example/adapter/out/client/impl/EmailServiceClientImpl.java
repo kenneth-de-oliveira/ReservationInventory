@@ -3,7 +3,7 @@ package com.example.adapter.out.client.impl;
 import feign.FeignException;
 import com.example.adapter.out.client.EmailServiceClient;
 import com.example.adapter.out.client.dto.EmailDTO;
-import com.example.framework.errors.GenericErrorsEnum;
+import com.example.infrastructure.errors.GenericErrorsEnum;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

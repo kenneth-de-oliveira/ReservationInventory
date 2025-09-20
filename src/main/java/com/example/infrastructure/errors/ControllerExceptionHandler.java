@@ -1,4 +1,4 @@
-package com.example.framework.errors;
+package com.example.infrastructure.errors;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpHeaders;

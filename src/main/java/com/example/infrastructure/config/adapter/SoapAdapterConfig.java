@@ -1,4 +1,4 @@
-package com.example.framework.config.adapter;
+package com.example.infrastructure.config.adapter;
 
 import feign.RequestInterceptor;
 import feign.codec.Decoder;

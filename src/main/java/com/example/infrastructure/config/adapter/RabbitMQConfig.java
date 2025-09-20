@@ -1,4 +1,4 @@
-package com.example.framework.config.adapter;
+package com.example.infrastructure.config.adapter;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Value;

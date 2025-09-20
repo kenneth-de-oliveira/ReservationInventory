@@ -1,4 +1,4 @@
-package com.example.framework.errors;
+package com.example.infrastructure.errors;
 
 import graphql.GraphQLError;
 import graphql.GraphqlErrorBuilder;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-import static com.example.framework.errors.GenericErrorsEnum.ERROR_GENERIC;
+import static com.example.infrastructure.errors.GenericErrorsEnum.ERROR_GENERIC;
 
 @Slf4j
 @Component

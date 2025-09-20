@@ -1,4 +1,4 @@
-package com.example.framework.errors;
+package com.example.infrastructure.errors;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

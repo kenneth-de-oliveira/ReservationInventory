@@ -10,7 +10,7 @@ import com.example.adapter.out.repository.entity.ReservationEntity;
 import com.example.adapter.out.repository.enums.ReservationControlStatus;
 import com.example.application.core.domain.Reservation;
 import com.example.application.core.port.out.ReservationInventoryPortOut;
-import com.example.framework.errors.BusinessException;
+import com.example.infrastructure.errors.BusinessException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
