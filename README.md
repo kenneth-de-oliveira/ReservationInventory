@@ -64,7 +64,7 @@ Create a new book **POST**: localhost:8080/api/v1/books
 }
 ```
 
-Create a new user **POST**: localhost:8080/api/v1/students
+Create a new user **POST**: localhost:8080/api/v1/users
 ```json
 {
   "document": "51436427606",
