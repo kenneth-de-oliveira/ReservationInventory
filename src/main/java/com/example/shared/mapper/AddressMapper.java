@@ -1,7 +1,7 @@
 package com.example.shared.mapper;
 
-import com.example.adapter.out.client.dto.AddressResponse;
 import com.example.application.core.domain.Address;
+import com.example.shared.dto.AddressResponse;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", implementationName = "AddressMapperAdapterInImpl")

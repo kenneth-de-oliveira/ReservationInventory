@@ -1,10 +1,9 @@
 package com.example.adapter.in;
 
-import com.example.adapter.out.client.dto.UserRequest;
-import com.example.adapter.out.client.dto.UserResponse;
-import com.example.application.core.domain.User;
 import com.example.application.core.port.in.CreateUserPortIn;
 import com.example.application.core.port.in.FindUserPortIn;
+import com.example.shared.dto.UserRequest;
+import com.example.shared.dto.UserResponse;
 import com.example.shared.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,7 +1,7 @@
 package com.example.shared.mapper;
 
-import com.example.adapter.out.client.dto.UserRequest;
-import com.example.adapter.out.client.dto.UserResponse;
+import com.example.shared.dto.UserRequest;
+import com.example.shared.dto.UserResponse;
 import com.example.application.core.domain.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

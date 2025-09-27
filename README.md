@@ -38,12 +38,12 @@ This project is a “fictitious” digital book inventory project proposal devel
 
 First, clone the repository at the address:
 
-`https://github.com/kenneth-de-oliveira/ReservationInventory.git` 
+`https://github.com/kenneth-de-oliveira/ms-reservation-inventory.git` 
 
 After the project is cloned, open the terminal in the cloned directory **ReservationInventory**
 
 ```bash
-cd ReservationInventory
+cd ms-reservation-inventory
 mvn install
 ```
 
@@ -57,7 +57,7 @@ Create a new book **POST**: localhost:8080/api/v1/books
   "authorName": "Uncle Bob",
   "text": "bla bla bla",
   "isbn": "9783127323207",
-  "category": {
+  "categoryRequest": {
     "name": "Informática",
     "description": "bla, bla, bla"
   }

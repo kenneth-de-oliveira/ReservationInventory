@@ -1,8 +1,8 @@
 package com.example.adapter.out.client.impl;
 
+import com.example.shared.dto.EmailRequest;
 import feign.FeignException;
 import com.example.adapter.out.client.EmailServiceClient;
-import com.example.adapter.out.client.dto.EmailDTO;
 import com.example.infrastructure.errors.GenericErrorsEnum;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,12 +19,12 @@ public class EmailServiceClientImpl implements EmailServiceClient {
     private final EmailServiceClient emailServiceClient;
 
     @Override
-    public void send(EmailDTO emailDTO) {
+    public void send(EmailRequest emailRequest) {
 
         handleExceptions(() -> {
-            log.info("Sending mail to: {}, subject: {}, text: {}", emailDTO.getTo(), emailDTO.getSubject(), emailDTO.getText());
-            emailServiceClient.send(emailDTO);
-            log.info("Email sent successfully to: {}", emailDTO.getTo());
+            log.info("Sending mail to: {}, subject: {}, text: {}", emailRequest.getTo(), emailRequest.getSubject(), emailRequest.getText());
+            emailServiceClient.send(emailRequest);
+            log.info("Email sent successfully to: {}", emailRequest.getTo());
             return null;
         }, ex -> {
             if (ex instanceof FeignException) {

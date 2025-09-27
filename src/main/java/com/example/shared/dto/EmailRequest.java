@@ -1,11 +1,9 @@
-package com.example.adapter.out.client.dto;
+package com.example.shared.dto;
 
-import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
-public class EmailDTO {
+public class EmailRequest {
     private String to;
     private String subject;
     private String text;
