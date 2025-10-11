@@ -26,3 +26,12 @@ api:
     url: ${API_USER_MANAGEMENT_SERVICE_URL}
   viacep:
     url: ${API_VIACEP_URL}
+
+#### Service Discovery Configuration ####
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE}
+  instance:
+    prefer-ip-address: true
